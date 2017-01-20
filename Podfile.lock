@@ -3,7 +3,25 @@ PODS:
   - AlamofireObjectMapper (4.0.1):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
   - Eureka (2.0.0-beta.1)
+  - FacebookCore (0.2.0):
+    - Bolts (~> 1.8)
+    - FBSDKCoreKit (~> 4.15)
+  - FacebookLogin (0.2.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.2)
+    - FBSDKCoreKit (~> 4.15)
+    - FBSDKLoginKit (~> 4.15)
+  - FBSDKCoreKit (4.18.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.18.0):
+    - FBSDKCoreKit
   - Kingfisher (3.2.4)
   - ObjectMapper (2.2.2)
   - SnapKit (3.1.2)
@@ -13,6 +31,8 @@ DEPENDENCIES:
   - Alamofire (~> 4.3)
   - AlamofireObjectMapper (~> 4.0)
   - Eureka (~> 2.0.0-beta.1)
+  - FacebookCore
+  - FacebookLogin
   - Kingfisher (~> 3.0)
   - ObjectMapper (~> 2.2)
   - SnapKit (~> 3.1.2)
@@ -21,12 +41,17 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   AlamofireObjectMapper: 842d2eed43a4d0593ff0110d54ac86a170c4519c
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Eureka: d014adf16406745e1a78d5790ea37ed130a0a8e5
+  FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
+  FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
+  FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
+  FBSDKLoginKit: 6773073e970b2b15fb12e451ce7f11da0532b880
   Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 85f0bb4b21cf7c7ed3b1265d5b98bce5ae4a895e
+PODFILE CHECKSUM: aedbc61e4bbc8018f0569b3b3ca5c0a634178f8f
 
 COCOAPODS: 1.1.1

@@ -7,14 +7,28 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
 
 class LoginController: BaseController {
     @IBOutlet var tfUsername: UITextField!
     @IBOutlet var tfPassword: UITextField!
+    @IBOutlet var switchRemember: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let preferences = UserDefaults.standard
+        
+        if let accessToken = AccessToken.current {
+            requestSignInWithFacebook(accessToken: accessToken.authenticationToken)
+        }else if(preferences.object(forKey: KEY_USERNAME) != nil && preferences.object(forKey: KEY_PASSWORD) != nil){
+            let username = preferences.object(forKey: KEY_USERNAME) as! String
+            let password = preferences.object(forKey: KEY_PASSWORD) as! String
+
+            requestLogin(username: username, password: password)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +59,21 @@ class LoginController: BaseController {
     }
     
     @IBAction func doFacebookLogin(_ sender: Any){
-        
+        let loginManager = LoginManager()
+    
+        loginManager.logIn([ .email ], viewController: self) { loginResult in
+            switch loginResult {
+            case .failed(let error):
+                self.showMessage(title: "Error", msg: error as! String)
+                break
+            case .cancelled:
+                print("User cancelled login.")
+                break
+            case .success(_, _, let accessToken):
+                self.requestSignInWithFacebook(accessToken: accessToken.authenticationToken)
+                break
+            }
+        }
     }
     
     @IBAction func doRegister(_ sender: UIButton) {
@@ -66,9 +94,30 @@ class LoginController: BaseController {
         ApiClient.login(username: username, password: password,errorHandler: { (message: String) in
             self.showMessage(title: "Error", msg: message)
         }) { (customer: CustomerResponse) in
+            self.saveAccountLogin(username: username, password: password)
             self.performSegue(withIdentifier: "MainScreen",
                          sender: self)
         }
+    }
+    
+    
+    func requestSignInWithFacebook(accessToken: String!) {
+        ApiClient.signInWithFacebook(accessToken: accessToken, errorHandler: { (message: String) in
+            self.showMessage(title: "Error", msg: message)
+        }) { (customer: CustomerResponse) in
+            self.performSegue(withIdentifier: "MainScreen",
+                              sender: self)
+        }
+    }
+    
+    func saveAccountLogin(username: String!,password: String!) {
+        if(!switchRemember.isOn){
+            return
+        }
+        
+        let preferences = UserDefaults.standard
+        preferences.set(username, forKey: KEY_USERNAME)
+        preferences.set(password, forKey: KEY_PASSWORD)
     }
 }
 

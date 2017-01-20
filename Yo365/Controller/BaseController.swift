@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FacebookLogin
+
 class BaseController: UIViewController{
     func backView() {
         guard navigationController?.popViewController(animated: true) != nil else { //modal
@@ -45,5 +47,16 @@ class BaseController: UIViewController{
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Close", style: .default, handler: handler))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func logout() {
+        // self
+        let preferences = UserDefaults.standard
+        preferences.removeObject(forKey: KEY_USERNAME)
+        preferences.removeObject(forKey: KEY_PASSWORD)
+        
+        // facebook
+        let loginManager = LoginManager()
+        loginManager.logOut()
     }
 }

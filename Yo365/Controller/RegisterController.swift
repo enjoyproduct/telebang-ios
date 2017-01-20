@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
 
 class RegisterController: BaseController {
     @IBOutlet var utfUsername: UITextField!
@@ -38,12 +40,19 @@ class RegisterController: BaseController {
             ApiClient.register(username: username, email: email, password: password, errorHandler: { (msg: String) in
                 self.showMessage(title: "Error", msg: msg)
             }, successHandler: { (customerModel: CustomerResponse) in
+                self.saveAccountLogin(username: username, password: password)
                 self.performSegue(withIdentifier: "MainScreen",
                                   sender: self)
             })
         }else{
             showMessage(title: "Error", msg: msg)
         }
+    }
+    
+    func saveAccountLogin(username: String!,password: String!) {
+        let preferences = UserDefaults.standard
+        preferences.set(username, forKey: KEY_USERNAME)
+        preferences.set(password, forKey: KEY_PASSWORD)
     }
     
     func validate() -> String {
@@ -67,5 +76,32 @@ class RegisterController: BaseController {
         }
         
         return message
+    }
+    
+    @IBAction func doSignInFacebook(_ sender: Any) {
+        let loginManager = LoginManager()
+        
+        loginManager.logIn([ .email ], viewController: self) { loginResult in
+            switch loginResult {
+            case .failed(let error):
+                self.showMessage(title: "Error", msg: error as! String)
+                break
+            case .cancelled:
+                print("User cancelled login.")
+                break
+            case .success(_, _, let accessToken):
+                self.requestSignInWithFacebook(accessToken: accessToken.authenticationToken)
+                break
+            }
+        }
+    }
+    
+    func requestSignInWithFacebook(accessToken: String!) {
+        ApiClient.signInWithFacebook(accessToken: accessToken, errorHandler: { (message: String) in
+            self.showMessage(title: "Error", msg: message)
+        }) { (customer: CustomerResponse) in
+            self.performSegue(withIdentifier: "MainScreen",
+                              sender: self)
+        }
     }
 }

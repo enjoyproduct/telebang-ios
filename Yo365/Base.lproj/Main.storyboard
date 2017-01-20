@@ -172,6 +172,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="switchRemember" destination="V84-hl-0jm" id="wgA-cO-sV0"/>
                         <outlet property="tfPassword" destination="5Ub-Jd-NBL" id="guJ-3M-wik"/>
                         <outlet property="tfUsername" destination="H65-Nm-cWc" id="nvt-fF-9i0"/>
                         <segue destination="dlN-cz-2Gb" kind="show" identifier="RegisterScreen" id="6TC-w3-9Wz"/>
@@ -294,12 +295,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Qo6-3p-r49"/>
                                 </constraints>
-                                <state key="normal" title="LOGIN">
+                                <state key="normal" title="Sign in with Facebook">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="doSignInFacebook:" destination="dlN-cz-2Gb" eventType="touchUpInside" id="CgV-sh-9br"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ue7-gr-BOI">
                                 <rect key="frame" x="50" y="428" width="275" height="50"/>

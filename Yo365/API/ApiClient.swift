@@ -26,6 +26,20 @@ class ApiClient {
         }
     }
     
+    static func signInWithFacebook(accessToken: String, errorHandler: @escaping (String) -> Void, successHandler: @escaping (CustomerResponse)-> Void) {
+        let params: Parameters = [KEY_ACCESS_TOKEN: accessToken]
+        
+        Alamofire.request(getAbsoluteUrl(relativeUrl: RELATIVE_URL_LOGIN_FACE_BOOK), method: .post ,parameters: params).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let content = response.result.value?.content
+                let data = CustomerResponse(JSON: content!)
+                successHandler(data!)
+            }
+        }
+    }
+    
     static func register(username: String, email: String, password: String, errorHandler: @escaping (String) -> Void, successHandler: @escaping (CustomerResponse)-> Void) {
         let params: Parameters = [KEY_USERNAME: username, KEY_EMAIL: email, KEY_PASSWORD: password ]
         

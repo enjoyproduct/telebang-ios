@@ -15,6 +15,8 @@ pod 'Eureka', '~> 2.0.0-beta.1'
 pod 'SnapKit', '~> 3.1.2'
 pod 'Kingfisher', '~> 3.0'
 pod 'AlamofireObjectMapper', '~> 4.0'
+pod 'FacebookCore'
+pod 'FacebookLogin'
 end
 
 target 'Yo365Tests' do
