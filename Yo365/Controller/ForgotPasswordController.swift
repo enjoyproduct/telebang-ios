@@ -29,9 +29,12 @@ class ForgotPasswordController: BaseController {
         let email:String! = utfEmail.text
 
         if(ValidateUtil.isValidEmail(emailAddress: email!)){
+            showLoading(msg: "Loading... Please wait")
             ApiClient.forgotPassword(email: email, errorHandler: { (msg: String) in
+                self.hideLoading()
                 self.showMessage(title: "Error", msg: msg)
             }, successHandler: { (msg: String) in
+                self.hideLoading()
                 self.showMessage(title: "Successfully", msg: msg, handler: { (action) in
                     self.backView()
                 })

@@ -37,9 +37,12 @@ class RegisterController: BaseController {
         
         let msg = validate()
         if(msg.isEmpty){
+            showLoading(msg: "Loading... Please wait")
             ApiClient.register(username: username, email: email, password: password, errorHandler: { (msg: String) in
+                self.hideLoading()
                 self.showMessage(title: "Error", msg: msg)
             }, successHandler: { (customerModel: CustomerResponse) in
+                self.hideLoading()
                 self.saveAccountLogin(username: username, password: password)
                 self.performSegue(withIdentifier: "MainScreen",
                                   sender: self)
@@ -97,9 +100,12 @@ class RegisterController: BaseController {
     }
     
     func requestSignInWithFacebook(accessToken: String!) {
+        showLoading(msg: "Please wait while the content loads")
         ApiClient.signInWithFacebook(accessToken: accessToken, errorHandler: { (message: String) in
+            self.hideLoading()
             self.showMessage(title: "Error", msg: message)
         }) { (customer: CustomerResponse) in
+            self.hideLoading()
             self.performSegue(withIdentifier: "MainScreen",
                               sender: self)
         }

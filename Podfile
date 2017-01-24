@@ -17,6 +17,9 @@ pod 'Kingfisher', '~> 3.0'
 pod 'AlamofireObjectMapper', '~> 4.0'
 pod 'FacebookCore'
 pod 'FacebookLogin'
+pod 'RAMAnimatedTabBarController', "~> 2.0.13"
+pod 'SlideMenuControllerSwift'
+pod 'SwiftOverlays', '~> 3.0.0'
 end
 
 target 'Yo365Tests' do

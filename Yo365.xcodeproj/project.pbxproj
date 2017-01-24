@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0AA2AD1AED7BFFFC95904659 /* Pods_Yo365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03910CC03AD4756D4A2E91C0 /* Pods_Yo365.framework */; };
+		281ACF141E37411300F9E063 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281ACF131E37411300F9E063 /* ContainerViewController.swift */; };
+		281ACF171E37459400F9E063 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281ACF161E37459400F9E063 /* SettingController.swift */; };
 		2848B30F1E2F67E900AAB998 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2848B30E1E2F67E900AAB998 /* LoginController.swift */; };
 		2848B3121E2F6DF600AAB998 /* LoginUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2848B3111E2F6DF600AAB998 /* LoginUITextField.swift */; };
 		286C87941E3099E100539369 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87931E3099E100539369 /* RegisterController.swift */; };
@@ -18,6 +20,8 @@
 		286C87A01E30C35700539369 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C879F1E30C35700539369 /* AppSetting.swift */; };
 		286C87A21E30C37000539369 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87A11E30C37000539369 /* AppConstant.swift */; };
 		286C87A41E30C87A00539369 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87A31E30C87A00539369 /* ResponseModel.swift */; };
+		287A2E3C1E331EF100D92A01 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A2E3B1E331EF100D92A01 /* HomeController.swift */; };
+		28AC54881E35DD0500CE5598 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC54871E35DD0500CE5598 /* SideMenuView.swift */; };
 		28E2DA291E2F511100CFD6AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E2DA281E2F511100CFD6AC /* AppDelegate.swift */; };
 		28E2DA2E1E2F511100CFD6AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E2DA2C1E2F511100CFD6AC /* Main.storyboard */; };
 		28E2DA301E2F511100CFD6AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E2DA2F1E2F511100CFD6AC /* Assets.xcassets */; };
@@ -49,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		03910CC03AD4756D4A2E91C0 /* Pods_Yo365.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yo365.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		281ACF131E37411300F9E063 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = Controller/ContainerViewController.swift; sourceTree = "<group>"; };
+		281ACF161E37459400F9E063 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingController.swift; path = Controller/SettingController.swift; sourceTree = "<group>"; };
 		2848B30E1E2F67E900AAB998 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Controller/LoginController.swift; sourceTree = "<group>"; };
 		2848B3111E2F6DF600AAB998 /* LoginUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginUITextField.swift; path = Widget/LoginUITextField.swift; sourceTree = "<group>"; };
 		286C87931E3099E100539369 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterController.swift; path = Controller/RegisterController.swift; sourceTree = "<group>"; };
@@ -59,6 +65,8 @@
 		286C879F1E30C35700539369 /* AppSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppSetting.swift; path = Config/AppSetting.swift; sourceTree = "<group>"; };
 		286C87A11E30C37000539369 /* AppConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConstant.swift; path = Config/AppConstant.swift; sourceTree = "<group>"; };
 		286C87A31E30C87A00539369 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseModel.swift; path = Model/ResponseModel.swift; sourceTree = "<group>"; };
+		287A2E3B1E331EF100D92A01 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeController.swift; path = Controller/HomeController.swift; sourceTree = "<group>"; };
+		28AC54871E35DD0500CE5598 /* SideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuView.swift; path = Controller/SideMenuView.swift; sourceTree = "<group>"; };
 		28E2DA251E2F511100CFD6AC /* Yo365.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yo365.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28E2DA281E2F511100CFD6AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28E2DA2D1E2F511100CFD6AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,6 +119,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		281ACF151E37458100F9E063 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				281ACF161E37459400F9E063 /* SettingController.swift */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 		2848B30A1E2F56D000AAB998 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,9 +154,12 @@
 		2848B30D1E2F56F200AAB998 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				281ACF151E37458100F9E063 /* Setting */,
 				28FD82521E320B1500EFA1A4 /* MainScreen */,
 				286C87971E309FD900539369 /* Base */,
 				2848B3131E2F7DE700AAB998 /* CustomerScreen */,
+				28AC54871E35DD0500CE5598 /* SideMenuView.swift */,
+				281ACF131E37411300F9E063 /* ContainerViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -243,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				28FD82531E320B4300EFA1A4 /* MainController.swift */,
+				287A2E3B1E331EF100D92A01 /* HomeController.swift */,
 			);
 			name = MainScreen;
 			sourceTree = "<group>";
@@ -561,12 +581,16 @@
 			files = (
 				286C87961E3099F600539369 /* ForgotPasswordController.swift in Sources */,
 				28FD82571E32113400EFA1A4 /* ValidateUtil.swift in Sources */,
+				28AC54881E35DD0500CE5598 /* SideMenuView.swift in Sources */,
+				287A2E3C1E331EF100D92A01 /* HomeController.swift in Sources */,
 				286C87A21E30C37000539369 /* AppConstant.swift in Sources */,
 				286C879D1E30BE0F00539369 /* ApiClient.swift in Sources */,
 				286C87991E309FEE00539369 /* BaseController.swift in Sources */,
 				28FD82541E320B4300EFA1A4 /* MainController.swift in Sources */,
 				286C87941E3099E100539369 /* RegisterController.swift in Sources */,
+				281ACF171E37459400F9E063 /* SettingController.swift in Sources */,
 				2848B3121E2F6DF600AAB998 /* LoginUITextField.swift in Sources */,
+				281ACF141E37411300F9E063 /* ContainerViewController.swift in Sources */,
 				286C87A01E30C35700539369 /* AppSetting.swift in Sources */,
 				286C879B1E30B07600539369 /* CustomerResponse.swift in Sources */,
 				286C87A41E30C87A00539369 /* ResponseModel.swift in Sources */,

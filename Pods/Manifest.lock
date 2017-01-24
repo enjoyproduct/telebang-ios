@@ -24,7 +24,10 @@ PODS:
     - FBSDKCoreKit
   - Kingfisher (3.2.4)
   - ObjectMapper (2.2.2)
+  - RAMAnimatedTabBarController (2.0.13)
+  - SlideMenuControllerSwift (3.0.1)
   - SnapKit (3.1.2)
+  - SwiftOverlays (3.0.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -35,7 +38,10 @@ DEPENDENCIES:
   - FacebookLogin
   - Kingfisher (~> 3.0)
   - ObjectMapper (~> 2.2)
+  - RAMAnimatedTabBarController (~> 2.0.13)
+  - SlideMenuControllerSwift
   - SnapKit (~> 3.1.2)
+  - SwiftOverlays (~> 3.0.0)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -49,9 +55,12 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 6773073e970b2b15fb12e451ce7f11da0532b880
   Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
+  RAMAnimatedTabBarController: 2510f3b66954c3f77ea1042a35d34df8f5f3b604
+  SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
+  SwiftOverlays: 4cdd9e4f5c7817fb6348882059eb697e11685fad
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: aedbc61e4bbc8018f0569b3b3ca5c0a634178f8f
+PODFILE CHECKSUM: 14373be2faa37c08adcb8aafb68f2c691beab7b4
 
 COCOAPODS: 1.1.1

@@ -94,7 +94,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/FacebookLogin/FacebookLogin.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kingfisher/Kingfisher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ObjectMapper/ObjectMapper.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SlideMenuControllerSwift/SlideMenuControllerSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftOverlays/SwiftOverlays.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -108,6 +111,9 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/FacebookLogin/FacebookLogin.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kingfisher/Kingfisher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ObjectMapper/ObjectMapper.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SlideMenuControllerSwift/SlideMenuControllerSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftOverlays/SwiftOverlays.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
 fi

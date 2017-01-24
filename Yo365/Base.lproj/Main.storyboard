@@ -171,13 +171,14 @@
                             <constraint firstItem="5Ub-Jd-NBL" firstAttribute="top" secondItem="H65-Nm-cWc" secondAttribute="bottom" constant="16" id="yTG-3b-hts"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="switchRemember" destination="V84-hl-0jm" id="wgA-cO-sV0"/>
                         <outlet property="tfPassword" destination="5Ub-Jd-NBL" id="guJ-3M-wik"/>
                         <outlet property="tfUsername" destination="H65-Nm-cWc" id="nvt-fF-9i0"/>
                         <segue destination="dlN-cz-2Gb" kind="show" identifier="RegisterScreen" id="6TC-w3-9Wz"/>
                         <segue destination="a8C-JM-CJp" kind="show" identifier="ForgotPasswordScreen" id="M7b-nF-7tF"/>
-                        <segue destination="eAe-Mc-r9D" kind="show" identifier="MainScreen" id="p74-pd-xGG"/>
+                        <segue destination="I7T-cj-XFM" kind="show" identifier="MainScreen" id="0o1-Fu-ya5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -352,12 +353,12 @@
                             <constraint firstItem="ODi-WN-5FM" firstAttribute="leading" secondItem="Fve-l7-skx" secondAttribute="leadingMargin" constant="34" id="xiy-s6-QmL"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="utfEmail" destination="hx6-8E-oIr" id="lVa-dJ-LlR"/>
                         <outlet property="utfPassword" destination="Ozr-Mh-9ir" id="C9n-kk-YS0"/>
                         <outlet property="utfRePassword" destination="DfT-bd-Dkc" id="Xth-dY-lNy"/>
                         <outlet property="utfUsername" destination="rMo-Pl-ynX" id="Ily-TN-CUw"/>
-                        <segue destination="eAe-Mc-r9D" kind="show" identifier="MainScreen" id="rQl-rI-A3c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="br3-3M-Amn" sceneMemberID="firstResponder"/>
@@ -467,33 +468,294 @@
             </objects>
             <point key="canvasLocation" x="1182" y="476"/>
         </scene>
-        <!--Main Controller-->
-        <scene sceneID="vd3-kd-0o7">
+        <!--Categories-->
+        <scene sceneID="bZy-4g-Afr">
             <objects>
-                <viewController id="eAe-Mc-r9D" customClass="MainController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iNX-k5-Gw9" customClass="HomeController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7qf-pB-GJs"/>
-                        <viewControllerLayoutGuide type="bottom" id="9g0-U5-Qa4"/>
+                        <viewControllerLayoutGuide type="top" id="IcO-k0-TQP"/>
+                        <viewControllerLayoutGuide type="bottom" id="7xZ-JS-THp"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="u7b-35-ld6">
+                    <view key="view" contentMode="scaleToFill" id="MZI-Lw-2YV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Categories" image="ic_tab_categories" id="Lr5-94-uUH" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" red="0.60392156860000001" green="0.62745098040000002" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="F90-JY-8Tq" id="9BJ-We-O8c"/>
+                        </connections>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zul-l5-FfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="F90-JY-8Tq" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.95294117649999999" green="0.34509803919999998" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.95294117649999999" green="0.34509803919999998" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="4662" y="-313"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="YW1-YS-LR6">
+            <objects>
+                <viewController id="l9x-Lv-Xkv" customClass="HomeController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9LX-zH-HNa"/>
+                        <viewControllerLayoutGuide type="bottom" id="vYI-Qc-y7Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b0f-9q-IX9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwX-VK-CBU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="h7q-E9-Aab">
+                                        <barButtonItem key="leftBarButtonItem" title="cc" id="3Ri-LX-gHd"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="2Pd-3k-rDq"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="ic_tab_home" id="DIc-SC-u3U" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" red="0.60392156860000001" green="0.62745098040000002" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="q3X-l7-69z" id="oYB-3C-RCU"/>
+                        </connections>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIv-pK-woo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="q3X-l7-69z" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.95294117649999999" green="0.34509803919999998" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.95294117649999999" green="0.34509803919999998" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="4662" y="-962"/>
+        </scene>
+        <!--Main Controller-->
+        <scene sceneID="gCg-5X-z5u">
+            <objects>
+                <tabBarController storyboardIdentifier="MainController" id="Qb6-zI-LFA" customClass="MainController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="AWf-oJ-z2J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="l9x-Lv-Xkv" kind="relationship" relationship="viewControllers" id="qXZ-CY-xY2"/>
+                        <segue destination="iNX-k5-Gw9" kind="relationship" relationship="viewControllers" id="yba-Jw-4cv"/>
+                        <segue destination="2sz-n2-OQT" kind="relationship" relationship="viewControllers" id="1Ir-9g-Tcg"/>
+                        <segue destination="dQh-sb-CXq" kind="relationship" relationship="viewControllers" id="m4o-ik-YBR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3g6-EM-EXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3455" y="123"/>
+        </scene>
+        <!--Setting Controller-->
+        <scene sceneID="ivd-Gw-Wfa">
+            <objects>
+                <viewController storyboardIdentifier="SettingScreen" id="lQh-Te-4a6" customClass="SettingController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3AP-3b-Tkb"/>
+                        <viewControllerLayoutGuide type="bottom" id="76A-zK-eSb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s0z-jd-cI1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yh-fU-CSS">
+                                <rect key="frame" x="164" y="205" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="doMenu:" destination="lQh-Te-4a6" eventType="touchUpInside" id="Eql-Bi-RxU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUt-BQ-zXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3454" y="862"/>
+        </scene>
+        <!--Watch List-->
+        <scene sceneID="eWb-6H-WDP">
+            <objects>
+                <viewController id="dQh-sb-CXq" customClass="HomeController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UMk-RL-fy6"/>
+                        <viewControllerLayoutGuide type="bottom" id="zf9-YW-vuS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B7C-Tn-nCa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Watch List" image="ic_tab_watch" id="VMr-lu-K4O" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" red="0.60392156860000001" green="0.62745098040000002" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="2S0-fl-Pvx" id="QJB-n2-ay2"/>
+                        </connections>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mWd-hJ-4Um" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="2S0-fl-Pvx" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.95294117649999999" green="0.34509803919999998" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.95294117649999999" green="0.34509803919999998" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="4662" y="1025"/>
+        </scene>
+        <!--Container View Controller-->
+        <scene sceneID="nMm-9R-nx4">
+            <objects>
+                <viewController id="I7T-cj-XFM" customClass="ContainerViewController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CLf-Sq-vuP"/>
+                        <viewControllerLayoutGuide type="bottom" id="njF-GB-RLI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iPa-z7-nOG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9ge-7y-VYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QrS-8H-RfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2242" y="103"/>
+            <point key="canvasLocation" x="2470" y="123"/>
+        </scene>
+        <!--Side Menu View-->
+        <scene sceneID="gQD-Ba-iZJ">
+            <objects>
+                <viewController storyboardIdentifier="Left" id="QYt-cY-AsJ" customClass="SideMenuView" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tb9-Ca-CtY"/>
+                        <viewControllerLayoutGuide type="bottom" id="teU-rG-bi6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mGK-uL-SPp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyg-21-7xm">
+                                <rect key="frame" x="156" y="350" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dB6-2t-CxV">
+                                <rect key="frame" x="139" y="151" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Setting"/>
+                                <connections>
+                                    <action selector="doSetting:" destination="QYt-cY-AsJ" eventType="touchUpInside" id="IHJ-Hn-5ip"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUT-p7-Eoc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2470" y="-555"/>
+        </scene>
+        <!--Trending-->
+        <scene sceneID="Y9r-rB-CkW">
+            <objects>
+                <viewController id="2sz-n2-OQT" customClass="HomeController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TXk-Wm-9Y5"/>
+                        <viewControllerLayoutGuide type="bottom" id="l2X-SR-0xF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IAh-8b-CiE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Trending" image="ic_tab_trending" id="Zeo-gy-HTq" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" red="0.60392156860000001" green="0.62745098040000002" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="2IU-xZ-CQn" id="MuU-gu-Ucq"/>
+                        </connections>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AM0-3v-UsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="2IU-xZ-CQn" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.95294117649999999" green="0.34509803919999998" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.95294117649999999" green="0.34509803919999998" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="4662" y="347"/>
         </scene>
     </scenes>
     <resources>
         <image name="bgr_login" width="375" height="667"/>
         <image name="ic_close" width="14" height="14"/>
         <image name="ic_customer_back" width="16" height="16"/>
+        <image name="ic_tab_categories" width="23" height="19"/>
+        <image name="ic_tab_home" width="22" height="18"/>
+        <image name="ic_tab_trending" width="19" height="24"/>
+        <image name="ic_tab_watch" width="22" height="18"/>
         <image name="ic_username" width="16" height="17"/>
         <image name="logo_yo365" width="178" height="144"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="p74-pd-xGG"/>
-    </inferredMetricsTieBreakers>
 </document>

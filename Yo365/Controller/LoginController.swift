@@ -91,9 +91,13 @@ class LoginController: BaseController {
     }
     
     func requestLogin(username: String!,password: String!) {
+        showLoading(msg: "Loading... Please wait")
+        
         ApiClient.login(username: username, password: password,errorHandler: { (message: String) in
             self.showMessage(title: "Error", msg: message)
+            self.hideLoading()
         }) { (customer: CustomerResponse) in
+            self.hideLoading()
             self.saveAccountLogin(username: username, password: password)
             self.performSegue(withIdentifier: "MainScreen",
                          sender: self)
@@ -102,9 +106,12 @@ class LoginController: BaseController {
     
     
     func requestSignInWithFacebook(accessToken: String!) {
+        showLoading(msg: "Please wait while the content loads")
         ApiClient.signInWithFacebook(accessToken: accessToken, errorHandler: { (message: String) in
+            self.hideLoading()
             self.showMessage(title: "Error", msg: message)
         }) { (customer: CustomerResponse) in
+            self.hideLoading()
             self.performSegue(withIdentifier: "MainScreen",
                               sender: self)
         }

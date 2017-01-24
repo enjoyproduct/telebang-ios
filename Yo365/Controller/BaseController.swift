@@ -8,6 +8,7 @@
 
 import UIKit
 import FacebookLogin
+import SwiftOverlays
 
 class BaseController: UIViewController{
     func backView() {
@@ -47,6 +48,22 @@ class BaseController: UIViewController{
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Close", style: .default, handler: handler))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showLoading() {
+        showLoading(msg: "");
+    }
+    
+    func showLoading(msg: String) {
+        if(msg.isEmpty){
+            self.showWaitOverlay()
+        }else{
+            self.showWaitOverlayWithText(msg)
+        }
+    }
+    
+    func hideLoading(){
+        self.removeAllOverlays()
     }
     
     func logout() {
