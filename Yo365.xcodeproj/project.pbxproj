@@ -11,7 +11,6 @@
 		281ACF141E37411300F9E063 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281ACF131E37411300F9E063 /* ContainerViewController.swift */; };
 		281ACF171E37459400F9E063 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281ACF161E37459400F9E063 /* SettingController.swift */; };
 		2848B30F1E2F67E900AAB998 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2848B30E1E2F67E900AAB998 /* LoginController.swift */; };
-		2848B3121E2F6DF600AAB998 /* LoginUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2848B3111E2F6DF600AAB998 /* LoginUITextField.swift */; };
 		286C87941E3099E100539369 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87931E3099E100539369 /* RegisterController.swift */; };
 		286C87961E3099F600539369 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87951E3099F600539369 /* ForgotPasswordController.swift */; };
 		286C87991E309FEE00539369 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87981E309FEE00539369 /* BaseController.swift */; };
@@ -22,6 +21,12 @@
 		286C87A41E30C87A00539369 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87A31E30C87A00539369 /* ResponseModel.swift */; };
 		287A2E3C1E331EF100D92A01 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A2E3B1E331EF100D92A01 /* HomeController.swift */; };
 		28AC54881E35DD0500CE5598 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC54871E35DD0500CE5598 /* SideMenuView.swift */; };
+		28CD24991E44412F00CEEEF4 /* SlideMenuElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CD24981E44412F00CEEEF4 /* SlideMenuElement.swift */; };
+		28CD249B1E44437900CEEEF4 /* SlideMenuElements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28CD249A1E44437900CEEEF4 /* SlideMenuElements.plist */; };
+		28CD249F1E445E3200CEEEF4 /* SlideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CD249D1E445E3200CEEEF4 /* SlideMenuCell.swift */; };
+		28CD24A01E445E3200CEEEF4 /* SlideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28CD249E1E445E3200CEEEF4 /* SlideMenuCell.xib */; };
+		28CD24A31E4481E900CEEEF4 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CD24A21E4481E900CEEEF4 /* AppSession.swift */; };
+		28CD24A51E44820300CEEEF4 /* CustomerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CD24A41E44820300CEEEF4 /* CustomerManager.swift */; };
 		28E2DA291E2F511100CFD6AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E2DA281E2F511100CFD6AC /* AppDelegate.swift */; };
 		28E2DA2E1E2F511100CFD6AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E2DA2C1E2F511100CFD6AC /* Main.storyboard */; };
 		28E2DA301E2F511100CFD6AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E2DA2F1E2F511100CFD6AC /* Assets.xcassets */; };
@@ -56,7 +61,6 @@
 		281ACF131E37411300F9E063 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = Controller/ContainerViewController.swift; sourceTree = "<group>"; };
 		281ACF161E37459400F9E063 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingController.swift; path = Controller/SettingController.swift; sourceTree = "<group>"; };
 		2848B30E1E2F67E900AAB998 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Controller/LoginController.swift; sourceTree = "<group>"; };
-		2848B3111E2F6DF600AAB998 /* LoginUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginUITextField.swift; path = Widget/LoginUITextField.swift; sourceTree = "<group>"; };
 		286C87931E3099E100539369 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterController.swift; path = Controller/RegisterController.swift; sourceTree = "<group>"; };
 		286C87951E3099F600539369 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordController.swift; path = Controller/ForgotPasswordController.swift; sourceTree = "<group>"; };
 		286C87981E309FEE00539369 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseController.swift; path = Controller/BaseController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,12 @@
 		286C87A31E30C87A00539369 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseModel.swift; path = Model/ResponseModel.swift; sourceTree = "<group>"; };
 		287A2E3B1E331EF100D92A01 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeController.swift; path = Controller/HomeController.swift; sourceTree = "<group>"; };
 		28AC54871E35DD0500CE5598 /* SideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuView.swift; path = Controller/SideMenuView.swift; sourceTree = "<group>"; };
+		28CD24981E44412F00CEEEF4 /* SlideMenuElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideMenuElement.swift; path = Model/SlideMenuElement.swift; sourceTree = "<group>"; };
+		28CD249A1E44437900CEEEF4 /* SlideMenuElements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SlideMenuElements.plist; sourceTree = "<group>"; };
+		28CD249D1E445E3200CEEEF4 /* SlideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideMenuCell.swift; path = View/SlideMenuCell.swift; sourceTree = "<group>"; };
+		28CD249E1E445E3200CEEEF4 /* SlideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SlideMenuCell.xib; path = View/SlideMenuCell.xib; sourceTree = "<group>"; };
+		28CD24A21E4481E900CEEEF4 /* AppSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppSession.swift; path = Manager/AppSession.swift; sourceTree = "<group>"; };
+		28CD24A41E44820300CEEEF4 /* CustomerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerManager.swift; path = Manager/CustomerManager.swift; sourceTree = "<group>"; };
 		28E2DA251E2F511100CFD6AC /* Yo365.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yo365.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28E2DA281E2F511100CFD6AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28E2DA2D1E2F511100CFD6AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,6 +150,7 @@
 			children = (
 				286C879A1E30B07600539369 /* CustomerResponse.swift */,
 				286C87A31E30C87A00539369 /* ResponseModel.swift */,
+				28CD24981E44412F00CEEEF4 /* SlideMenuElement.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -147,6 +158,8 @@
 		2848B30C1E2F56E400AAB998 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				28CD249C1E445DED00CEEEF4 /* SlideMenuCell */,
+				28CD24971E44408B00CEEEF4 /* VideoListCell */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -167,7 +180,6 @@
 		2848B3101E2F6DBE00AAB998 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
-				2848B3111E2F6DF600AAB998 /* LoginUITextField.swift */,
 			);
 			name = Widget;
 			sourceTree = "<group>";
@@ -199,6 +211,31 @@
 			name = Config;
 			sourceTree = "<group>";
 		};
+		28CD24971E44408B00CEEEF4 /* VideoListCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = VideoListCell;
+			sourceTree = "<group>";
+		};
+		28CD249C1E445DED00CEEEF4 /* SlideMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				28CD249D1E445E3200CEEEF4 /* SlideMenuCell.swift */,
+				28CD249E1E445E3200CEEEF4 /* SlideMenuCell.xib */,
+			);
+			name = SlideMenuCell;
+			sourceTree = "<group>";
+		};
+		28CD24A11E4481BF00CEEEF4 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				28CD24A21E4481E900CEEEF4 /* AppSession.swift */,
+				28CD24A41E44820300CEEEF4 /* CustomerManager.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
 		28E2DA1C1E2F511100CFD6AC = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +261,7 @@
 		28E2DA271E2F511100CFD6AC /* Yo365 */ = {
 			isa = PBXGroup;
 			children = (
+				28CD24A11E4481BF00CEEEF4 /* Manager */,
 				28FD82551E32111C00EFA1A4 /* Helper */,
 				286C879E1E30C28200539369 /* Config */,
 				2848B3101E2F6DBE00AAB998 /* Widget */,
@@ -235,6 +273,7 @@
 				28E2DA2C1E2F511100CFD6AC /* Main.storyboard */,
 				28E2DA2F1E2F511100CFD6AC /* Assets.xcassets */,
 				28E2DA311E2F511100CFD6AC /* LaunchScreen.storyboard */,
+				28CD249A1E44437900CEEEF4 /* SlideMenuElements.plist */,
 				28E2DA341E2F511100CFD6AC /* Info.plist */,
 			);
 			path = Yo365;
@@ -414,9 +453,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28CD24A01E445E3200CEEEF4 /* SlideMenuCell.xib in Resources */,
 				28E2DA331E2F511100CFD6AC /* LaunchScreen.storyboard in Resources */,
 				28E2DA301E2F511100CFD6AC /* Assets.xcassets in Resources */,
 				28E2DA2E1E2F511100CFD6AC /* Main.storyboard in Resources */,
+				28CD249B1E44437900CEEEF4 /* SlideMenuElements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +620,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28CD24A31E4481E900CEEEF4 /* AppSession.swift in Sources */,
 				286C87961E3099F600539369 /* ForgotPasswordController.swift in Sources */,
 				28FD82571E32113400EFA1A4 /* ValidateUtil.swift in Sources */,
 				28AC54881E35DD0500CE5598 /* SideMenuView.swift in Sources */,
@@ -589,13 +631,15 @@
 				28FD82541E320B4300EFA1A4 /* MainController.swift in Sources */,
 				286C87941E3099E100539369 /* RegisterController.swift in Sources */,
 				281ACF171E37459400F9E063 /* SettingController.swift in Sources */,
-				2848B3121E2F6DF600AAB998 /* LoginUITextField.swift in Sources */,
+				28CD249F1E445E3200CEEEF4 /* SlideMenuCell.swift in Sources */,
 				281ACF141E37411300F9E063 /* ContainerViewController.swift in Sources */,
 				286C87A01E30C35700539369 /* AppSetting.swift in Sources */,
 				286C879B1E30B07600539369 /* CustomerResponse.swift in Sources */,
+				28CD24991E44412F00CEEEF4 /* SlideMenuElement.swift in Sources */,
 				286C87A41E30C87A00539369 /* ResponseModel.swift in Sources */,
 				2848B30F1E2F67E900AAB998 /* LoginController.swift in Sources */,
 				28E2DA291E2F511100CFD6AC /* AppDelegate.swift in Sources */,
+				28CD24A51E44820300CEEEF4 /* CustomerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

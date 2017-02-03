@@ -11,9 +11,12 @@ import RAMAnimatedTabBarController
 
 
 class MainController: RAMAnimatedTabBarController {
+    var positionActive: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       setSelectIndex(from: 0, to: positionActive)
     }
     
     override func didReceiveMemoryWarning() {

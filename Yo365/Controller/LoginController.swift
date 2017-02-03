@@ -99,6 +99,7 @@ class LoginController: BaseController {
         }) { (customer: CustomerResponse) in
             self.hideLoading()
             self.saveAccountLogin(username: username, password: password)
+            customerManager.onLoginSuccessfully(loginStatus: .LoginWithSystem, customer: customer)
             self.performSegue(withIdentifier: "MainScreen",
                          sender: self)
         }
@@ -112,6 +113,7 @@ class LoginController: BaseController {
             self.showMessage(title: "Error", msg: message)
         }) { (customer: CustomerResponse) in
             self.hideLoading()
+            customerManager.onLoginSuccessfully(loginStatus: .LoginWithFacebook, customer: customer)
             self.performSegue(withIdentifier: "MainScreen",
                               sender: self)
         }
@@ -122,9 +124,7 @@ class LoginController: BaseController {
             return
         }
         
-        let preferences = UserDefaults.standard
-        preferences.set(username, forKey: KEY_USERNAME)
-        preferences.set(password, forKey: KEY_PASSWORD)
+        customerManager.saveAuthenticAccount(username: username, password: password)
     }
 }
 

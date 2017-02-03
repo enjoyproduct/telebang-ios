@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>icon</key>
+		<string>ic_slide_menu_home</string>
+		<key>title</key>
+		<string>Home</string>
+		<key>type</key>
+		<string>Home</string>
+		<key>enable</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>ic_slide_menu_categories</string>
+		<key>title</key>
+		<string>Categories</string>
+		<key>type</key>
+		<string>Categories</string>
+		<key>enable</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>ic_slide_menu_favourite</string>
+		<key>title</key>
+		<string>My Favourite</string>
+		<key>type</key>
+		<string>Favourite</string>
+		<key>enable</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>ic_slide_menu_download</string>
+		<key>title</key>
+		<string>My Download</string>
+		<key>type</key>
+		<string>Download</string>
+		<key>enable</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>ic_slide_menu_news</string>
+		<key>title</key>
+		<string>News/Blog</string>
+		<key>type</key>
+		<string>News</string>
+		<key>enable</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>ic_slide_menu_upload</string>
+		<key>title</key>
+		<string>Upload Video</string>
+		<key>type</key>
+		<string>Upload</string>
+		<key>enable</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>ic_slide_menu_about</string>
+		<key>title</key>
+		<string>About Us</string>
+		<key>type</key>
+		<string>AboutUs</string>
+		<key>enable</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>ic_slide_menu_term</string>
+		<key>title</key>
+		<string>Terms &amp; Privacy Policy</string>
+		<key>type</key>
+		<string>Terms</string>
+		<key>enable</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>ic_slide_menu_feedback</string>
+		<key>title</key>
+		<string>Feedback</string>
+		<key>type</key>
+		<string>Feedback</string>
+		<key>enable</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>ic_slide_menu_help</string>
+		<key>title</key>
+		<string>Help</string>
+		<key>type</key>
+		<string>Help</string>
+		<key>enable</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>ic_slide_menu_share</string>
+		<key>title</key>
+		<string>Share</string>
+		<key>type</key>
+		<string>Share</string>
+		<key>enable</key>
+		<true/>
+	</dict>
+</array>
+</plist>

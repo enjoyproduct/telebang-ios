@@ -22,6 +22,10 @@ class CustomerResponse: Mappable {
     var zip: String?
     var vip: String?
     
+    init() {
+        
+    }
+    
     required init?(map: Map) {
         
     }

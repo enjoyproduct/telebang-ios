@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FacebookLogin
 import SwiftOverlays
 
 class BaseController: UIViewController{
@@ -64,16 +63,5 @@ class BaseController: UIViewController{
     
     func hideLoading(){
         self.removeAllOverlays()
-    }
-    
-    func logout() {
-        // self
-        let preferences = UserDefaults.standard
-        preferences.removeObject(forKey: KEY_USERNAME)
-        preferences.removeObject(forKey: KEY_PASSWORD)
-        
-        // facebook
-        let loginManager = LoginManager()
-        loginManager.logOut()
     }
 }

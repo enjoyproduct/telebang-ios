@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SlideMenuCellScreen" rowHeight="96" id="KGk-i7-Jjw" customClass="SlideMenuCell" customModule="Yo365" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_slide_menu_home" translatesAutoresizingMaskIntoConstraints="NO" id="0R1-pz-Pa7">
+                        <rect key="frame" x="24" y="16.5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="0jT-xX-Hhf"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="MaD-sA-BL1"/>
+                            <constraint firstAttribute="width" constant="20" id="tHl-2j-NIy"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4S-nB-nb0">
+                        <rect key="frame" x="64" y="18" width="248" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="0R1-pz-Pa7" secondAttribute="bottom" constant="16" id="02x-ir-4ZN"/>
+                    <constraint firstItem="0R1-pz-Pa7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="9yF-YK-gIN"/>
+                    <constraint firstItem="0R1-pz-Pa7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Fyh-Se-E2Y"/>
+                    <constraint firstItem="m4S-nB-nb0" firstAttribute="centerY" secondItem="0R1-pz-Pa7" secondAttribute="centerY" id="LZJ-vN-9Ny"/>
+                    <constraint firstAttribute="trailing" secondItem="m4S-nB-nb0" secondAttribute="trailing" constant="8" id="TY7-Te-pSI"/>
+                    <constraint firstItem="m4S-nB-nb0" firstAttribute="leading" secondItem="0R1-pz-Pa7" secondAttribute="trailing" constant="20" id="ly2-jy-gkc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imvIcon" destination="0R1-pz-Pa7" id="ckN-Se-9g4"/>
+                <outlet property="lbTitle" destination="m4S-nB-nb0" id="btm-Dj-b9V"/>
+            </connections>
+            <point key="canvasLocation" x="26" y="78"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_slide_menu_home" width="19" height="15"/>
+    </resources>
+</document>

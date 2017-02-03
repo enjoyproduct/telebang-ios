@@ -43,19 +43,14 @@ class RegisterController: BaseController {
                 self.showMessage(title: "Error", msg: msg)
             }, successHandler: { (customerModel: CustomerResponse) in
                 self.hideLoading()
-                self.saveAccountLogin(username: username, password: password)
+                customerManager.saveAuthenticAccount(username: username, password: password)
+                customerManager.onLoginSuccessfully(loginStatus: .LoginWithSystem, customer: customerModel)
                 self.performSegue(withIdentifier: "MainScreen",
                                   sender: self)
             })
         }else{
             showMessage(title: "Error", msg: msg)
         }
-    }
-    
-    func saveAccountLogin(username: String!,password: String!) {
-        let preferences = UserDefaults.standard
-        preferences.set(username, forKey: KEY_USERNAME)
-        preferences.set(password, forKey: KEY_PASSWORD)
     }
     
     func validate() -> String {
@@ -106,6 +101,7 @@ class RegisterController: BaseController {
             self.showMessage(title: "Error", msg: message)
         }) { (customer: CustomerResponse) in
             self.hideLoading()
+            customerManager.onLoginSuccessfully(loginStatus: .LoginWithFacebook, customer: customer)
             self.performSegue(withIdentifier: "MainScreen",
                               sender: self)
         }
