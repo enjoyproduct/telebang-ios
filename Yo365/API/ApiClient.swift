@@ -19,7 +19,7 @@ class ApiClient {
 
             let result = parseResponse(data: response, errorHandler: errorHandler)
             if(result){
-                let content = response.result.value?.content
+                let content: Dictionary<String, AnyObject>? = response.result.value?.content as! Dictionary<String, AnyObject>?
                 let data = CustomerResponse(JSON: content!)
                 successHandler(data!)
             }
@@ -33,7 +33,7 @@ class ApiClient {
             
             let result = parseResponse(data: response, errorHandler: errorHandler)
             if(result){
-                let content = response.result.value?.content
+                let content: Dictionary<String, AnyObject>? = response.result.value?.content as! Dictionary<String, AnyObject>?
                 let data = CustomerResponse(JSON: content!)
                 successHandler(data!)
             }
@@ -47,7 +47,7 @@ class ApiClient {
             
             let result = parseResponse(data: response, errorHandler: errorHandler)
             if(result){
-                let content = response.result.value?.content
+                let content: Dictionary<String, AnyObject>? = response.result.value?.content as! Dictionary<String, AnyObject>?
                 let data = CustomerResponse(JSON: content!)
                 successHandler(data!)
             }
@@ -62,6 +62,32 @@ class ApiClient {
             let result = parseResponse(data: response, errorHandler: errorHandler)
             if(result){
                 successHandler("An email will be sent to you with reset password link")
+            }
+        }
+    }
+    
+    static func getVideoCategories(errorHandler: @escaping (String) -> Void, successHandler: @escaping (VideoCategoryResponseJSON)-> Void) {
+        Alamofire.request(getAbsoluteUrl(relativeUrl: RELATIVE_URL_VIDEO_CATEGORIES)).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let content: Dictionary<String, AnyObject>? = response.result.value?.content as! Dictionary<String, AnyObject>?
+                let data = VideoCategoryResponseJSON(JSON: content!)!
+                successHandler(data)
+            }
+        }
+    }
+    
+    static func getVideosLatest(pageNumber: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (Array<VideoResponseJSON>)-> Void) {
+        let relativeUrl = String.init(format: RELATIVE_URL_VIDEO_LATEST, pageNumber, LIMIT_VIDEOS_HOMES)
+        Alamofire.request(getAbsoluteUrl(relativeUrl: relativeUrl)).responseObject { (response: DataResponse<ResponseModel>) in
+
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let content: Dictionary<String, AnyObject>! = response.result.value?.content as! Dictionary<String, AnyObject>!
+                let data: Array<Dictionary<String, AnyObject>>! = content?["videos"] as! Array<Dictionary<String, AnyObject>>
+                let videoList: Array<VideoResponseJSON>! = Mapper<VideoResponseJSON>().mapArray(JSONArray: data)
+                successHandler(videoList)
             }
         }
     }

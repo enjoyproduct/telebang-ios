@@ -91,6 +91,11 @@ class LoginController: BaseController {
     }
     
     func requestLogin(username: String!,password: String!) {
+        ApiClient.getVideosLatest(pageNumber: 2, errorHandler: { (message: String) in
+            
+        }) { (data: Array<VideoResponseJSON>) in
+            
+        }
         showLoading(msg: "Loading... Please wait")
         
         ApiClient.login(username: username, password: password,errorHandler: { (message: String) in

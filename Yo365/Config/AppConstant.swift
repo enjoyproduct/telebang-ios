@@ -18,6 +18,10 @@ let RELATIVE_URL_LOGIN = "/api/login"
 let RELATIVE_URL_REGISTER = "/api/register"
 let RELATIVE_URL_FORGOT_PASSWORD = "/api/forgot_password"
 let RELATIVE_URL_LOGIN_FACE_BOOK = "/api/loginFacebook"
+let RELATIVE_URL_VIDEO_CATEGORIES = "/api/categories"
+let RELATIVE_URL_VIDEO_LATEST = "/api/getListVideoLasted/%d/%d";
+
+let LIMIT_VIDEOS_HOMES = 10;
 
 let KEY_USERNAME = "username"
 let KEY_PASSWORD = "password"

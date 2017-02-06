@@ -9,6 +9,9 @@
 import UIKit
 
 class GridVideoCell: UITableViewCell {
+    @IBOutlet var imvThumbnail: UIImageView!
+    @IBOutlet var lbTitle: UILabel!
+    @IBOutlet var lbInfo: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +23,4 @@ class GridVideoCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

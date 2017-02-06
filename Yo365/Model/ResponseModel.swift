@@ -11,7 +11,8 @@ import ObjectMapper
 class ResponseModel: Mappable {
     var code: Int?
     var message: String?
-    var content: Dictionary<String, AnyObject>?
+    //var content: Dictionary<String, AnyObject>?
+    var content: Any?
     
     required init?(map: Map) {
         
