@@ -718,10 +718,10 @@
             </objects>
             <point key="canvasLocation" x="3454" y="862"/>
         </scene>
-        <!--View Controller-->
+        <!--Favourite Controller-->
         <scene sceneID="eWb-6H-WDP">
             <objects>
-                <viewController id="dQh-sb-CXq" sceneMemberID="viewController">
+                <viewController id="dQh-sb-CXq" customClass="FavouriteController" customModule="Yo365" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UMk-RL-fy6"/>
                         <viewControllerLayoutGuide type="bottom" id="zf9-YW-vuS"/>
@@ -729,9 +729,24 @@
                     <view key="view" contentMode="scaleToFill" id="B7C-Tn-nCa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zYc-qw-Yfj">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zf9-YW-vuS" firstAttribute="top" secondItem="zYc-qw-Yfj" secondAttribute="bottom" id="9xX-8H-NFR"/>
+                            <constraint firstItem="zYc-qw-Yfj" firstAttribute="leading" secondItem="B7C-Tn-nCa" secondAttribute="leading" id="h74-oW-Vcc"/>
+                            <constraint firstAttribute="trailing" secondItem="zYc-qw-Yfj" secondAttribute="trailing" id="qgX-gG-CLz"/>
+                            <constraint firstItem="zYc-qw-Yfj" firstAttribute="top" secondItem="UMk-RL-fy6" secondAttribute="bottom" id="xjI-xX-Efs"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aHc-uP-fuR"/>
+                    <connections>
+                        <outlet property="tableView" destination="zYc-qw-Yfj" id="n6p-Gz-pXs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWd-hJ-4Um" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -850,10 +865,10 @@
             </objects>
             <point key="canvasLocation" x="2469.5999999999999" y="-555.47226386806597"/>
         </scene>
-        <!--View Controller-->
+        <!--Trending Controller-->
         <scene sceneID="Y9r-rB-CkW">
             <objects>
-                <viewController id="2sz-n2-OQT" sceneMemberID="viewController">
+                <viewController id="2sz-n2-OQT" customClass="TrendingController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TXk-Wm-9Y5"/>
                         <viewControllerLayoutGuide type="bottom" id="l2X-SR-0xF"/>
@@ -861,9 +876,24 @@
                     <view key="view" contentMode="scaleToFill" id="IAh-8b-CiE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zVw-BL-Yb9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l2X-SR-0xF" firstAttribute="top" secondItem="zVw-BL-Yb9" secondAttribute="bottom" id="Kus-WH-zwf"/>
+                            <constraint firstItem="zVw-BL-Yb9" firstAttribute="top" secondItem="TXk-Wm-9Y5" secondAttribute="bottom" id="ZA7-cZ-bgU"/>
+                            <constraint firstItem="zVw-BL-Yb9" firstAttribute="leading" secondItem="IAh-8b-CiE" secondAttribute="leading" id="ekk-4X-PCx"/>
+                            <constraint firstAttribute="trailing" secondItem="zVw-BL-Yb9" secondAttribute="trailing" id="kTE-dF-9Aa"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DVg-Y2-Bx3"/>
+                    <connections>
+                        <outlet property="tableView" destination="zVw-BL-Yb9" id="DUq-fd-sCq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AM0-3v-UsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

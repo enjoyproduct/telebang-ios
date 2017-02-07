@@ -13,6 +13,12 @@
 		2848B30F1E2F67E900AAB998 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2848B30E1E2F67E900AAB998 /* LoginController.swift */; };
 		284E15AB1E49D2090090B276 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E15AA1E49D2090090B276 /* CategoryController.swift */; };
 		284E15AE1E49D2710090B276 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E15AD1E49D2710090B276 /* CategoryViewCell.swift */; };
+		284E15B21E49E3AA0090B276 /* VideoViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E15B01E49E3AA0090B276 /* VideoViewCell1.swift */; };
+		284E15B31E49E3AA0090B276 /* VideoViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284E15B11E49E3AA0090B276 /* VideoViewCell1.xib */; };
+		284E15B81E49E3CD0090B276 /* VideoViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E15B61E49E3CD0090B276 /* VideoViewCell2.swift */; };
+		284E15B91E49E3CD0090B276 /* VideoViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284E15B71E49E3CD0090B276 /* VideoViewCell2.xib */; };
+		284E15BB1E49ECCA0090B276 /* FavouriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E15BA1E49ECCA0090B276 /* FavouriteController.swift */; };
+		284E15BD1E49FA700090B276 /* TrendingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E15BC1E49FA700090B276 /* TrendingController.swift */; };
 		286C87941E3099E100539369 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87931E3099E100539369 /* RegisterController.swift */; };
 		286C87961E3099F600539369 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87951E3099F600539369 /* ForgotPasswordController.swift */; };
 		286C87991E309FEE00539369 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87981E309FEE00539369 /* BaseController.swift */; };
@@ -69,6 +75,12 @@
 		2848B30E1E2F67E900AAB998 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Controller/LoginController.swift; sourceTree = "<group>"; };
 		284E15AA1E49D2090090B276 /* CategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryController.swift; path = Controller/CategoryController.swift; sourceTree = "<group>"; };
 		284E15AD1E49D2710090B276 /* CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryViewCell.swift; path = View/CategoryViewCell.swift; sourceTree = "<group>"; };
+		284E15B01E49E3AA0090B276 /* VideoViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewCell1.swift; path = View/VideoViewCell1.swift; sourceTree = "<group>"; };
+		284E15B11E49E3AA0090B276 /* VideoViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoViewCell1.xib; path = View/VideoViewCell1.xib; sourceTree = "<group>"; };
+		284E15B61E49E3CD0090B276 /* VideoViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewCell2.swift; path = View/VideoViewCell2.swift; sourceTree = "<group>"; };
+		284E15B71E49E3CD0090B276 /* VideoViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoViewCell2.xib; path = View/VideoViewCell2.xib; sourceTree = "<group>"; };
+		284E15BA1E49ECCA0090B276 /* FavouriteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavouriteController.swift; path = Controller/FavouriteController.swift; sourceTree = "<group>"; };
+		284E15BC1E49FA700090B276 /* TrendingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrendingController.swift; path = Controller/TrendingController.swift; sourceTree = "<group>"; };
 		286C87931E3099E100539369 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterController.swift; path = Controller/RegisterController.swift; sourceTree = "<group>"; };
 		286C87951E3099F600539369 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordController.swift; path = Controller/ForgotPasswordController.swift; sourceTree = "<group>"; };
 		286C87981E309FEE00539369 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseController.swift; path = Controller/BaseController.swift; sourceTree = "<group>"; };
@@ -172,6 +184,7 @@
 		2848B30C1E2F56E400AAB998 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				284E15AF1E49E37C0090B276 /* VideoListCell */,
 				284E15AC1E49D24A0090B276 /* CategoryCell */,
 				28975E651E487AF700CB824A /* VideoGridCell */,
 				28CD249C1E445DED00CEEEF4 /* SlideMenuCell */,
@@ -216,6 +229,17 @@
 				284E15AD1E49D2710090B276 /* CategoryViewCell.swift */,
 			);
 			name = CategoryCell;
+			sourceTree = "<group>";
+		};
+		284E15AF1E49E37C0090B276 /* VideoListCell */ = {
+			isa = PBXGroup;
+			children = (
+				284E15B01E49E3AA0090B276 /* VideoViewCell1.swift */,
+				284E15B11E49E3AA0090B276 /* VideoViewCell1.xib */,
+				284E15B61E49E3CD0090B276 /* VideoViewCell2.swift */,
+				284E15B71E49E3CD0090B276 /* VideoViewCell2.xib */,
+			);
+			name = VideoListCell;
 			sourceTree = "<group>";
 		};
 		286C87971E309FD900539369 /* Base */ = {
@@ -333,9 +357,11 @@
 		28FD82521E320B1500EFA1A4 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				284E15BC1E49FA700090B276 /* TrendingController.swift */,
 				28FD82531E320B4300EFA1A4 /* MainController.swift */,
 				287A2E3B1E331EF100D92A01 /* HomeController.swift */,
 				284E15AA1E49D2090090B276 /* CategoryController.swift */,
+				284E15BA1E49ECCA0090B276 /* FavouriteController.swift */,
 			);
 			name = MainScreen;
 			sourceTree = "<group>";
@@ -487,8 +513,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				284E15B91E49E3CD0090B276 /* VideoViewCell2.xib in Resources */,
 				28CD24A01E445E3200CEEEF4 /* SlideMenuCell.xib in Resources */,
 				28E2DA331E2F511100CFD6AC /* LaunchScreen.storyboard in Resources */,
+				284E15B31E49E3AA0090B276 /* VideoViewCell1.xib in Resources */,
 				28E2DA301E2F511100CFD6AC /* Assets.xcassets in Resources */,
 				28E2DA2E1E2F511100CFD6AC /* Main.storyboard in Resources */,
 				28CD249B1E44437900CEEEF4 /* SlideMenuElements.plist in Resources */,
@@ -658,6 +686,7 @@
 				284E15AB1E49D2090090B276 /* CategoryController.swift in Sources */,
 				286C87961E3099F600539369 /* ForgotPasswordController.swift in Sources */,
 				28FD82571E32113400EFA1A4 /* ValidateUtil.swift in Sources */,
+				284E15B21E49E3AA0090B276 /* VideoViewCell1.swift in Sources */,
 				28975E641E48727F00CB824A /* BaseSlideController.swift in Sources */,
 				28975E6B1E4882EF00CB824A /* VideoModel.swift in Sources */,
 				284E15AE1E49D2710090B276 /* CategoryViewCell.swift in Sources */,
@@ -665,13 +694,16 @@
 				287A2E3C1E331EF100D92A01 /* HomeController.swift in Sources */,
 				286C87A21E30C37000539369 /* AppConstant.swift in Sources */,
 				286C879D1E30BE0F00539369 /* ApiClient.swift in Sources */,
+				284E15BB1E49ECCA0090B276 /* FavouriteController.swift in Sources */,
 				286C87991E309FEE00539369 /* BaseController.swift in Sources */,
 				28FD82541E320B4300EFA1A4 /* MainController.swift in Sources */,
 				286C87941E3099E100539369 /* RegisterController.swift in Sources */,
+				284E15BD1E49FA700090B276 /* TrendingController.swift in Sources */,
 				281ACF171E37459400F9E063 /* SettingController.swift in Sources */,
 				28975E6D1E4890A900CB824A /* VideoCategoryModel.swift in Sources */,
 				28CD249F1E445E3200CEEEF4 /* SlideMenuCell.swift in Sources */,
 				281ACF141E37411300F9E063 /* ContainerViewController.swift in Sources */,
+				284E15B81E49E3CD0090B276 /* VideoViewCell2.swift in Sources */,
 				286C87A01E30C35700539369 /* AppSetting.swift in Sources */,
 				28975E681E487B7500CB824A /* GridVideoViewCell.swift in Sources */,
 				286C879B1E30B07600539369 /* CustomerResponse.swift in Sources */,

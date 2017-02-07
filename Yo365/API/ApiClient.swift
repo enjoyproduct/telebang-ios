@@ -91,6 +91,18 @@ class ApiClient {
             }
         }
     }
+    static func getVideosTrending(pageNumber: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (Array<VideoResponseJSON>)-> Void) {
+        let relativeUrl = String.init(format: RELATIVE_URL_VIDEO_TRENDING, pageNumber, LIMIT_VIDEOS_HOMES)
+        Alamofire.request(getAbsoluteUrl(relativeUrl: relativeUrl)).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let data: Array<Dictionary<String, AnyObject>>! = response.result.value!.content as! Array<Dictionary<String, AnyObject>>
+                let videoList: Array<VideoResponseJSON>! = Mapper<VideoResponseJSON>().mapArray(JSONArray: data)
+                successHandler(videoList)
+            }
+        }
+    }
     
     private static func parseResponse(data: DataResponse<ResponseModel>, errorHandler: @escaping (String) -> Void)-> Bool{
         debugPrint(data)
