@@ -8,6 +8,67 @@
 
 import ObjectMapper
 
+class VideoModel{
+    enum PlayerType: String {
+        case UPLOAD, YOUTUBE, VIMEO, Download, MP3, FACEBOOK, DAILY_MOTION
+    }
+    
+    var videoJSON: VideoResponseJSON
+    
+    var playerType: PlayerType?
+    var videoPath: String?
+    var viewCounterFormat: String?
+    var series: String?
+    
+    init(videoJSON: VideoResponseJSON) {
+        self.videoJSON = videoJSON
+        self.playerType = PlayerType(rawValue: (videoJSON.videoPlayer?.type)!)
+        
+        if(self.playerType == .FACEBOOK){
+            self.videoPath = String.init(format: RELATIVE_URL_PLAY_FACEBOOK, (videoJSON.videoPlayer?.path)!)
+        }else if(self.playerType == .VIMEO){
+            self.videoPath = String.init(format: RELATIVE_URL_PLAY_VIMEO, (videoJSON.videoPlayer?.path)!)
+        }else{
+            self.videoPath = videoJSON.videoPlayer?.path
+        }
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        
+        let strView = formatter.string(from: NSNumber.init(value: (videoJSON.statsCounter?.viewCounter)!))!
+        self.viewCounterFormat = String.init(format: "%@ views", strView)
+        
+        self.series = videoJSON.series
+        if(series?.isEmpty)!{
+            series = "No Series";
+        }
+    }
+    
+    func getThumbnail() -> String {
+        return videoJSON.thumbnail!
+    }
+    
+    func getTitle() -> String {
+        return videoJSON.title!
+    }
+    
+    func getVideoPath() -> String {
+        return videoPath!
+    }
+    
+    func getViewCounterFormat() -> String {
+        return viewCounterFormat!
+    }
+    
+    func getUpdateAt() -> String {
+        return videoJSON.updateAt!
+    }
+    
+    func getSeries() -> String {
+        return series!
+    }
+}
+
 class VideoResponseJSON: Mappable {
     var id: Int?
     var urlSocial: String?

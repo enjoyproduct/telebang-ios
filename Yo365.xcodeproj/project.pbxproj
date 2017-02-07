@@ -21,8 +21,7 @@
 		286C87A41E30C87A00539369 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87A31E30C87A00539369 /* ResponseModel.swift */; };
 		287A2E3C1E331EF100D92A01 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A2E3B1E331EF100D92A01 /* HomeController.swift */; };
 		28975E641E48727F00CB824A /* BaseSlideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E631E48727F00CB824A /* BaseSlideController.swift */; };
-		28975E681E487B7500CB824A /* GridVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E661E487B7500CB824A /* GridVideoCell.swift */; };
-		28975E691E487B7500CB824A /* GridVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28975E671E487B7500CB824A /* GridVideoCell.xib */; };
+		28975E681E487B7500CB824A /* GridVideoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E661E487B7500CB824A /* GridVideoViewCell.swift */; };
 		28975E6B1E4882EF00CB824A /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E6A1E4882EF00CB824A /* VideoModel.swift */; };
 		28975E6D1E4890A900CB824A /* VideoCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E6C1E4890A900CB824A /* VideoCategoryModel.swift */; };
 		28AC54881E35DD0500CE5598 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC54871E35DD0500CE5598 /* SideMenuView.swift */; };
@@ -76,8 +75,7 @@
 		286C87A31E30C87A00539369 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseModel.swift; path = Model/ResponseModel.swift; sourceTree = "<group>"; };
 		287A2E3B1E331EF100D92A01 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeController.swift; path = Controller/HomeController.swift; sourceTree = "<group>"; };
 		28975E631E48727F00CB824A /* BaseSlideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseSlideController.swift; path = Controller/BaseSlideController.swift; sourceTree = "<group>"; };
-		28975E661E487B7500CB824A /* GridVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridVideoCell.swift; path = View/GridVideoCell.swift; sourceTree = "<group>"; };
-		28975E671E487B7500CB824A /* GridVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GridVideoCell.xib; path = View/GridVideoCell.xib; sourceTree = "<group>"; };
+		28975E661E487B7500CB824A /* GridVideoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridVideoViewCell.swift; path = View/GridVideoViewCell.swift; sourceTree = "<group>"; };
 		28975E6A1E4882EF00CB824A /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoModel.swift; path = Model/VideoModel.swift; sourceTree = "<group>"; };
 		28975E6C1E4890A900CB824A /* VideoCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCategoryModel.swift; path = Model/VideoCategoryModel.swift; sourceTree = "<group>"; };
 		28AC54871E35DD0500CE5598 /* SideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuView.swift; path = Controller/SideMenuView.swift; sourceTree = "<group>"; };
@@ -228,8 +226,7 @@
 		28975E651E487AF700CB824A /* VideoGridCell */ = {
 			isa = PBXGroup;
 			children = (
-				28975E661E487B7500CB824A /* GridVideoCell.swift */,
-				28975E671E487B7500CB824A /* GridVideoCell.xib */,
+				28975E661E487B7500CB824A /* GridVideoViewCell.swift */,
 			);
 			name = VideoGridCell;
 			sourceTree = "<group>";
@@ -479,7 +476,6 @@
 				28CD24A01E445E3200CEEEF4 /* SlideMenuCell.xib in Resources */,
 				28E2DA331E2F511100CFD6AC /* LaunchScreen.storyboard in Resources */,
 				28E2DA301E2F511100CFD6AC /* Assets.xcassets in Resources */,
-				28975E691E487B7500CB824A /* GridVideoCell.xib in Resources */,
 				28E2DA2E1E2F511100CFD6AC /* Main.storyboard in Resources */,
 				28CD249B1E44437900CEEEF4 /* SlideMenuElements.plist in Resources */,
 			);
@@ -661,7 +657,7 @@
 				28CD249F1E445E3200CEEEF4 /* SlideMenuCell.swift in Sources */,
 				281ACF141E37411300F9E063 /* ContainerViewController.swift in Sources */,
 				286C87A01E30C35700539369 /* AppSetting.swift in Sources */,
-				28975E681E487B7500CB824A /* GridVideoCell.swift in Sources */,
+				28975E681E487B7500CB824A /* GridVideoViewCell.swift in Sources */,
 				286C879B1E30B07600539369 /* CustomerResponse.swift in Sources */,
 				28CD24991E44412F00CEEEF4 /* SlideMenuElement.swift in Sources */,
 				286C87A41E30C87A00539369 /* ResponseModel.swift in Sources */,

@@ -11,8 +11,10 @@ class BaseSlideController: BaseController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
+        
         let nav = self.navigationController?.navigationBar
-        nav?.barStyle = UIBarStyle.blackTranslucent
+        nav?.barStyle = UIBarStyle.black
         nav?.tintColor = UIColor.white
         
         let navBackgroundImage:UIImage! = UIImage.init(named: "bgr_header_slide_menu")
