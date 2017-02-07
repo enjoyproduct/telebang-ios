@@ -11,6 +11,8 @@
 		281ACF141E37411300F9E063 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281ACF131E37411300F9E063 /* ContainerViewController.swift */; };
 		281ACF171E37459400F9E063 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281ACF161E37459400F9E063 /* SettingController.swift */; };
 		2848B30F1E2F67E900AAB998 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2848B30E1E2F67E900AAB998 /* LoginController.swift */; };
+		284E15AB1E49D2090090B276 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E15AA1E49D2090090B276 /* CategoryController.swift */; };
+		284E15AE1E49D2710090B276 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E15AD1E49D2710090B276 /* CategoryViewCell.swift */; };
 		286C87941E3099E100539369 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87931E3099E100539369 /* RegisterController.swift */; };
 		286C87961E3099F600539369 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87951E3099F600539369 /* ForgotPasswordController.swift */; };
 		286C87991E309FEE00539369 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87981E309FEE00539369 /* BaseController.swift */; };
@@ -65,6 +67,8 @@
 		281ACF131E37411300F9E063 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = Controller/ContainerViewController.swift; sourceTree = "<group>"; };
 		281ACF161E37459400F9E063 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingController.swift; path = Controller/SettingController.swift; sourceTree = "<group>"; };
 		2848B30E1E2F67E900AAB998 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Controller/LoginController.swift; sourceTree = "<group>"; };
+		284E15AA1E49D2090090B276 /* CategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryController.swift; path = Controller/CategoryController.swift; sourceTree = "<group>"; };
+		284E15AD1E49D2710090B276 /* CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryViewCell.swift; path = View/CategoryViewCell.swift; sourceTree = "<group>"; };
 		286C87931E3099E100539369 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterController.swift; path = Controller/RegisterController.swift; sourceTree = "<group>"; };
 		286C87951E3099F600539369 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordController.swift; path = Controller/ForgotPasswordController.swift; sourceTree = "<group>"; };
 		286C87981E309FEE00539369 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseController.swift; path = Controller/BaseController.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 		2848B30C1E2F56E400AAB998 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				284E15AC1E49D24A0090B276 /* CategoryCell */,
 				28975E651E487AF700CB824A /* VideoGridCell */,
 				28CD249C1E445DED00CEEEF4 /* SlideMenuCell */,
 				28CD24971E44408B00CEEEF4 /* VideoListCell */,
@@ -203,6 +208,14 @@
 				286C87951E3099F600539369 /* ForgotPasswordController.swift */,
 			);
 			name = CustomerScreen;
+			sourceTree = "<group>";
+		};
+		284E15AC1E49D24A0090B276 /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				284E15AD1E49D2710090B276 /* CategoryViewCell.swift */,
+			);
+			name = CategoryCell;
 			sourceTree = "<group>";
 		};
 		286C87971E309FD900539369 /* Base */ = {
@@ -322,6 +335,7 @@
 			children = (
 				28FD82531E320B4300EFA1A4 /* MainController.swift */,
 				287A2E3B1E331EF100D92A01 /* HomeController.swift */,
+				284E15AA1E49D2090090B276 /* CategoryController.swift */,
 			);
 			name = MainScreen;
 			sourceTree = "<group>";
@@ -641,10 +655,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				28CD24A31E4481E900CEEEF4 /* AppSession.swift in Sources */,
+				284E15AB1E49D2090090B276 /* CategoryController.swift in Sources */,
 				286C87961E3099F600539369 /* ForgotPasswordController.swift in Sources */,
 				28FD82571E32113400EFA1A4 /* ValidateUtil.swift in Sources */,
 				28975E641E48727F00CB824A /* BaseSlideController.swift in Sources */,
 				28975E6B1E4882EF00CB824A /* VideoModel.swift in Sources */,
+				284E15AE1E49D2710090B276 /* CategoryViewCell.swift in Sources */,
 				28AC54881E35DD0500CE5598 /* SideMenuView.swift in Sources */,
 				287A2E3C1E331EF100D92A01 /* HomeController.swift in Sources */,
 				286C87A21E30C37000539369 /* AppConstant.swift in Sources */,
