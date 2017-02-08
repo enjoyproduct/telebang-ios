@@ -104,6 +104,10 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         videoCell.updateView(model: listVideo[indexPath.row])
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switchToViewController(identifier: "VideoDetailView")
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

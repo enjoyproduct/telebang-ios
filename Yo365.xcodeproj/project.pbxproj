@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0AA2AD1AED7BFFFC95904659 /* Pods_Yo365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03910CC03AD4756D4A2E91C0 /* Pods_Yo365.framework */; };
 		2818F6681E4AF88600D408D1 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818F6671E4AF88600D408D1 /* SearchController.swift */; };
+		2818F66B1E4B296900D408D1 /* VideoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818F66A1E4B296900D408D1 /* VideoDetailController.swift */; };
 		281ACF141E37411300F9E063 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281ACF131E37411300F9E063 /* ContainerViewController.swift */; };
 		281ACF171E37459400F9E063 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281ACF161E37459400F9E063 /* SettingController.swift */; };
 		2848B30F1E2F67E900AAB998 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2848B30E1E2F67E900AAB998 /* LoginController.swift */; };
@@ -72,6 +73,7 @@
 /* Begin PBXFileReference section */
 		03910CC03AD4756D4A2E91C0 /* Pods_Yo365.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yo365.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2818F6671E4AF88600D408D1 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = Controller/SearchController.swift; sourceTree = "<group>"; };
+		2818F66A1E4B296900D408D1 /* VideoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoDetailController.swift; path = Controller/VideoDetailController.swift; sourceTree = "<group>"; };
 		281ACF131E37411300F9E063 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = Controller/ContainerViewController.swift; sourceTree = "<group>"; };
 		281ACF161E37459400F9E063 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingController.swift; path = Controller/SettingController.swift; sourceTree = "<group>"; };
 		2848B30E1E2F67E900AAB998 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Controller/LoginController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,14 @@
 			name = Search;
 			sourceTree = "<group>";
 		};
+		2818F6691E4B294F00D408D1 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2818F66A1E4B296900D408D1 /* VideoDetailController.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		281ACF151E37458100F9E063 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +216,7 @@
 		2848B30D1E2F56F200AAB998 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2818F6691E4B294F00D408D1 /* Detail */,
 				2818F6661E4AF5AD00D408D1 /* Search */,
 				281ACF151E37458100F9E063 /* Setting */,
 				28FD82521E320B1500EFA1A4 /* MainScreen */,
@@ -697,6 +708,7 @@
 				284E15AB1E49D2090090B276 /* CategoryController.swift in Sources */,
 				286C87961E3099F600539369 /* ForgotPasswordController.swift in Sources */,
 				28FD82571E32113400EFA1A4 /* ValidateUtil.swift in Sources */,
+				2818F66B1E4B296900D408D1 /* VideoDetailController.swift in Sources */,
 				284E15B21E49E3AA0090B276 /* VideoViewCell1.swift in Sources */,
 				28975E641E48727F00CB824A /* BaseSlideController.swift in Sources */,
 				28975E6B1E4882EF00CB824A /* VideoModel.swift in Sources */,

@@ -16,7 +16,8 @@ class MainController: RAMAnimatedTabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       setSelectIndex(from: 0, to: positionActive)
+        hidesBottomBarWhenPushed = true
+        setSelectIndex(from: 0, to: positionActive)
     }
     
     override func didReceiveMemoryWarning() {
