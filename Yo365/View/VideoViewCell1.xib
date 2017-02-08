@@ -81,7 +81,6 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="4cc-18-DVG" firstAttribute="top" secondItem="tax-tj-MxJ" secondAttribute="bottom" constant="5" id="15c-Z6-ysX"/>
                     <constraint firstItem="Qj4-Uu-ptA" firstAttribute="centerY" secondItem="4cc-18-DVG" secondAttribute="centerY" id="1NI-3S-9Bf"/>
                     <constraint firstAttribute="trailing" secondItem="tax-tj-MxJ" secondAttribute="trailing" constant="15" id="21f-s5-ypb"/>
                     <constraint firstItem="tax-tj-MxJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="3n0-z1-YNZ"/>
@@ -92,12 +91,12 @@
                     <constraint firstItem="WNK-SZ-psY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Cb4-x4-Uhj"/>
                     <constraint firstItem="4cc-18-DVG" firstAttribute="top" secondItem="tax-tj-MxJ" secondAttribute="bottom" constant="5" id="Gj3-kN-bEg"/>
                     <constraint firstItem="ri7-HT-jIL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Hol-tr-cyt"/>
-                    <constraint firstItem="4cc-18-DVG" firstAttribute="top" secondItem="tax-tj-MxJ" secondAttribute="bottom" id="JbT-l4-n0b"/>
                     <constraint firstItem="4cc-18-DVG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="NKU-0f-Wor"/>
                     <constraint firstItem="Qj4-Uu-ptA" firstAttribute="leading" secondItem="4cc-18-DVG" secondAttribute="trailing" id="UpP-jT-YkN"/>
                     <constraint firstItem="npa-WL-vyJ" firstAttribute="centerY" secondItem="WNK-SZ-psY" secondAttribute="centerY" id="Vh9-Gw-Ube"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Qj4-Uu-ptA" secondAttribute="trailing" constant="15" id="ZJp-3K-gpO"/>
                     <constraint firstItem="WNK-SZ-psY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="as7-oA-Gqk"/>
+                    <constraint firstItem="4cc-18-DVG" firstAttribute="top" secondItem="tax-tj-MxJ" secondAttribute="bottom" constant="5" id="byP-bA-1DG"/>
                     <constraint firstItem="ri7-HT-jIL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ewR-ji-qOM"/>
                     <constraint firstItem="Qj4-Uu-ptA" firstAttribute="width" secondItem="4cc-18-DVG" secondAttribute="width" id="fPF-3a-hhj"/>
                     <constraint firstAttribute="trailing" secondItem="WNK-SZ-psY" secondAttribute="trailing" constant="15" id="gFB-kb-8g3"/>
@@ -106,8 +105,7 @@
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
-                        <exclude reference="4UC-GQ-8cP"/>
-                        <exclude reference="JbT-l4-n0b"/>
+                        <exclude reference="Gj3-kN-bEg"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>

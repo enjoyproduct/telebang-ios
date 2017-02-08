@@ -33,6 +33,17 @@ class HomeController: BaseSlideController{
         requestGetVideos()
     }
     
+    override func initRightHeader() {
+        super.initRightHeader()
+        let rightButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_search"), style: .plain, target: self, action: #selector(self.callSearchMethod))
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    func callSearchMethod() {
+        performSegue(withIdentifier: "SearchView",
+                     sender: self)
+    }
+
     func refresh(sender:AnyObject) {
         self.pageNumber = 1
         self.isLoadMore = true
@@ -113,5 +124,23 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        highlightCell(indexPath: indexPath, flag: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        highlightCell(indexPath: indexPath, flag: false)
+    }
+    func highlightCell(indexPath : IndexPath, flag: Bool) {
+        
+        let cell = self.collectionView.cellForItem(at: indexPath) as! GridVideoViewCell
+        
+        if flag {
+            cell.bgrViewHover.alpha = 1
+        } else {
+            cell.bgrViewHover.alpha = 0
+        }
     }
 }

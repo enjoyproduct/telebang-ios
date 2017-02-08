@@ -33,6 +33,17 @@ class TrendingController: BaseSlideController{
         requestGetVideos()
     }
     
+    override func initRightHeader() {
+        super.initRightHeader()
+        let rightButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_search"), style: .plain, target: self, action: #selector(self.callSearchMethod))
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    func callSearchMethod() {
+        performSegue(withIdentifier: "SearchView",
+                     sender: self)
+    }
+    
     func refresh(sender:AnyObject) {
         self.pageNumber = 1
         self.isLoadMore = true

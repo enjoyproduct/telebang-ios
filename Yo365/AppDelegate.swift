@@ -21,6 +21,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func changeRootViewController(_ newRootViewController:UIViewController, completion:(()->Void)?) {
+        if self.window?.rootViewController != nil {
+            UIView.transition(with: self.window!, duration: 0.5, options:[.transitionCrossDissolve, .allowAnimatedContent], animations: {
+                let oldState = UIView.areAnimationsEnabled
+                UIView.setAnimationsEnabled(false)
+                self.window?.rootViewController = newRootViewController
+                UIView.setAnimationsEnabled(oldState)
+                
+            }, completion: { (success) in
+                if completion != nil {
+                    completion!()
+                }
+            })
+        } else {
+            self.window?.rootViewController = newRootViewController
+            if completion != nil {
+                completion!()
+            }
+        }
+    }
+
+    
     /**
      * Defining Facebook
      */

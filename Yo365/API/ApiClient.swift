@@ -91,9 +91,38 @@ class ApiClient {
             }
         }
     }
+    
+    static func getVideosMostView(pageNumber: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (Array<VideoResponseJSON>)-> Void) {
+        let relativeUrl = String.init(format: RELATIVE_URL_VIDEO_MOST, pageNumber, LIMIT_VIDEOS_HOMES)
+        Alamofire.request(getAbsoluteUrl(relativeUrl: relativeUrl)).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let content: Dictionary<String, AnyObject>! = response.result.value?.content as! Dictionary<String, AnyObject>!
+                let data: Array<Dictionary<String, AnyObject>>! = content?["videos"] as! Array<Dictionary<String, AnyObject>>
+                let videoList: Array<VideoResponseJSON>! = Mapper<VideoResponseJSON>().mapArray(JSONArray: data)
+                successHandler(videoList)
+            }
+        }
+    }
+    
     static func getVideosTrending(pageNumber: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (Array<VideoResponseJSON>)-> Void) {
         let relativeUrl = String.init(format: RELATIVE_URL_VIDEO_TRENDING, pageNumber, LIMIT_VIDEOS_HOMES)
         Alamofire.request(getAbsoluteUrl(relativeUrl: relativeUrl)).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let data: Array<Dictionary<String, AnyObject>>! = response.result.value!.content as! Array<Dictionary<String, AnyObject>>
+                let videoList: Array<VideoResponseJSON>! = Mapper<VideoResponseJSON>().mapArray(JSONArray: data)
+                successHandler(videoList)
+            }
+        }
+    }
+    
+    static func getVideosBeyKeyword(keyword: String, pageNumber: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (Array<VideoResponseJSON>)-> Void) {
+        let params: Parameters = [KEY_KEYWORD: keyword, KEY_PAGE_NUMBER: pageNumber, KEY_LIMIT: LIMIT_VIDEOS_SEARCH ]
+        
+        Alamofire.request(getAbsoluteUrl(relativeUrl: RELATIVE_URL_SEARCH_BY_KEYWORD), method: .post ,parameters: params).responseObject { (response: DataResponse<ResponseModel>) in
             
             let result = parseResponse(data: response, errorHandler: errorHandler)
             if(result){

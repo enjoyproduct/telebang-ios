@@ -40,7 +40,7 @@
 		<key>type</key>
 		<string>Download</string>
 		<key>enable</key>
-		<true/>
+		<false/>
 	</dict>
 	<dict>
 		<key>icon</key>

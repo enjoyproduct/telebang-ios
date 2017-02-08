@@ -13,29 +13,32 @@ class BaseSlideController: BaseController{
         
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         
+        initHeader()
+    }
+    
+    func initHeader() {
         let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.black
         nav?.tintColor = UIColor.white
         
         let navBackgroundImage:UIImage! = UIImage.init(named: "bgr_header_slide_menu")
         nav?.setBackgroundImage(navBackgroundImage, for: .default)
-        
+    
+        initLeftHeader()
+        initRightHeader()
+    }
+    
+    func initLeftHeader() {
         var leftButton: UIBarButtonItem
         if ((self.navigationController?.viewControllers.count)! > 1) {
-            let button = UIButton.init(type: .custom)
-            button.setImage(UIImage.init(named: "ic_customer_back"), for: UIControlState.normal)
-            button.addTarget(self, action:#selector(self.callBackMethod), for: UIControlEvents.touchUpInside)
-            button.frame = CGRect.init(x: 0, y: 0, width: 40, height: 40) //CGRectMake(0, 0, 40, 40)
-            leftButton = UIBarButtonItem.init(customView: button)
+            leftButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_customer_back"), style: .plain, target: self, action: #selector(self.callBackMethod))
         }else{
-            let button = UIButton.init(type: .custom)
-            button.setImage(UIImage.init(named: "ic_slide_menu"), for: UIControlState.normal)
-            button.addTarget(self, action:#selector(self.callMenuMethod), for: UIControlEvents.touchUpInside)
-            button.frame = CGRect.init(x: 0, y: 0, width: 40, height: 40) //CGRectMake(0, 0, 40, 40)
-            leftButton = UIBarButtonItem.init(customView: button)
+            leftButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_slide_menu"), style: .plain, target: self, action: #selector(self.callMenuMethod))
         }
-
         self.navigationItem.leftBarButtonItem = leftButton
+    }
+    
+    func initRightHeader() {
     }
     
     func callBackMethod() {

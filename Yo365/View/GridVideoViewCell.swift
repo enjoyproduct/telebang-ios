@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 
 class GridVideoViewCell: UICollectionViewCell {
+    @IBOutlet var bgrViewHover: UIView!
     @IBOutlet var imvThumbnail: UIImageView!
     @IBOutlet var lbTitle: UILabel!
     @IBOutlet var lbSeries: UILabel!

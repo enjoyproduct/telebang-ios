@@ -178,7 +178,7 @@
                         <outlet property="tfUsername" destination="H65-Nm-cWc" id="nvt-fF-9i0"/>
                         <segue destination="dlN-cz-2Gb" kind="show" identifier="RegisterScreen" id="6TC-w3-9Wz"/>
                         <segue destination="a8C-JM-CJp" kind="show" identifier="ForgotPasswordScreen" id="M7b-nF-7tF"/>
-                        <segue destination="I7T-cj-XFM" kind="show" identifier="MainScreen" id="0o1-Fu-ya5"/>
+                        <segue destination="I7T-cj-XFM" kind="presentation" identifier="MainScreen" id="0o1-Fu-ya5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -489,7 +489,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OMN-90-rHw" id="Lh3-d3-k0Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yv-6A-US1">
@@ -543,11 +543,54 @@
                     <navigationItem key="navigationItem" id="s7M-7Y-hYf"/>
                     <connections>
                         <outlet property="tableView" destination="W2h-tJ-Xg1" id="lkw-P6-vTl"/>
+                        <segue destination="SRk-T8-EYO" kind="show" identifier="SearchView" id="2fh-ba-LHU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zul-l5-FfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5600.8000000000002" y="-313.49325337331339"/>
+        </scene>
+        <!--Search Controller-->
+        <scene sceneID="adr-s2-ARb">
+            <objects>
+                <viewController id="SRk-T8-EYO" customClass="SearchController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oxo-lg-0zs"/>
+                        <viewControllerLayoutGuide type="bottom" id="k5U-eg-XXU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LiJ-wn-Ska">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tc5-4B-xXy">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k5U-eg-XXU" firstAttribute="top" secondItem="tc5-4B-xXy" secondAttribute="bottom" id="Dpq-MQ-DV5"/>
+                            <constraint firstItem="tc5-4B-xXy" firstAttribute="top" secondItem="Oxo-lg-0zs" secondAttribute="bottom" id="Q7x-Co-i7f"/>
+                            <constraint firstItem="tc5-4B-xXy" firstAttribute="leading" secondItem="LiJ-wn-Ska" secondAttribute="leading" id="nEw-Ey-NzX"/>
+                            <constraint firstAttribute="trailing" secondItem="tc5-4B-xXy" secondAttribute="trailing" id="xDR-A0-Abm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Vew-od-WU4" id="Vwh-pX-aqB"/>
+                        <outlet property="tableView" destination="tc5-4B-xXy" id="TSF-HM-Drg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgc-lZ-jdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Vew-od-WU4">
+                    <connections>
+                        <outlet property="delegate" destination="SRk-T8-EYO" id="xSE-QX-UNF"/>
+                        <outlet property="searchContentsController" destination="SRk-T8-EYO" id="Yo8-wQ-Mc1"/>
+                        <outlet property="searchResultsDataSource" destination="SRk-T8-EYO" id="IEv-fm-Ia6"/>
+                        <outlet property="searchResultsDelegate" destination="SRk-T8-EYO" id="eqk-Oz-htT"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="6964" y="90.404797601199405"/>
         </scene>
         <!--Yo365-->
         <scene sceneID="YW1-YS-LR6">
@@ -578,6 +621,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="165" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9h-Bj-j7w">
+                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="154"/>
+                                                    <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image_default" translatesAutoresizingMaskIntoConstraints="NO" id="SkM-Od-i9m">
                                                     <rect key="frame" x="0.0" y="0.0" width="165" height="85"/>
                                                     <constraints>
@@ -623,11 +670,14 @@
                                         <constraints>
                                             <constraint firstItem="xOb-5x-J3R" firstAttribute="leading" secondItem="6UU-cs-qfJ" secondAttribute="leading" id="62Z-vH-xdW"/>
                                             <constraint firstItem="xnZ-aQ-uup" firstAttribute="top" secondItem="0Ej-i9-OwR" secondAttribute="bottom" id="DCj-9T-oce"/>
+                                            <constraint firstAttribute="trailing" secondItem="Q9h-Bj-j7w" secondAttribute="trailing" id="EGL-6F-nJN"/>
+                                            <constraint firstItem="Q9h-Bj-j7w" firstAttribute="leading" secondItem="6UU-cs-qfJ" secondAttribute="leading" id="JDd-aR-vNn"/>
                                             <constraint firstItem="xnZ-aQ-uup" firstAttribute="leading" secondItem="Gv4-nF-mzE" secondAttribute="trailing" id="JdG-xW-eLl"/>
                                             <constraint firstItem="SkM-Od-i9m" firstAttribute="top" secondItem="6UU-cs-qfJ" secondAttribute="top" id="NSF-dM-xKG"/>
                                             <constraint firstAttribute="trailing" secondItem="xnZ-aQ-uup" secondAttribute="trailing" id="NUm-nO-Ccl"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="0Ej-i9-OwR" secondAttribute="trailing" id="NmU-jh-LMo"/>
                                             <constraint firstItem="Gv4-nF-mzE" firstAttribute="leading" secondItem="6UU-cs-qfJ" secondAttribute="leading" id="OAt-Sf-OgH"/>
+                                            <constraint firstAttribute="bottom" secondItem="Q9h-Bj-j7w" secondAttribute="bottom" id="OLI-Nd-MNV"/>
                                             <constraint firstAttribute="trailing" secondItem="SkM-Od-i9m" secondAttribute="trailing" id="Owk-AA-9Jg"/>
                                             <constraint firstAttribute="bottom" secondItem="Gv4-nF-mzE" secondAttribute="bottom" id="Uds-OE-Veh"/>
                                             <constraint firstItem="xOb-5x-J3R" firstAttribute="top" secondItem="SkM-Od-i9m" secondAttribute="bottom" constant="8" id="Zjg-Wl-925"/>
@@ -635,6 +685,7 @@
                                             <constraint firstItem="0Ej-i9-OwR" firstAttribute="leading" secondItem="BFL-8B-CUU" secondAttribute="trailing" constant="8" id="cyw-AT-Frl"/>
                                             <constraint firstAttribute="trailing" secondItem="xOb-5x-J3R" secondAttribute="trailing" id="dn5-sH-gEm"/>
                                             <constraint firstItem="Gv4-nF-mzE" firstAttribute="top" secondItem="BFL-8B-CUU" secondAttribute="bottom" id="eLc-ca-5Mq"/>
+                                            <constraint firstItem="Q9h-Bj-j7w" firstAttribute="top" secondItem="6UU-cs-qfJ" secondAttribute="top" id="g25-3n-ZgP"/>
                                             <constraint firstAttribute="bottom" secondItem="xnZ-aQ-uup" secondAttribute="bottom" id="knT-0x-fHS"/>
                                             <constraint firstItem="BFL-8B-CUU" firstAttribute="leading" secondItem="6UU-cs-qfJ" secondAttribute="leading" id="mN2-Cv-5RG"/>
                                             <constraint firstItem="BFL-8B-CUU" firstAttribute="top" secondItem="xOb-5x-J3R" secondAttribute="bottom" id="pYP-XB-UiH"/>
@@ -642,6 +693,7 @@
                                             <constraint firstItem="xnZ-aQ-uup" firstAttribute="width" secondItem="Gv4-nF-mzE" secondAttribute="width" id="zP7-WG-3w3"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="bgrViewHover" destination="Q9h-Bj-j7w" id="2nQ-qw-iGH"/>
                                             <outlet property="imvThumbnail" destination="SkM-Od-i9m" id="M3d-oe-ka2"/>
                                             <outlet property="lbSeries" destination="0Ej-i9-OwR" id="0D5-Ny-P6x"/>
                                             <outlet property="lbTitle" destination="xOb-5x-J3R" id="h0n-pM-nJN"/>
@@ -663,6 +715,7 @@
                     <navigationItem key="navigationItem" title="Yo365" id="BEN-gl-g0b"/>
                     <connections>
                         <outlet property="collectionView" destination="5Tz-T2-Idj" id="ZHA-05-kHD"/>
+                        <segue destination="SRk-T8-EYO" kind="show" identifier="SearchView" id="ThJ-8T-2Pa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIv-pK-woo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -746,6 +799,7 @@
                     <navigationItem key="navigationItem" id="aHc-uP-fuR"/>
                     <connections>
                         <outlet property="tableView" destination="zYc-qw-Yfj" id="n6p-Gz-pXs"/>
+                        <segue destination="SRk-T8-EYO" kind="show" identifier="SearchView" id="YrO-sz-OpV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWd-hJ-4Um" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -755,7 +809,7 @@
         <!--Container View Controller-->
         <scene sceneID="nMm-9R-nx4">
             <objects>
-                <viewController id="I7T-cj-XFM" customClass="ContainerViewController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContainerViewController" id="I7T-cj-XFM" customClass="ContainerViewController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CLf-Sq-vuP"/>
                         <viewControllerLayoutGuide type="bottom" id="njF-GB-RLI"/>
@@ -893,6 +947,7 @@
                     <navigationItem key="navigationItem" id="DVg-Y2-Bx3"/>
                     <connections>
                         <outlet property="tableView" destination="zVw-BL-Yb9" id="DUq-fd-sCq"/>
+                        <segue destination="SRk-T8-EYO" kind="show" identifier="SearchView" id="aOe-bu-aDH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AM0-3v-UsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1081,4 +1136,7 @@
         <image name="logo_yo365" width="178" height="144"/>
         <image name="no_image_default" width="480" height="320"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YrO-sz-OpV"/>
+    </inferredMetricsTieBreakers>
 </document>

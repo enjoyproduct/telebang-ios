@@ -100,8 +100,9 @@ class LoginController: BaseController {
             self.hideLoading()
             self.saveAccountLogin(username: username, password: password)
             customerManager.onLoginSuccessfully(loginStatus: .LoginWithSystem, customer: customer)
-            self.performSegue(withIdentifier: "MainScreen",
-                         sender: self)
+//            self.performSegue(withIdentifier: "MainScreen",
+//                         sender: self)
+            (UIApplication.shared.delegate as? AppDelegate)?.changeRootViewController((UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContainerViewController") as? ContainerViewController)!, completion: nil)
         }
     }
     
