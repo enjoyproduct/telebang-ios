@@ -105,7 +105,9 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switchToViewController(identifier: "VideoDetailView")
+        let vc = storyboard?.instantiateViewController(withIdentifier: "VideoDetailView") as! VideoDetailController
+        vc.videoModel = listVideo[indexPath.row]
+        switchToViewController(viewController: vc)
     }
     
     func collectionView(_ collectionView: UICollectionView,

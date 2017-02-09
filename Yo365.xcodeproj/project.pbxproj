@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0AA2AD1AED7BFFFC95904659 /* Pods_Yo365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03910CC03AD4756D4A2E91C0 /* Pods_Yo365.framework */; };
+		2802F8451E4C6723000795B8 /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8441E4C6723000795B8 /* AppUtil.swift */; };
 		2818F6681E4AF88600D408D1 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818F6671E4AF88600D408D1 /* SearchController.swift */; };
 		2818F66B1E4B296900D408D1 /* VideoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818F66A1E4B296900D408D1 /* VideoDetailController.swift */; };
 		281ACF141E37411300F9E063 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281ACF131E37411300F9E063 /* ContainerViewController.swift */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		03910CC03AD4756D4A2E91C0 /* Pods_Yo365.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yo365.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2802F8441E4C6723000795B8 /* AppUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppUtil.swift; path = Helper/AppUtil.swift; sourceTree = "<group>"; };
 		2818F6671E4AF88600D408D1 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = Controller/SearchController.swift; sourceTree = "<group>"; };
 		2818F66A1E4B296900D408D1 /* VideoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoDetailController.swift; path = Controller/VideoDetailController.swift; sourceTree = "<group>"; };
 		281ACF131E37411300F9E063 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = Controller/ContainerViewController.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				28FD82561E32113400EFA1A4 /* ValidateUtil.swift */,
+				2802F8441E4C6723000795B8 /* AppUtil.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				286C87A01E30C35700539369 /* AppSetting.swift in Sources */,
 				28975E681E487B7500CB824A /* GridVideoViewCell.swift in Sources */,
 				286C879B1E30B07600539369 /* CustomerResponse.swift in Sources */,
+				2802F8451E4C6723000795B8 /* AppUtil.swift in Sources */,
 				28CD24991E44412F00CEEEF4 /* SlideMenuElement.swift in Sources */,
 				286C87A41E30C87A00539369 /* ResponseModel.swift in Sources */,
 				2848B30F1E2F67E900AAB998 /* LoginController.swift in Sources */,

@@ -28,6 +28,10 @@ class BaseSlideController: BaseController{
         initRightHeader()
     }
     
+    func initTitleHeader(title: String) {
+        self.navigationItem.title = title
+    }
+    
     func initLeftHeader() {
         var leftButton: UIBarButtonItem
         if ((self.navigationController?.viewControllers.count)! > 1) {

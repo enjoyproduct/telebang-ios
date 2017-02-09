@@ -19,6 +19,7 @@ class VideoModel{
     var videoPath: String?
     var viewCounterFormat: String?
     var series: String?
+    var shareContent: String?
     
     init(videoJSON: VideoResponseJSON) {
         self.videoJSON = videoJSON
@@ -41,6 +42,11 @@ class VideoModel{
         self.series = videoJSON.series
         if(series?.isEmpty)!{
             series = "No Series";
+        }
+        
+        shareContent = videoJSON.urlSocial
+        if(shareContent?.isEmpty)!{
+            shareContent = videoJSON .videoPlayer?.path
         }
     }
     
@@ -66,6 +72,18 @@ class VideoModel{
     
     func getSeries() -> String {
         return series!
+    }
+    
+    func getDescription() -> String {
+        return videoJSON.description!
+    }
+    
+    func getShareContent() -> String {
+        return shareContent!
+    }
+    
+    func getID() -> Int {
+        return videoJSON.id!
     }
 }
 
@@ -142,5 +160,19 @@ class VideoPlayerJSON: Mappable {
         path        <- map["url"]
         type        <- map["type"]
         length      <- map["length"]
+    }
+}
+
+class LikeStatusResponse: Mappable {
+    var newLikeCounter: Int?
+    var action: String?
+    
+    required init?(map: Map){
+        
+    }
+    
+    func mapping(map: Map) {
+        newLikeCounter        <- map["new_stats_like"]
+        action        <- map["action"]
     }
 }

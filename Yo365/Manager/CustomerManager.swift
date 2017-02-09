@@ -71,6 +71,14 @@ class CustomerManager {
         return customerModel
     }
     
+    func getCustomerID() -> Int {
+        if(!isLogin()){
+            return 0
+        }
+        
+        return customerModel.id!
+    }
+    
     func isLogin() -> Bool {
         if(loginStatus == .NotLogin){
             return false

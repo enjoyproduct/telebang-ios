@@ -9,15 +9,130 @@
 import UIKit
 import RAMAnimatedTabBarController
 
-class VideoDetailController: BaseController {
+class VideoDetailController: BaseSlideController {
+    var videoModel: VideoModel? = nil
+    
+    @IBOutlet var lbInfo: UILabel!
+    @IBOutlet var lbTitle: UILabel!
+    @IBOutlet var lbSeries: UILabel!
+    @IBOutlet var lbDescription: UITextView!
+    @IBOutlet var imvLike: UIImageView!
+    @IBOutlet var lbLike: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
+        
+        if(videoModel == nil){
+            return
+        }
+        
+        initTitleHeader(title: (videoModel?.getTitle())!)
+        
+        initVideoInfo()
+        requestUpdateCounter(field: .view)
+        requestGetLikeStatus()
+    }
+    
+    override func initRightHeader() {
+        super.initRightHeader()
+        let favouriteButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_video_favourite"), style: .plain, target: self, action: #selector(self.callFavouriteMethod))
+        
+        let downloadButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_video_download"), style: .plain, target: self, action: #selector(self.callDownloadMethod))
+        
+        self.navigationItem.rightBarButtonItems = [downloadButton, favouriteButton]
+    }
+    
+    func callFavouriteMethod() {
+
+    }
+    
+    func callDownloadMethod() {
+        
+    }
+    
+    func initVideoInfo() {
+        lbTitle.text = videoModel?.getTitle()
+        lbSeries.text = videoModel?.getSeries()
+        
+        var moreInfo = String.init(format: "%@ &#8226; %@", (videoModel?.getUpdateAt())!, (videoModel?.getViewCounterFormat())!)
+        let aux = "<span style=\"font-family: Helvetica; line-height: 1.5;color: #8F8E94; font-size: 13\">%@</span>"
+        moreInfo = String.init(format: aux, moreInfo)
+        lbInfo.attributedText = AppUtil.stringFromHtml(string: moreInfo)
+        
+        let fmDescription = "<span style=\"font-family: Helvetica; line-height: 1.5;color: #555555; font-size: 13\">%@</span>"
+        let description = String.init(format: fmDescription, (videoModel?.getDescription())!)
+        lbDescription.attributedText = AppUtil.stringFromHtml(string: description)
+    }
+    
+    func updateLikeState(isLiked: Bool) {
+        if(isLiked){
+            imvLike.isHighlighted = true
+            lbLike.isHighlighted = true
+            lbLike.text = "Liked"
+        }else{
+            imvLike.isHighlighted = false
+            lbLike.isHighlighted = false
+            lbLike.text = "Like"
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func doLike(_ sender: UITapGestureRecognizer) {
+        requestLikeVideo()
+    }
+    
+    @IBAction func doShare(_ sender: UITapGestureRecognizer) {
+        displayShareSheet(shareContent: (videoModel?.getShareContent())!)
+    }
+    
+    @IBAction func doComment(_ sender: UITapGestureRecognizer) {
+        print("doComment")
+    }
+    
+    func displayShareSheet(shareContent:String) {
+        let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: {})
+    }
+    
+    func requestUpdateCounter(field: VideoCounterField) {
+        ApiClient.updateVideosCounter(field: field.rawValue, videoID: (videoModel?.getID())!, errorHandler: { (message: String) in
+            
+        }, successHandler: {
+            self.updateLikeState(isLiked: true)
+        })
+    }
+    
+    func requestLikeVideo() {
+        ApiClient.updateUserLikeVideo(customerID: customerManager.getCustomerID(), videoID: (videoModel?.getID())!, errorHandler: { (msg: String) in
+            self.showMessage(title: "Error", msg: msg)
+        }, successHandler: { (response: LikeStatusResponse) in
+            if(response.action?.lowercased() == "liked"){
+                self.updateLikeState(isLiked: true)
+            }else{
+                self.updateLikeState(isLiked: false)
+            }
+        })
+    }
+    
+    func requestGetLikeStatus() {
+        if(!customerManager.isLogin()){
+            self.updateLikeState(isLiked: false)
+            return
+        }
+
+        ApiClient.getLikeVideoStatus(customerID: customerManager.getCustomerID(), videoID: (videoModel?.getID())!, errorHandler: { (msg: String) in
+            self.updateLikeState(isLiked: false)
+        }, successHandler: { (response: LikeStatusResponse) in
+            if(response.action?.lowercased() == "liked"){
+                self.updateLikeState(isLiked: true)
+            }else{
+                self.updateLikeState(isLiked: false)
+            }
+        })
     }
 }

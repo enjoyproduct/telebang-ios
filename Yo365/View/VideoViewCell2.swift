@@ -37,20 +37,8 @@ class VideoViewCell2: UITableViewCell {
         var moreInfo = String.init(format: "%@ &#8226; %@", model.getUpdateAt(), model.getViewCounterFormat())
         let aux = "<span style=\"font-family: Helvetica; line-height: 1.5;color: #8F8E94; font-size: 12\">%@</span>"
         moreInfo = String.init(format: aux, moreInfo)
-        lbMoreInfo.attributedText = stringFromHtml(string: moreInfo)
+        lbMoreInfo.attributedText = AppUtil.stringFromHtml(string: moreInfo)
     }
     
-    private func stringFromHtml(string: String) -> NSAttributedString? {
-        do {
-            let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
-            if let d = data {
-                let str = try NSAttributedString(data: d,
-                                                 options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
-                                                 documentAttributes: nil)
-                return str
-            }
-        } catch {
-        }
-        return nil
-    }
+
 }

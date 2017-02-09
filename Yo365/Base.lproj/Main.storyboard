@@ -614,7 +614,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLE-Nz-bav">
                                 <rect key="frame" x="0.0" y="200" width="375" height="50"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMy-Yg-BEb">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMy-Yg-BEb" userLabel="ViewLike">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imz-9y-LW5">
@@ -631,9 +631,10 @@
                                                         <rect key="frame" x="25" y="0.0" width="23" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
+                                                        <color key="highlightedColor" red="0.94509803920000002" green="0.25098039220000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </label>
                                                 </subviews>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstItem="CYb-6h-t1g" firstAttribute="leading" secondItem="imz-9y-LW5" secondAttribute="leading" id="7OO-m8-APo"/>
                                                     <constraint firstItem="fJL-vn-xJs" firstAttribute="top" secondItem="imz-9y-LW5" secondAttribute="top" id="GAf-EE-1iB"/>
@@ -643,6 +644,9 @@
                                                     <constraint firstItem="CYb-6h-t1g" firstAttribute="top" secondItem="imz-9y-LW5" secondAttribute="top" id="tXH-qs-4bE"/>
                                                     <constraint firstAttribute="bottom" secondItem="fJL-vn-xJs" secondAttribute="bottom" id="vj1-xZ-C6l"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="1TE-uN-Dpd" appends="YES" id="aNN-29-EEA"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -650,7 +654,7 @@
                                             <constraint firstItem="imz-9y-LW5" firstAttribute="centerX" secondItem="iMy-Yg-BEb" secondAttribute="centerX" id="ZWj-fA-dT7"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-Ys-9RI">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-Ys-9RI" userLabel="ViewComment">
                                         <rect key="frame" x="250" y="0.0" width="125" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQv-qu-gbE">
@@ -670,6 +674,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstItem="m8R-rd-csU" firstAttribute="leading" secondItem="uQv-qu-gbE" secondAttribute="leading" id="0Mt-uQ-X0z"/>
                                                     <constraint firstAttribute="trailing" secondItem="r3s-Zz-hHH" secondAttribute="trailing" id="9hi-GJ-csS"/>
@@ -679,6 +684,9 @@
                                                     <constraint firstItem="m8R-rd-csU" firstAttribute="top" secondItem="uQv-qu-gbE" secondAttribute="top" id="Mxg-c0-tbS"/>
                                                     <constraint firstAttribute="bottom" secondItem="r3s-Zz-hHH" secondAttribute="bottom" id="NJg-ce-ZIu"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="CVp-om-XSS" appends="YES" id="hhJ-2C-DD3"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -686,7 +694,7 @@
                                             <constraint firstItem="uQv-qu-gbE" firstAttribute="centerY" secondItem="cLh-Ys-9RI" secondAttribute="centerY" id="rG9-PA-BHw"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfX-If-K4q">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfX-If-K4q" userLabel="ViewShare">
                                         <rect key="frame" x="125" y="0.0" width="125" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6S-eI-zRo">
@@ -706,6 +714,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstItem="sHs-Qf-0q8" firstAttribute="top" secondItem="f6S-eI-zRo" secondAttribute="top" id="03B-Jf-o9D"/>
                                                     <constraint firstItem="sHs-Qf-0q8" firstAttribute="leading" secondItem="f6S-eI-zRo" secondAttribute="leading" id="Hnk-87-QH4"/>
@@ -715,6 +724,9 @@
                                                     <constraint firstAttribute="bottom" secondItem="sHs-Qf-0q8" secondAttribute="bottom" id="nL5-Sd-kNg"/>
                                                     <constraint firstItem="CxE-ko-6Bd" firstAttribute="leading" secondItem="sHs-Qf-0q8" secondAttribute="trailing" constant="5" id="pTG-8n-hoP"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="6jW-Xy-Y59" appends="YES" id="Qmo-Wx-AVp"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -747,32 +759,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Captain America's Brooklyn Apartment Fireside" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdj-8d-VL7">
-                                <rect key="frame" x="15" y="283" width="345" height="16"/>
+                                <rect key="frame" x="15" y="288" width="345" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.56078431370000004" green="0.5568627451" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBI-3u-Jhd">
-                                <rect key="frame" x="15" y="299" width="38" height="16"/>
+                                <rect key="frame" x="15" y="309" width="38" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.56078431370000004" green="0.5568627451" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Master Chef" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cm-m6-Tk6">
-                                <rect key="frame" x="58" y="299" width="301" height="16"/>
+                                <rect key="frame" x="58" y="309" width="301" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.94509803920000002" green="0.25098039220000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVd-QS-FVk">
-                                <rect key="frame" x="0.0" y="330" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="340" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="vjy-LV-iL9"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="4QB-J3-go5">
-                                <rect key="frame" x="15" y="346" width="345" height="321"/>
+                                <rect key="frame" x="15" y="356" width="345" height="311"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
@@ -788,31 +800,53 @@
                             <constraint firstItem="wRV-MK-ALL" firstAttribute="top" secondItem="4QB-J3-go5" secondAttribute="bottom" id="7KK-XA-BHQ"/>
                             <constraint firstItem="AdU-B2-E7D" firstAttribute="leading" secondItem="wTL-ad-nAV" secondAttribute="leading" id="8dH-eo-vG7"/>
                             <constraint firstItem="3Cm-m6-Tk6" firstAttribute="leading" secondItem="kBI-3u-Jhd" secondAttribute="trailing" constant="5" id="AFa-on-hZF"/>
-                            <constraint firstItem="qdj-8d-VL7" firstAttribute="top" secondItem="1wO-4a-97B" secondAttribute="bottom" id="BzK-LJ-Prq"/>
+                            <constraint firstItem="qdj-8d-VL7" firstAttribute="top" secondItem="1wO-4a-97B" secondAttribute="bottom" constant="5" id="BzK-LJ-Prq"/>
                             <constraint firstItem="4QB-J3-go5" firstAttribute="leading" secondItem="wTL-ad-nAV" secondAttribute="leading" constant="15" id="D1L-PP-jbl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Cm-m6-Tk6" secondAttribute="trailing" id="JJB-Nf-MnO"/>
                             <constraint firstAttribute="trailing" secondItem="AdU-B2-E7D" secondAttribute="trailing" id="Obi-wd-zcO"/>
                             <constraint firstItem="1wO-4a-97B" firstAttribute="leading" secondItem="wTL-ad-nAV" secondAttribute="leading" constant="15" id="Rja-tk-8Aq"/>
                             <constraint firstAttribute="trailing" secondItem="lVd-QS-FVk" secondAttribute="trailing" id="TkS-cA-EgW"/>
-                            <constraint firstItem="kBI-3u-Jhd" firstAttribute="top" secondItem="qdj-8d-VL7" secondAttribute="bottom" id="Uda-o2-9T5"/>
+                            <constraint firstItem="kBI-3u-Jhd" firstAttribute="top" secondItem="qdj-8d-VL7" secondAttribute="bottom" constant="5" id="Uda-o2-9T5"/>
                             <constraint firstItem="1wO-4a-97B" firstAttribute="top" secondItem="sLE-Nz-bav" secondAttribute="bottom" constant="15" id="V1u-Bk-i4B"/>
-                            <constraint firstItem="3Cm-m6-Tk6" firstAttribute="top" secondItem="qdj-8d-VL7" secondAttribute="bottom" id="Z4U-mg-vRM"/>
                             <constraint firstAttribute="trailing" secondItem="1wO-4a-97B" secondAttribute="trailing" constant="15" id="Zwo-BI-laz"/>
-                            <constraint firstItem="3Cm-m6-Tk6" firstAttribute="top" secondItem="qdj-8d-VL7" secondAttribute="bottom" id="aBk-8R-otq"/>
                             <constraint firstItem="4QB-J3-go5" firstAttribute="top" secondItem="lVd-QS-FVk" secondAttribute="bottom" constant="15" id="aYi-su-GVu"/>
                             <constraint firstItem="sLE-Nz-bav" firstAttribute="top" secondItem="AdU-B2-E7D" secondAttribute="bottom" id="b6F-HW-7EV"/>
                             <constraint firstItem="sLE-Nz-bav" firstAttribute="leading" secondItem="wTL-ad-nAV" secondAttribute="leading" id="cXb-2l-n2e"/>
                             <constraint firstAttribute="trailing" secondItem="4QB-J3-go5" secondAttribute="trailing" constant="15" id="dsI-XF-aUL"/>
                             <constraint firstItem="sLE-Nz-bav" firstAttribute="top" secondItem="AdU-B2-E7D" secondAttribute="bottom" id="g8k-EF-xBm"/>
                             <constraint firstItem="kBI-3u-Jhd" firstAttribute="leading" secondItem="wTL-ad-nAV" secondAttribute="leading" constant="15" id="l5D-hY-Hb9"/>
+                            <constraint firstItem="3Cm-m6-Tk6" firstAttribute="centerY" secondItem="kBI-3u-Jhd" secondAttribute="centerY" id="rQk-jD-5JG"/>
                             <constraint firstItem="AdU-B2-E7D" firstAttribute="top" secondItem="wTL-ad-nAV" secondAttribute="top" id="t9B-20-Xei"/>
                             <constraint firstAttribute="trailing" secondItem="sLE-Nz-bav" secondAttribute="trailing" id="wIJ-O6-UWC"/>
                             <constraint firstAttribute="trailing" secondItem="qdj-8d-VL7" secondAttribute="trailing" constant="15" id="zpU-o8-0DC"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <connections>
+                        <outlet property="imvLike" destination="CYb-6h-t1g" id="jyH-nw-6ZA"/>
+                        <outlet property="lbDescription" destination="4QB-J3-go5" id="1es-mO-F3A"/>
+                        <outlet property="lbInfo" destination="qdj-8d-VL7" id="Zp6-cI-eaT"/>
+                        <outlet property="lbLike" destination="fJL-vn-xJs" id="dm8-cS-Z4g"/>
+                        <outlet property="lbSeries" destination="3Cm-m6-Tk6" id="8Vx-rT-Pce"/>
+                        <outlet property="lbTitle" destination="1wO-4a-97B" id="otN-K5-4g0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEG-AY-h9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1TE-uN-Dpd">
+                    <connections>
+                        <action selector="doLike:" destination="Mbi-Jx-xqE" id="zMa-Dl-gkO"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="6jW-Xy-Y59">
+                    <connections>
+                        <action selector="doShare:" destination="Mbi-Jx-xqE" id="DSP-LN-Yrt"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="CVp-om-XSS">
+                    <connections>
+                        <action selector="doComment:" destination="Mbi-Jx-xqE" id="Ud2-85-sVz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="8023.1999999999998" y="90.404797601199405"/>
         </scene>

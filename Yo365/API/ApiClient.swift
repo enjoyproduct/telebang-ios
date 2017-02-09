@@ -133,6 +133,46 @@ class ApiClient {
         }
     }
     
+    static func updateVideosCounter(field: String, videoID: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping ()-> Void) {
+        let params: Parameters = [KEY_FIELD: field, KEY_VIDEO_ID: videoID]
+        
+        Alamofire.request(getAbsoluteUrl(relativeUrl: RELATIVE_URL_UPDATE_VIDEO_COUNTER), method: .post ,parameters: params).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                successHandler()
+            }
+        }
+    }
+    
+    static func updateUserLikeVideo(customerID: Int, videoID: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (LikeStatusResponse)-> Void) {
+        let params: Parameters = [KEY_CUSTOMER_ID: customerID, KEY_VIDEO_ID: videoID]
+        
+        Alamofire.request(getAbsoluteUrl(relativeUrl: RELATIVE_URL_USER_LIKE_VIDEO), method: .post ,parameters: params).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let content: Dictionary<String, AnyObject>? = response.result.value?.content as! Dictionary<String, AnyObject>?
+                let data = LikeStatusResponse(JSON: content!)
+                successHandler(data!)
+            }
+        }
+    }
+    
+    static func getLikeVideoStatus(customerID: Int, videoID: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (LikeStatusResponse)-> Void) {
+        let relativeUrl = String.init(format: RELATIVE_URL_GET_USER_LIKE_STATUS, videoID, customerID)
+        
+        Alamofire.request(getAbsoluteUrl(relativeUrl: relativeUrl)).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let content: Dictionary<String, AnyObject>? = response.result.value?.content as! Dictionary<String, AnyObject>?
+                let data = LikeStatusResponse(JSON: content!)
+                successHandler(data!)
+            }
+        }
+    }
+    
     private static func parseResponse(data: DataResponse<ResponseModel>, errorHandler: @escaping (String) -> Void)-> Bool{
         debugPrint(data)
         
