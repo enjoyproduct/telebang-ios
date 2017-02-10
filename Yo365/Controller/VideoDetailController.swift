@@ -28,7 +28,7 @@ class VideoDetailController: BaseSlideController {
             return
         }
         
-        initTitleHeader(title: (videoModel?.getTitle())!)
+        updateTitleHeader(title: (videoModel?.getTitle())!)
         
         initVideoInfo()
         requestUpdateCounter(field: .view)
@@ -91,7 +91,9 @@ class VideoDetailController: BaseSlideController {
     }
     
     @IBAction func doComment(_ sender: UITapGestureRecognizer) {
-        print("doComment")
+        let vc = storyboard?.instantiateViewController(withIdentifier: "CommentScreen") as! CommentController
+        vc.videoModel = videoModel
+        switchToViewController(viewController: vc)
     }
     
     func displayShareSheet(shareContent:String) {

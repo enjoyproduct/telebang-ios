@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0AA2AD1AED7BFFFC95904659 /* Pods_Yo365.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03910CC03AD4756D4A2E91C0 /* Pods_Yo365.framework */; };
 		2802F8451E4C6723000795B8 /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8441E4C6723000795B8 /* AppUtil.swift */; };
+		2802F84B1E4C8BBD000795B8 /* CommentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8491E4C8BBD000795B8 /* CommentViewCell.swift */; };
+		2802F84C1E4C8BBD000795B8 /* CommentViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2802F84A1E4C8BBD000795B8 /* CommentViewCell.xib */; };
+		2802F84F1E4C8E23000795B8 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F84E1E4C8E23000795B8 /* CommentController.swift */; };
 		2818F6681E4AF88600D408D1 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818F6671E4AF88600D408D1 /* SearchController.swift */; };
 		2818F66B1E4B296900D408D1 /* VideoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818F66A1E4B296900D408D1 /* VideoDetailController.swift */; };
 		281ACF141E37411300F9E063 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281ACF131E37411300F9E063 /* ContainerViewController.swift */; };
@@ -74,6 +77,9 @@
 /* Begin PBXFileReference section */
 		03910CC03AD4756D4A2E91C0 /* Pods_Yo365.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yo365.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2802F8441E4C6723000795B8 /* AppUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppUtil.swift; path = Helper/AppUtil.swift; sourceTree = "<group>"; };
+		2802F8491E4C8BBD000795B8 /* CommentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentViewCell.swift; path = View/CommentViewCell.swift; sourceTree = "<group>"; };
+		2802F84A1E4C8BBD000795B8 /* CommentViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentViewCell.xib; path = View/CommentViewCell.xib; sourceTree = "<group>"; };
+		2802F84E1E4C8E23000795B8 /* CommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentController.swift; path = Controller/CommentController.swift; sourceTree = "<group>"; };
 		2818F6671E4AF88600D408D1 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = Controller/SearchController.swift; sourceTree = "<group>"; };
 		2818F66A1E4B296900D408D1 /* VideoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoDetailController.swift; path = Controller/VideoDetailController.swift; sourceTree = "<group>"; };
 		281ACF131E37411300F9E063 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = Controller/ContainerViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +165,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2802F8481E4C8BAC000795B8 /* CommentCell */ = {
+			isa = PBXGroup;
+			children = (
+				2802F8491E4C8BBD000795B8 /* CommentViewCell.swift */,
+				2802F84A1E4C8BBD000795B8 /* CommentViewCell.xib */,
+			);
+			name = CommentCell;
+			sourceTree = "<group>";
+		};
+		2802F84D1E4C8E13000795B8 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				2802F84E1E4C8E23000795B8 /* CommentController.swift */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
 		2818F6661E4AF5AD00D408D1 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +229,7 @@
 		2848B30C1E2F56E400AAB998 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2802F8481E4C8BAC000795B8 /* CommentCell */,
 				284E15AF1E49E37C0090B276 /* VideoListCell */,
 				284E15AC1E49D24A0090B276 /* CategoryCell */,
 				28975E651E487AF700CB824A /* VideoGridCell */,
@@ -218,6 +242,7 @@
 		2848B30D1E2F56F200AAB998 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2802F84D1E4C8E13000795B8 /* Comment */,
 				2818F6691E4B294F00D408D1 /* Detail */,
 				2818F6661E4AF5AD00D408D1 /* Search */,
 				281ACF151E37458100F9E063 /* Setting */,
@@ -540,6 +565,7 @@
 			files = (
 				284E15B91E49E3CD0090B276 /* VideoViewCell2.xib in Resources */,
 				28CD24A01E445E3200CEEEF4 /* SlideMenuCell.xib in Resources */,
+				2802F84C1E4C8BBD000795B8 /* CommentViewCell.xib in Resources */,
 				28E2DA331E2F511100CFD6AC /* LaunchScreen.storyboard in Resources */,
 				284E15B31E49E3AA0090B276 /* VideoViewCell1.xib in Resources */,
 				28E2DA301E2F511100CFD6AC /* Assets.xcassets in Resources */,
@@ -728,7 +754,9 @@
 				281ACF171E37459400F9E063 /* SettingController.swift in Sources */,
 				2818F6681E4AF88600D408D1 /* SearchController.swift in Sources */,
 				28975E6D1E4890A900CB824A /* VideoCategoryModel.swift in Sources */,
+				2802F84F1E4C8E23000795B8 /* CommentController.swift in Sources */,
 				28CD249F1E445E3200CEEEF4 /* SlideMenuCell.swift in Sources */,
+				2802F84B1E4C8BBD000795B8 /* CommentViewCell.swift in Sources */,
 				281ACF141E37411300F9E063 /* ContainerViewController.swift in Sources */,
 				284E15B81E49E3CD0090B276 /* VideoViewCell2.swift in Sources */,
 				286C87A01E30C35700539369 /* AppSetting.swift in Sources */,

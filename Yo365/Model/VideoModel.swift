@@ -176,3 +176,23 @@ class LikeStatusResponse: Mappable {
         action        <- map["action"]
     }
 }
+
+class CommentJSON: Mappable {
+    var id: String?
+    var commentContent: String?
+    var createAt: String?
+    var videoId: Int?
+    var customerJSON: CustomerResponse?
+    
+    required init?(map: Map){
+        
+    }
+    
+    func mapping(map: Map) {
+        id              <- map["id"]
+        commentContent  <- map["comment_text"]
+        createAt        <- map["create_at"]
+        videoId         <- map["video_id"]
+        customerJSON    <- map["user"]
+    }
+}

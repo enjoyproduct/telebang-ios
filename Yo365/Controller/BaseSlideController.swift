@@ -28,7 +28,7 @@ class BaseSlideController: BaseController{
         initRightHeader()
     }
     
-    func initTitleHeader(title: String) {
+    func updateTitleHeader(title: String) {
         self.navigationItem.title = title
     }
     

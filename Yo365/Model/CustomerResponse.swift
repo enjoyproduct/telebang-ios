@@ -12,9 +12,9 @@ class CustomerResponse: Mappable {
     var id: Int?
     var email: String?
     var username: String?
-    var avatar: String?
-    var firstName: String?
-    var lastName: String?
+    var avatar: String? = ""
+    var firstName: String? = ""
+    var lastName: String? = ""
     var phone: String?
     var address: String?
     var city: String?

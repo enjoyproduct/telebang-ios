@@ -173,6 +173,36 @@ class ApiClient {
         }
     }
     
+    
+    static func getVideoComments(videoID: Int, pageNumber: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (Array<CommentJSON>)-> Void) {
+        let relativeUrl = String.init(format: RELATIVE_URL_GET_VIDEO_COMMENTS,videoID, pageNumber, LIMIT_COMMENTS_VIDEO)
+        Alamofire.request(getAbsoluteUrl(relativeUrl: relativeUrl)).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let data: Array<Dictionary<String, AnyObject>>! = response.result.value!.content as! Array<Dictionary<String, AnyObject>>
+                let listComments: Array<CommentJSON>! = Mapper<CommentJSON>().mapArray(JSONArray: data)
+                successHandler(listComments)
+            }
+        }
+    }
+    
+    static func postCommentVideo(customerID: Int, videoID: Int,commentContent: String, errorHandler: @escaping (String) -> Void, successHandler: @escaping (CommentJSON)-> Void) {
+        
+        let params: Parameters = [KEY_CUSTOMER_ID: customerID, KEY_VIDEO_ID: videoID, KEY_COMMENT_CONTENT: commentContent]
+        
+        Alamofire.request(getAbsoluteUrl(relativeUrl: RELATIVE_URL_INSERT_COMMENT), method: .post ,parameters: params).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let content: Dictionary<String, AnyObject>? = response.result.value?.content as! Dictionary<String, AnyObject>?
+                let data = CommentJSON(JSON: content!)
+
+                successHandler(data!)
+            }
+        }
+    }
+    
     private static func parseResponse(data: DataResponse<ResponseModel>, errorHandler: @escaping (String) -> Void)-> Bool{
         debugPrint(data)
         
@@ -189,7 +219,7 @@ class ApiClient {
             break
             
         case .failure(let error):
-            errorHandler(error as! String)
+            errorHandler(error.localizedDescription)
             break
         }
         

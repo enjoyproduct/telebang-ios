@@ -32,9 +32,12 @@ let RELATIVE_URL_PLAY_VIMEO = "%@?player_id=player&autoplay=1&title=0&byline=0&p
 let RELATIVE_URL_PLAY_FACEBOOK = "/api/playFacebookVideo?video_url=%@"
 let RELATIVE_URL_USER_LIKE_VIDEO = "/api/likevideo";
 let RELATIVE_URL_GET_USER_LIKE_STATUS = "/api/getLikeVideoStatus/%d/%d"
+let RELATIVE_URL_GET_VIDEO_COMMENTS = "/api/getListCommentVideo/%d/%d/%d";
+let RELATIVE_URL_INSERT_COMMENT = "/api/insertCommentVideo";
 
 let LIMIT_VIDEOS_HOMES = 10;
 let LIMIT_VIDEOS_SEARCH = 10;
+let LIMIT_COMMENTS_VIDEO = 20;
 
 let KEY_USERNAME = "username"
 let KEY_PASSWORD = "password"
@@ -46,3 +49,5 @@ let KEY_PAGE_NUMBER = "page"
 let KEY_VIDEO_ID = "video_id"
 let KEY_FIELD = "field"
 let KEY_CUSTOMER_ID = "customer_id"
+let KEY_COMMENT_CONTENT = "comment_text";
+
