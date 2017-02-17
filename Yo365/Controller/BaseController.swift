@@ -58,7 +58,12 @@ class BaseController: UIViewController{
             self.showWaitOverlay()
         }else{
             self.showWaitOverlayWithText(msg)
+            
         }
+    }
+    
+    func updateMessageLoading(msg: String) {
+        self.updateOverlayText(msg)
     }
     
     func hideLoading(){

@@ -19,7 +19,7 @@ class SettingController: BaseSlideController {
         super.viewDidLoad()
         
         picker.delegate = self
-        updateTitleHeader(title: "Setting")
+        updateTitleHeader(title: "Account")
         let urlAvatar = URL(string: customerManager.getCustomerModel().avatar!)!
         imvAvatar.kf.setImage(with: urlAvatar, placeholder: Image.init(named: "img_avatar_default"), options: nil, progressBlock: nil, completionHandler: nil)
         
@@ -63,15 +63,19 @@ extension SettingController: UIImagePickerControllerDelegate, UINavigationContro
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         imvAvatar.image = chosenImage //4
         
-        let imageUrl          = info[UIImagePickerControllerReferenceURL] as! NSURL
-        let imageName         = imageUrl.lastPathComponent
+//        let imageUrl          = info[UIImagePickerControllerReferenceURL] as! NSURL
+//        let imageName         = imageUrl.lastPathComponent
         
         dismiss(animated:true, completion: nil) //5
-        
-        ApiClient.changeAvatar(customerID: customerManager.getCustomerID(), image: chosenImage, errorHandler: { (msg: String) in
-            
-        }, successHandler: { 
-            
-        })
+        showLoading(msg: "Please wait while the content loads")
+        ApiClient.changeAvatar(customerID: customerManager.getCustomerID(), image: chosenImage, errorHandler: { (msg: String?) in
+            self.hideLoading()
+        }, successHandler: { (response: CustomerResponse?) in
+            self.hideLoading()
+            customerManager.onChangeProfileSuccessfully(customer: response!)
+            self.showMessage(title: "Sucessfully", msg: "Change Avatar Successfully!")
+         }) { (progressCompletted: Int) in
+            self.updateOverlayText(String.init(format: "Processing... %d%%", progressCompletted))
+        }
     }   
 }
