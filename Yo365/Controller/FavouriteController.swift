@@ -19,6 +19,9 @@ class FavouriteController: BaseSlideController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateTitleHeader(title: "Favourite")
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -105,7 +108,9 @@ extension FavouriteController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "VideoDetailScreen") as! VideoDetailController
+        vc.videoModel = listVideo[indexPath.section]
+        switchToViewController(viewController: vc)
     }
     
     // Set the spacing between sections

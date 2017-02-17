@@ -22,6 +22,8 @@ class HomeController: BaseSlideController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateTitleHeader(title: "Yo365")
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         

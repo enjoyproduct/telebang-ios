@@ -28,12 +28,15 @@ let RELATIVE_URL_VIDEO_MOST = "/api/getListVideoMostView/%d/%d"
 let RELATIVE_URL_VIDEO_TRENDING = "/api/getListVideoTrending/%d/%d"
 let RELATIVE_URL_SEARCH_BY_KEYWORD = "/api/getListVideoByKeyword"
 let RELATIVE_URL_UPDATE_VIDEO_COUNTER = "api/updateStatistics"
-let RELATIVE_URL_PLAY_VIMEO = "%@?player_id=player&autoplay=1&title=0&byline=0&portrait=0&api=1&maxheight=480&maxwidth=800";
+let RELATIVE_URL_PLAY_VIMEO = "%@?player_id=player&autoplay=1&title=0&byline=0&portrait=0&api=1&maxheight=480&maxwidth=800"
 let RELATIVE_URL_PLAY_FACEBOOK = "/api/playFacebookVideo?video_url=%@"
-let RELATIVE_URL_USER_LIKE_VIDEO = "/api/likevideo";
+let RELATIVE_URL_USER_LIKE_VIDEO = "/api/likevideo"
 let RELATIVE_URL_GET_USER_LIKE_STATUS = "/api/getLikeVideoStatus/%d/%d"
-let RELATIVE_URL_GET_VIDEO_COMMENTS = "/api/getListCommentVideo/%d/%d/%d";
-let RELATIVE_URL_INSERT_COMMENT = "/api/insertCommentVideo";
+let RELATIVE_URL_GET_VIDEO_COMMENTS = "/api/getListCommentVideo/%d/%d/%d"
+let RELATIVE_URL_INSERT_COMMENT = "/api/insertCommentVideo"
+let RELATIVE_URL_CHANGE_PASSWORD = "/api/change_password"
+let RELATIVE_URL_CHANGE_PROFILE = "/api/change_profile"
+let RELATIVE_URL_CHANGE_AVATAR = "api/change_avatar"
 
 let LIMIT_VIDEOS_HOMES = 10;
 let LIMIT_VIDEOS_SEARCH = 10;
@@ -49,5 +52,11 @@ let KEY_PAGE_NUMBER = "page"
 let KEY_VIDEO_ID = "video_id"
 let KEY_FIELD = "field"
 let KEY_CUSTOMER_ID = "customer_id"
-let KEY_COMMENT_CONTENT = "comment_text";
-
+let KEY_COMMENT_CONTENT = "comment_text"
+let KEY_OLD_PASS = "old_password"
+let KEY_NEW_PASS = "new_password"
+let KEY_USER_ID = "user_id"
+let KEY_FIRST_NAME = "firstname"
+let KEY_LAST_NAME = "lastname"
+let KEY_PHONE_NUMBER = "phonenumber"
+let KEY_AVATAR = "avatar"

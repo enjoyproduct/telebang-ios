@@ -15,6 +15,9 @@ class CategoryController: BaseSlideController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateTitleHeader(title: "Categories")
+        
         tableView.delegate = self
         tableView.dataSource = self
         

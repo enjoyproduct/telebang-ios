@@ -11,16 +11,16 @@ import ObjectMapper
 class CustomerResponse: Mappable {
     var id: Int?
     var email: String?
-    var username: String?
+    var username: String? = ""
     var avatar: String? = ""
     var firstName: String? = ""
     var lastName: String? = ""
-    var phone: String?
+    var phone: String? = ""
     var address: String?
     var city: String?
     var country: String?
     var zip: String?
-    var vip: String?
+    var vip: Int?
     
     init() {
         

@@ -45,8 +45,9 @@ class RegisterController: BaseController {
                 self.hideLoading()
                 customerManager.saveAuthenticAccount(username: username, password: password)
                 customerManager.onLoginSuccessfully(loginStatus: .LoginWithSystem, customer: customerModel)
-                self.performSegue(withIdentifier: "MainScreen",
-                                  sender: self)
+//                self.performSegue(withIdentifier: "MainScreen",
+//                                  sender: self)
+            (UIApplication.shared.delegate as? AppDelegate)?.changeRootViewController((UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContainerViewController") as? ContainerViewController)!, completion: nil)
             })
         }else{
             showMessage(title: "Error", msg: msg)
@@ -102,8 +103,11 @@ class RegisterController: BaseController {
         }) { (customer: CustomerResponse) in
             self.hideLoading()
             customerManager.onLoginSuccessfully(loginStatus: .LoginWithFacebook, customer: customer)
-            self.performSegue(withIdentifier: "MainScreen",
-                              sender: self)
+//            self.performSegue(withIdentifier: "MainScreen",
+//                              sender: self)
+            
+            (UIApplication.shared.delegate as? AppDelegate)?.changeRootViewController((UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContainerViewController") as? ContainerViewController)!, completion: nil)
+            
         }
     }
 }

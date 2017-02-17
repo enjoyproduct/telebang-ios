@@ -54,6 +54,30 @@ class ApiClient {
         }
     }
     
+    static func changePassword(accountID: Int, currentPassword: String, newPassword: String,  errorHandler: @escaping (String) -> Void, successHandler: @escaping ()-> Void) {
+        let params: Parameters = [KEY_USER_ID: accountID, KEY_OLD_PASS: currentPassword, KEY_NEW_PASS: newPassword ]
+        
+        Alamofire.request(getAbsoluteUrl(relativeUrl: RELATIVE_URL_CHANGE_PASSWORD), method: .post ,parameters: params).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                successHandler()
+            }
+        }
+    }
+    
+    static func changeProfile(params: Parameters,  errorHandler: @escaping (String) -> Void, successHandler: @escaping (CustomerResponse)-> Void) {
+        Alamofire.request(getAbsoluteUrl(relativeUrl: RELATIVE_URL_CHANGE_PROFILE), method: .post ,parameters: params).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let content: Dictionary<String, AnyObject>? = response.result.value?.content as! Dictionary<String, AnyObject>?
+                let data = CustomerResponse(JSON: content!)
+                successHandler(data!)
+            }
+        }
+    }
+    
     static func forgotPassword(email: String, errorHandler: @escaping (String) -> Void, successHandler: @escaping (String)-> Void) {
         let params: Parameters = [KEY_EMAIL: email]
         
@@ -199,6 +223,38 @@ class ApiClient {
                 let data = CommentJSON(JSON: content!)
 
                 successHandler(data!)
+            }
+        }
+    }
+    
+    static func changeAvatar(customerID: Int, image: UIImage, errorHandler: @escaping (String) -> Void, successHandler: @escaping ()-> Void) {
+        
+//        let params: Parameters = [KEY_CUSTOMER_ID: customerID, KEY_VIDEO_ID: videoID, KEY_COMMENT_CONTENT: commentContent]
+        
+//        Alamofire.upload(data, to: getAbsoluteUrl(relativeUrl: RELATIVE_URL_CHANGE_AVATAR)).response { response in // method defaults to `.post`
+//            debugPrint(response)
+//        }
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData: MultipartFormData) in
+//            multipartFormData.append(UIImageJPEGRepresentation(image, 1)!, withName: KEY_AVATAR, fileName: "swift_file.jpeg", mimeType: "image/jpeg")
+            multipartFormData.append(UIImageJPEGRepresentation(image, 1)!, withName: KEY_AVATAR,fileName: "swift_file.jpeg", mimeType: "image/jpeg")
+            multipartFormData.append(String(customerID).data(using: String.Encoding.utf8)!, withName: KEY_USER_ID)
+        }, to: getAbsoluteUrl(relativeUrl: RELATIVE_URL_CHANGE_AVATAR)) { (result: SessionManager.MultipartFormDataEncodingResult) in
+            switch result {
+            case .success(let upload, _, _):
+                
+                upload.uploadProgress(closure: { (progress) in
+                    //Print progress
+                    print(progress.fractionCompleted)
+                })
+                
+                upload.responseJSON { response in
+                    print(response)
+                }
+                
+            case .failure(let error):
+                
+                break
             }
         }
     }

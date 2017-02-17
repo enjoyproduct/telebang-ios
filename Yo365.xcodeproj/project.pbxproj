@@ -38,6 +38,8 @@
 		28975E681E487B7500CB824A /* GridVideoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E661E487B7500CB824A /* GridVideoViewCell.swift */; };
 		28975E6B1E4882EF00CB824A /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E6A1E4882EF00CB824A /* VideoModel.swift */; };
 		28975E6D1E4890A900CB824A /* VideoCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E6C1E4890A900CB824A /* VideoCategoryModel.swift */; };
+		289E53B51E51B3E5002369B7 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E53B41E51B3E5002369B7 /* ChangePasswordController.swift */; };
+		289E53B71E51B3F4002369B7 /* ChangeProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E53B61E51B3F4002369B7 /* ChangeProfileController.swift */; };
 		28AC54881E35DD0500CE5598 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC54871E35DD0500CE5598 /* SideMenuView.swift */; };
 		28CD24991E44412F00CEEEF4 /* SlideMenuElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CD24981E44412F00CEEEF4 /* SlideMenuElement.swift */; };
 		28CD249B1E44437900CEEEF4 /* SlideMenuElements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28CD249A1E44437900CEEEF4 /* SlideMenuElements.plist */; };
@@ -106,6 +108,8 @@
 		28975E661E487B7500CB824A /* GridVideoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridVideoViewCell.swift; path = View/GridVideoViewCell.swift; sourceTree = "<group>"; };
 		28975E6A1E4882EF00CB824A /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoModel.swift; path = Model/VideoModel.swift; sourceTree = "<group>"; };
 		28975E6C1E4890A900CB824A /* VideoCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCategoryModel.swift; path = Model/VideoCategoryModel.swift; sourceTree = "<group>"; };
+		289E53B41E51B3E5002369B7 /* ChangePasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordController.swift; path = Controller/ChangePasswordController.swift; sourceTree = "<group>"; };
+		289E53B61E51B3F4002369B7 /* ChangeProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeProfileController.swift; path = Controller/ChangeProfileController.swift; sourceTree = "<group>"; };
 		28AC54871E35DD0500CE5598 /* SideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuView.swift; path = Controller/SideMenuView.swift; sourceTree = "<group>"; };
 		28CD24981E44412F00CEEEF4 /* SlideMenuElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideMenuElement.swift; path = Model/SlideMenuElement.swift; sourceTree = "<group>"; };
 		28CD249A1E44437900CEEEF4 /* SlideMenuElements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SlideMenuElements.plist; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				281ACF161E37459400F9E063 /* SettingController.swift */,
+				289E53B41E51B3E5002369B7 /* ChangePasswordController.swift */,
+				289E53B61E51B3F4002369B7 /* ChangeProfileController.swift */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -747,10 +753,12 @@
 				286C87A21E30C37000539369 /* AppConstant.swift in Sources */,
 				286C879D1E30BE0F00539369 /* ApiClient.swift in Sources */,
 				284E15BB1E49ECCA0090B276 /* FavouriteController.swift in Sources */,
+				289E53B51E51B3E5002369B7 /* ChangePasswordController.swift in Sources */,
 				286C87991E309FEE00539369 /* BaseController.swift in Sources */,
 				28FD82541E320B4300EFA1A4 /* MainController.swift in Sources */,
 				286C87941E3099E100539369 /* RegisterController.swift in Sources */,
 				284E15BD1E49FA700090B276 /* TrendingController.swift in Sources */,
+				289E53B71E51B3F4002369B7 /* ChangeProfileController.swift in Sources */,
 				281ACF171E37459400F9E063 /* SettingController.swift in Sources */,
 				2818F6681E4AF88600D408D1 /* SearchController.swift in Sources */,
 				28975E6D1E4890A900CB824A /* VideoCategoryModel.swift in Sources */,

@@ -38,6 +38,14 @@ class CustomerManager {
         self.customerModel = customer;
     }
     
+    func onChangeProfileSuccessfully(customer: CustomerResponse) {
+        self.customerModel = customer;
+    }
+    
+    func onChangePasswordSuccessfully(password: String) {
+        preferences.set(password, forKey: KEY_PASSWORD)
+    }
+    
     func doLogout() {
         switch loginStatus {
         case .LoginWithSystem:
@@ -77,6 +85,14 @@ class CustomerManager {
         }
         
         return customerModel.id!
+    }
+    
+    func isPremiumAccount() -> Bool {
+        if(loginStatus == .NotLogin){
+            return false
+        }
+        
+        return customerModel.vip == 1;
     }
     
     func isLogin() -> Bool {

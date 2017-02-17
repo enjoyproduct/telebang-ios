@@ -18,6 +18,9 @@ class TrendingController: BaseSlideController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateTitleHeader(title: "Trending")
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -106,7 +109,9 @@ extension TrendingController: UITableViewDataSource, UITableViewDelegate{
 //    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "VideoDetailScreen") as! VideoDetailController
+        vc.videoModel = listVideo[indexPath.row]
+        switchToViewController(viewController: vc)
     }
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
