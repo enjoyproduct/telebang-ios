@@ -864,6 +864,7 @@
                         <outlet property="lbLike" destination="fJL-vn-xJs" id="dm8-cS-Z4g"/>
                         <outlet property="lbSeries" destination="3Cm-m6-Tk6" id="8Vx-rT-Pce"/>
                         <outlet property="lbTitle" destination="1wO-4a-97B" id="otN-K5-4g0"/>
+                        <outlet property="viewPlayer" destination="AdU-B2-E7D" id="OT8-Ap-DeW"/>
                         <segue destination="C2h-YX-kBO" kind="show" identifier="CommentView" id="Dx3-V8-GBt"/>
                     </connections>
                 </viewController>

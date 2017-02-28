@@ -8,10 +8,14 @@
 
 import UIKit
 import RAMAnimatedTabBarController
+import AVFoundation
+import AVKit
+import XCDYouTubeKit
 
 class VideoDetailController: BaseSlideController {
     var videoModel: VideoModel? = nil
     
+    @IBOutlet var viewPlayer: UIView!
     @IBOutlet var lbInfo: UILabel!
     @IBOutlet var lbTitle: UILabel!
     @IBOutlet var lbSeries: UILabel!
@@ -33,6 +37,7 @@ class VideoDetailController: BaseSlideController {
         initVideoInfo()
         requestUpdateCounter(field: .view)
         requestGetLikeStatus()
+        initPlayer()
     }
     
     override func initRightHeader() {
@@ -44,8 +49,17 @@ class VideoDetailController: BaseSlideController {
         self.navigationItem.rightBarButtonItems = [downloadButton, favouriteButton]
     }
     
+    func initPlayer() {
+        let player = videoModel?.getPlayerType()
+        if(player == .YOUTUBE){
+            initYoutubePlayer()
+        }else if(player == .UPLOAD){
+            initDefaultPlayer()
+        }
+    }
+    
     func callFavouriteMethod() {
-
+        
     }
     
     func callDownloadMethod() {
@@ -64,6 +78,33 @@ class VideoDetailController: BaseSlideController {
         let fmDescription = "<span style=\"font-family: Helvetica; line-height: 1.5;color: #555555; font-size: 13\">%@</span>"
         let description = String.init(format: fmDescription, (videoModel?.getDescription())!)
         lbDescription.attributedText = AppUtil.stringFromHtml(string: description)
+    }
+    
+    func initDefaultPlayer(){
+        let videoPath = videoModel?.getVideoPath()
+        let videoUrl: URL = URL.init(string: videoPath!)!
+        
+        let player = AVPlayer(url: videoUrl)
+        let playerController = AVPlayerViewController()
+        
+        playerController.player = player
+        self.addChildViewController(playerController)
+        self.viewPlayer.addSubview(playerController.view)
+        playerController.view.frame = self.viewPlayer.frame
+        
+        player.play()
+    }
+    
+    func initYoutubePlayer(){
+        let youtubeID = getYoutubeId(youtubeUrl: (videoModel?.getVideoPath())!)
+        let vidplayer : XCDYouTubeVideoPlayerViewController = XCDYouTubeVideoPlayerViewController(videoIdentifier: youtubeID)
+  
+        vidplayer.present(in: viewPlayer)
+        vidplayer.moviePlayer.play()
+    }
+    
+    func getYoutubeId(youtubeUrl: String) -> String? {
+        return URLComponents(string: youtubeUrl)?.queryItems?.first(where: { $0.name == "v" })?.value
     }
     
     func updateLikeState(isLiked: Bool) {

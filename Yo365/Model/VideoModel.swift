@@ -85,6 +85,11 @@ class VideoModel{
     func getID() -> Int {
         return videoJSON.id!
     }
+    
+    
+    func getPlayerType() -> PlayerType {
+        return playerType!
+    }
 }
 
 class VideoResponseJSON: Mappable {
