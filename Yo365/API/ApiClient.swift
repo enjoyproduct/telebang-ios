@@ -116,6 +116,19 @@ class ApiClient {
         }
     }
     
+    static func getListVideoByCategory(catID: Int, pageNumber: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (Array<VideoResponseJSON>)-> Void) {
+        let relativeUrl = String.init(format: RELATIVE_URL_GET_VIDEOS_BY_CATEGORY, catID, pageNumber, LIMIT_VIDEOS_SEARCH)
+        Alamofire.request(getAbsoluteUrl(relativeUrl: relativeUrl)).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let data: Array<Dictionary<String, AnyObject>>! = response.result.value!.content as! Array<Dictionary<String, AnyObject>>
+                let videoList: Array<VideoResponseJSON>! = Mapper<VideoResponseJSON>().mapArray(JSONArray: data)
+                successHandler(videoList)
+            }
+        }
+    }
+    
     static func getVideosMostView(pageNumber: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (Array<VideoResponseJSON>)-> Void) {
         let relativeUrl = String.init(format: RELATIVE_URL_VIDEO_MOST, pageNumber, LIMIT_VIDEOS_HOMES)
         Alamofire.request(getAbsoluteUrl(relativeUrl: relativeUrl)).responseObject { (response: DataResponse<ResponseModel>) in

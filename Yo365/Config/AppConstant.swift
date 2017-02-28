@@ -27,6 +27,8 @@ let RELATIVE_URL_VIDEO_LATEST = "/api/getListVideoLasted/%d/%d"
 let RELATIVE_URL_VIDEO_MOST = "/api/getListVideoMostView/%d/%d"
 let RELATIVE_URL_VIDEO_TRENDING = "/api/getListVideoTrending/%d/%d"
 let RELATIVE_URL_SEARCH_BY_KEYWORD = "/api/getListVideoByKeyword"
+let RELATIVE_URL_GET_VIDEOS_BY_CATEGORY = "/api/getListVideoByCategory/%d/%d/%d";
+
 let RELATIVE_URL_UPDATE_VIDEO_COUNTER = "api/updateStatistics"
 let RELATIVE_URL_PLAY_VIMEO = "%@?player_id=player&autoplay=1&title=0&byline=0&portrait=0&api=1&maxheight=480&maxwidth=800"
 let RELATIVE_URL_PLAY_FACEBOOK = "/api/playFacebookVideo?video_url=%@"

@@ -28,7 +28,12 @@ class CategoryViewCell: UITableViewCell {
     func updateView(model : VideoCategoryJSON) {
         lbTitle.text = model.name
         
-        let urlThumbnail = URL(string: model.icon!)!
+        var thumbnail = model.icon
+        if(thumbnail == nil){
+            thumbnail = ""
+        }
+        
+        let urlThumbnail = URL(string: thumbnail!)
         imvThumbnail.kf.setImage(with: urlThumbnail, placeholder: Image.init(named: "no_image_default"), options: nil, progressBlock: nil, completionHandler: nil)
     }
 }

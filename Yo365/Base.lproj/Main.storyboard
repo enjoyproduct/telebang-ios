@@ -545,11 +545,45 @@
                     <connections>
                         <outlet property="tableView" destination="W2h-tJ-Xg1" id="lkw-P6-vTl"/>
                         <segue destination="SRk-T8-EYO" kind="show" identifier="SearchView" id="2fh-ba-LHU"/>
+                        <segue destination="skO-py-EUG" kind="show" id="eVm-J7-eB0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zul-l5-FfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5600.8000000000002" y="-313.49325337331339"/>
+        </scene>
+        <!--Video List By Category Controller-->
+        <scene sceneID="IJc-Th-gcS">
+            <objects>
+                <viewController storyboardIdentifier="VideosByCategory" id="skO-py-EUG" customClass="VideoListByCategoryController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1FZ-YO-mUL"/>
+                        <viewControllerLayoutGuide type="bottom" id="JzV-dx-i17"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S4m-CW-77w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AET-OX-Ps3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JzV-dx-i17" firstAttribute="top" secondItem="AET-OX-Ps3" secondAttribute="bottom" id="5rG-VK-TrP"/>
+                            <constraint firstItem="AET-OX-Ps3" firstAttribute="leading" secondItem="S4m-CW-77w" secondAttribute="leading" id="Y9A-6W-gnS"/>
+                            <constraint firstAttribute="trailing" secondItem="AET-OX-Ps3" secondAttribute="trailing" id="bBu-r3-krU"/>
+                            <constraint firstItem="AET-OX-Ps3" firstAttribute="top" secondItem="1FZ-YO-mUL" secondAttribute="bottom" id="lSC-Ae-JXc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="AET-OX-Ps3" id="LRl-W6-PpA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ybl-M8-J1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6956" y="-616.64167916041981"/>
         </scene>
         <!--Search Controller-->
         <scene sceneID="adr-s2-ARb">

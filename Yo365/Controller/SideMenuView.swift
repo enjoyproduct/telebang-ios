@@ -42,7 +42,7 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
         //        imvAvatar.layer.borderColor = UIColor.red.cgColor
         imvAvatar.clipsToBounds = true;
         
-        let urlAvatar = URL(string: customerManager.getCustomerModel().avatar!)!
+        let urlAvatar = URL(string: customerManager.getCustomerAvatar())
         imvAvatar.kf.setImage(with: urlAvatar, placeholder: Image.init(named: "img_avatar_default"), options: nil, progressBlock: nil, completionHandler: nil)
         lbUsername.text = customerManager.getCustomerModel().username
         lbEmail.text = customerManager.getCustomerModel().email

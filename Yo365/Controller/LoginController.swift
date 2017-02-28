@@ -27,6 +27,9 @@ class LoginController: BaseController {
             let username = preferences.object(forKey: KEY_USERNAME) as! String
             let password = preferences.object(forKey: KEY_PASSWORD) as! String
 
+            tfUsername.text = username
+            tfPassword.text = password
+            
             requestLogin(username: username, password: password)
         }
     }

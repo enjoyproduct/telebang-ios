@@ -32,7 +32,7 @@ class VideoCategoryJSON: Mappable {
     }
     
     func mapping(map: Map) {
-        id                  <- map["url"]
+        id                  <- map["id"]
         thumbnail           <- map["image"]
         icon                <- map["icon"]
         name                <- map["name"]

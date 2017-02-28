@@ -67,7 +67,9 @@ extension CategoryController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        let vc = storyboard?.instantiateViewController(withIdentifier: "VideosByCategory") as! VideoListByCategoryController
+        vc.categoryModel = listCategoies[indexPath.row]
+        switchToViewController(viewController: vc)
     }
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {

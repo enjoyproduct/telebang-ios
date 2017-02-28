@@ -53,6 +53,7 @@
 		28E2DA331E2F511100CFD6AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E2DA311E2F511100CFD6AC /* LaunchScreen.storyboard */; };
 		28E2DA3E1E2F511200CFD6AC /* Yo365Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E2DA3D1E2F511200CFD6AC /* Yo365Tests.swift */; };
 		28E2DA491E2F511200CFD6AC /* Yo365UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E2DA481E2F511200CFD6AC /* Yo365UITests.swift */; };
+		28E69BEE1E5C50F800FEBCC9 /* VideoListByCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E69BED1E5C50F800FEBCC9 /* VideoListByCategoryController.swift */; };
 		28FD82541E320B4300EFA1A4 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD82531E320B4300EFA1A4 /* MainController.swift */; };
 		28FD82571E32113400EFA1A4 /* ValidateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD82561E32113400EFA1A4 /* ValidateUtil.swift */; };
 		384739B9F6941B9F039F3A8C /* Pods_Yo365Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B706AC0847C38FE38ED27AA0 /* Pods_Yo365Tests.framework */; };
@@ -129,6 +130,7 @@
 		28E2DA441E2F511200CFD6AC /* Yo365UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Yo365UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28E2DA481E2F511200CFD6AC /* Yo365UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yo365UITests.swift; sourceTree = "<group>"; };
 		28E2DA4A1E2F511200CFD6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28E69BED1E5C50F800FEBCC9 /* VideoListByCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoListByCategoryController.swift; path = Controller/VideoListByCategoryController.swift; sourceTree = "<group>"; };
 		28FD82531E320B4300EFA1A4 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainController.swift; path = Controller/MainController.swift; sourceTree = "<group>"; };
 		28FD82561E32113400EFA1A4 /* ValidateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidateUtil.swift; path = Helper/ValidateUtil.swift; sourceTree = "<group>"; };
 		4CBAE9E2D958CCABD6CC3CC4 /* Pods-Yo365UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yo365UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yo365UITests/Pods-Yo365UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		2848B30D1E2F56F200AAB998 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				28E69BEC1E5C50C500FEBCC9 /* VideoListByCategory */,
 				2802F84D1E4C8E13000795B8 /* Comment */,
 				2818F6691E4B294F00D408D1 /* Detail */,
 				2818F6661E4AF5AD00D408D1 /* Search */,
@@ -407,6 +410,14 @@
 				28E2DA4A1E2F511200CFD6AC /* Info.plist */,
 			);
 			path = Yo365UITests;
+			sourceTree = "<group>";
+		};
+		28E69BEC1E5C50C500FEBCC9 /* VideoListByCategory */ = {
+			isa = PBXGroup;
+			children = (
+				28E69BED1E5C50F800FEBCC9 /* VideoListByCategoryController.swift */,
+			);
+			name = VideoListByCategory;
 			sourceTree = "<group>";
 		};
 		28FD82521E320B1500EFA1A4 /* MainScreen */ = {
@@ -755,6 +766,7 @@
 				284E15BB1E49ECCA0090B276 /* FavouriteController.swift in Sources */,
 				289E53B51E51B3E5002369B7 /* ChangePasswordController.swift in Sources */,
 				286C87991E309FEE00539369 /* BaseController.swift in Sources */,
+				28E69BEE1E5C50F800FEBCC9 /* VideoListByCategoryController.swift in Sources */,
 				28FD82541E320B4300EFA1A4 /* MainController.swift in Sources */,
 				286C87941E3099E100539369 /* RegisterController.swift in Sources */,
 				284E15BD1E49FA700090B276 /* TrendingController.swift in Sources */,

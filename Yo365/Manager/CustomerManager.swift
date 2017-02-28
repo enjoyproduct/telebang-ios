@@ -79,6 +79,14 @@ class CustomerManager {
         return customerModel
     }
     
+    func getCustomerAvatar() -> String {
+        if(customerModel.avatar == nil){
+            return ""
+        }
+        
+        return customerModel.avatar!
+    }
+    
     func getCustomerID() -> Int {
         if(!isLogin()){
             return 0
