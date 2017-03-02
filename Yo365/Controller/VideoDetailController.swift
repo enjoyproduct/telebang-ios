@@ -11,6 +11,7 @@ import RAMAnimatedTabBarController
 import AVFoundation
 import AVKit
 import XCDYouTubeKit
+import RealmSwift
 
 class VideoDetailController: BaseSlideController {
     var videoModel: VideoModel? = nil
@@ -19,9 +20,13 @@ class VideoDetailController: BaseSlideController {
     @IBOutlet var lbInfo: UILabel!
     @IBOutlet var lbTitle: UILabel!
     @IBOutlet var lbSeries: UILabel!
-    @IBOutlet var lbDescription: UITextView!
+    @IBOutlet var lbDescription: UILabel!
     @IBOutlet var imvLike: UIImageView!
     @IBOutlet var lbLike: UILabel!
+    
+    var favouriteButton:UIBarButtonItem?
+    var realm: Realm?
+    var videoFavouriteSaved: VideoEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +37,16 @@ class VideoDetailController: BaseSlideController {
             return
         }
         
+        do {
+            realm = try Realm()
+        } catch let error as NSError {
+            fatalError(error.localizedDescription)
+        }
+        
         updateTitleHeader(title: (videoModel?.getTitle())!)
         
         initVideoInfo()
+        initFavourite()
         requestUpdateCounter(field: .view)
         requestGetLikeStatus()
         initPlayer()
@@ -42,11 +54,25 @@ class VideoDetailController: BaseSlideController {
     
     override func initRightHeader() {
         super.initRightHeader()
-        let favouriteButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_video_favourite"), style: .plain, target: self, action: #selector(self.callFavouriteMethod))
+        favouriteButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_video_favourite"), style: .plain, target: self, action: #selector(self.callFavouriteMethod))
         
         let downloadButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_video_download"), style: .plain, target: self, action: #selector(self.callDownloadMethod))
         
-        self.navigationItem.rightBarButtonItems = [downloadButton, favouriteButton]
+        self.navigationItem.rightBarButtonItems = [downloadButton, favouriteButton!]
+    }
+    
+    func initFavourite(){
+
+        let predicate = NSPredicate.init(format: "userID = %d AND videoID = %d", customerManager.getCustomerID(), (videoModel?.getID())!)
+        videoFavouriteSaved = realm?.objects(VideoEntity.self).filter(predicate).first
+        
+//        let countVideo = self.favouriteStack.fetchCount(From(VideoEntity.self), Where("videoID == %d", videoModel?.getID() ?? 0))
+//        
+        if(videoFavouriteSaved != nil){
+            favouriteButton?.image = UIImage.init(named: "ic_video_favourited")
+        }else{
+            favouriteButton?.image = UIImage.init(named: "ic_video_favourite")
+        }
     }
     
     func initPlayer() {
@@ -59,7 +85,23 @@ class VideoDetailController: BaseSlideController {
     }
     
     func callFavouriteMethod() {
-        
+        if(videoFavouriteSaved != nil){
+            videoFavouriteSaved?.delete()
+            videoFavouriteSaved = nil
+            
+            favouriteButton?.image = UIImage.init(named: "ic_video_favourite")
+        }else{
+            videoFavouriteSaved = VideoEntity()
+            videoFavouriteSaved?.videoID = (videoModel?.getID())!
+            videoFavouriteSaved?.videoName = (videoModel?.getTitle())!
+            videoFavouriteSaved?.videoThumbnail = (videoModel?.getThumbnail())!
+            videoFavouriteSaved?.videoSeries = (videoModel?.getSeries())!
+            videoFavouriteSaved?.videoCreateAt = (videoModel?.getUpdateAt())!
+            videoFavouriteSaved?.userID = customerManager.getCustomerID()
+            videoFavouriteSaved?.save()
+            
+            favouriteButton?.image = UIImage.init(named: "ic_video_favourited")
+        }
     }
     
     func callDownloadMethod() {
@@ -146,7 +188,7 @@ class VideoDetailController: BaseSlideController {
         ApiClient.updateVideosCounter(field: field.rawValue, videoID: (videoModel?.getID())!, errorHandler: { (message: String) in
             
         }, successHandler: {
-            self.updateLikeState(isLiked: true)
+            
         })
     }
     
@@ -163,8 +205,9 @@ class VideoDetailController: BaseSlideController {
     }
     
     func requestGetLikeStatus() {
+        self.updateLikeState(isLiked: false)
+        
         if(!customerManager.isLogin()){
-            self.updateLikeState(isLiked: false)
             return
         }
 

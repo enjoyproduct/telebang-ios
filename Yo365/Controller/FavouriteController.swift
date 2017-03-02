@@ -6,15 +6,16 @@
 //  Copyright © 2017 Billy. All rights reserved.
 //
 import UIKit
+import RealmSwift
 
 class FavouriteController: BaseSlideController{
     @IBOutlet var tableView: UITableView!
     var pageNumber:Int = 1
-    var listVideo: Array<VideoModel> = []
-    let cellIdentifier = "VideoViewCell2"
+    var listVideo: Array<VideoEntity> = []
+    let cellIdentifier = "FavouriteViewCell"
     
     let cellSpacingHeight: CGFloat = 15
-    var isLoadMore: Bool = true
+//    var isLoadMore: Bool = true
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
@@ -30,7 +31,10 @@ class FavouriteController: BaseSlideController{
         refreshControl.addTarget(self, action: #selector(self.refresh), for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl)
 
-        tableView.register(UINib(nibName: "VideoViewCell2", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        tableView.register(UINib(nibName: "FavouriteViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         requestGetVideos()
     }
     
@@ -47,32 +51,24 @@ class FavouriteController: BaseSlideController{
     
     func refresh(sender:AnyObject) {
         self.pageNumber = 1
-        self.isLoadMore = true
+//        self.isLoadMore = true
         requestGetVideos()
     }
     
     func requestGetVideos() {
-        if(pageNumber == 1){
-            listVideo.removeAll()
-            self.tableView.reloadData()
-        }
-        
-        ApiClient.getVideosLatest(pageNumber: pageNumber, errorHandler: { (message: String) in
-            self.refreshControl.endRefreshing()
+        do {
+            let realm = try Realm()
+            let data = realm.objects(VideoEntity.self)
+            print(data)
             
-        }) { (data: Array<VideoResponseJSON>) in
-            self.refreshControl.endRefreshing()
-            
-            if(data.count < LIMIT_VIDEOS_HOMES){
-                self.isLoadMore = false
-            }
-            
+            self.listVideo.removeAll()
             for model in data {
-                self.listVideo.append(VideoModel.init(videoJSON: model))
+                self.listVideo.append(model)
             }
-            
-            self.pageNumber += 1
             self.tableView.reloadData()
+            
+        } catch let error as NSError {
+            fatalError(error.localizedDescription)
         }
     }
 }
@@ -88,18 +84,18 @@ extension FavouriteController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if(isLoadMore && indexPath.section == listVideo.count-1){
-            requestGetVideos()
-        }
+//        if(isLoadMore && indexPath.section == listVideo.count-1){
+//            requestGetVideos()
+//        }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! VideoViewCell2
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! FavouriteViewCell
         cell.selectionStyle = .none
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let videoCell = cell as! VideoViewCell2
+        let videoCell = cell as! FavouriteViewCell
         videoCell.updateView(model: listVideo[indexPath.section])
     }
     
@@ -108,9 +104,20 @@ extension FavouriteController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "VideoDetailScreen") as! VideoDetailController
-        vc.videoModel = listVideo[indexPath.section]
-        switchToViewController(viewController: vc)
+        requestGetVideo(id: listVideo[indexPath.section].videoID)
+    }
+    
+    func requestGetVideo(id: Int){
+        showLoading(msg: "Please wait while the content loads")
+        ApiClient.getVideosByID(videoID: id, errorHandler: { (msg) in
+            self.hideLoading()
+            self.showMessage(title: "Error", msg: msg)
+        }, successHandler: { (model: VideoResponseJSON) in
+            self.hideLoading()
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "VideoDetailScreen") as! VideoDetailController
+            vc.videoModel = VideoModel.init(videoJSON: model)
+            self.switchToViewController(viewController: vc)
+        })
     }
     
     // Set the spacing between sections
@@ -135,7 +142,7 @@ extension FavouriteController: UITableViewDataSource, UITableViewDelegate{
     
     func highlightCell(indexPath : IndexPath, flag: Bool) {
         
-        let cell = self.tableView.cellForRow(at: indexPath) as! VideoViewCell2
+        let cell = self.tableView.cellForRow(at: indexPath) as! FavouriteViewCell
         
         if flag {
             cell.bgrViewHover.alpha = 1

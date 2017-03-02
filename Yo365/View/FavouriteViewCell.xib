@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavouriteViewCell" rowHeight="85" id="KGk-i7-Jjw" customClass="FavouriteViewCell" customModule="Yo365" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="521" height="85"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="521" height="84"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1d7-GU-Uix">
+                        <rect key="frame" x="15" y="0.0" width="506" height="85"/>
+                        <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image_default" translatesAutoresizingMaskIntoConstraints="NO" id="S0E-4t-AhX">
+                        <rect key="frame" x="15" y="0.0" width="165" height="85"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="85" id="G8v-ja-zpn"/>
+                            <constraint firstAttribute="width" constant="165" id="SC8-Ez-Bzs"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Captain America's Brooklyn Apartment Fireside" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PD-Rw-9eb">
+                        <rect key="frame" x="195" y="0.0" width="311" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA8-AR-wfd">
+                        <rect key="frame" x="195" y="41" width="38" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.56078431370000004" green="0.5568627451" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Master Chef" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTg-96-ppR">
+                        <rect key="frame" x="238" y="41" width="260" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.94509803920000002" green="0.25098039220000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Create At" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaT-ip-MNd">
+                        <rect key="frame" x="195" y="57" width="57" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.56078431370000004" green="0.5568627451" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Master Chef" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbL-Uo-iJW">
+                        <rect key="frame" x="257" y="57" width="241" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.94509803920000002" green="0.25098039220000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6PD-Rw-9eb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3hv-yx-T9q"/>
+                    <constraint firstItem="1d7-GU-Uix" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="4a9-zS-G0E"/>
+                    <constraint firstItem="jaT-ip-MNd" firstAttribute="top" secondItem="AA8-AR-wfd" secondAttribute="bottom" id="9gy-gV-ln3"/>
+                    <constraint firstItem="jaT-ip-MNd" firstAttribute="leading" secondItem="S0E-4t-AhX" secondAttribute="trailing" constant="15" id="B9S-pd-wUY"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="wTg-96-ppR" secondAttribute="trailing" constant="15" id="BMJ-wU-4QS"/>
+                    <constraint firstItem="S0E-4t-AhX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="HWW-Rm-MUV"/>
+                    <constraint firstItem="AA8-AR-wfd" firstAttribute="top" secondItem="6PD-Rw-9eb" secondAttribute="bottom" constant="5" id="IDs-uP-jvt"/>
+                    <constraint firstItem="wTg-96-ppR" firstAttribute="leading" secondItem="AA8-AR-wfd" secondAttribute="trailing" constant="5" id="Nt9-FL-mgq"/>
+                    <constraint firstItem="S0E-4t-AhX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="O0n-iU-Z61"/>
+                    <constraint firstItem="AA8-AR-wfd" firstAttribute="leading" secondItem="S0E-4t-AhX" secondAttribute="trailing" constant="15" id="RJQ-Tx-hYc"/>
+                    <constraint firstItem="wTg-96-ppR" firstAttribute="centerY" secondItem="AA8-AR-wfd" secondAttribute="centerY" id="Rft-3j-1xf"/>
+                    <constraint firstItem="6PD-Rw-9eb" firstAttribute="leading" secondItem="S0E-4t-AhX" secondAttribute="trailing" constant="15" id="YxL-mt-GtQ"/>
+                    <constraint firstAttribute="bottom" secondItem="S0E-4t-AhX" secondAttribute="bottom" id="hwn-71-KyE"/>
+                    <constraint firstAttribute="trailing" secondItem="6PD-Rw-9eb" secondAttribute="trailing" constant="15" id="iJl-Ed-e2u"/>
+                    <constraint firstAttribute="trailing" secondItem="1d7-GU-Uix" secondAttribute="trailing" id="l0z-6w-PZz"/>
+                    <constraint firstItem="1d7-GU-Uix" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="nSo-bt-bdB"/>
+                    <constraint firstItem="jbL-Uo-iJW" firstAttribute="centerY" secondItem="jaT-ip-MNd" secondAttribute="centerY" id="oYX-vB-4rH"/>
+                    <constraint firstAttribute="bottom" secondItem="1d7-GU-Uix" secondAttribute="bottom" id="tfY-0T-hQr"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="jbL-Uo-iJW" secondAttribute="trailing" constant="15" id="z5P-hx-dfI"/>
+                    <constraint firstItem="jbL-Uo-iJW" firstAttribute="leading" secondItem="jaT-ip-MNd" secondAttribute="trailing" constant="5" id="zAf-3X-TPd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bgrViewHover" destination="1d7-GU-Uix" id="bzH-J1-JPp"/>
+                <outlet property="imvThumbnail" destination="S0E-4t-AhX" id="OV0-qT-Fw0"/>
+                <outlet property="lbCreateAt" destination="jbL-Uo-iJW" id="oSE-UI-m8a"/>
+                <outlet property="lbSeries" destination="wTg-96-ppR" id="NAe-fL-JON"/>
+                <outlet property="lbTitle" destination="6PD-Rw-9eb" id="bhc-eW-pBB"/>
+            </connections>
+            <point key="canvasLocation" x="125.5" y="103.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="no_image_default" width="480" height="320"/>
+    </resources>
+</document>

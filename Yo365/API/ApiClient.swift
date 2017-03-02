@@ -156,6 +156,19 @@ class ApiClient {
         }
     }
     
+    static func getVideosByID(videoID: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (VideoResponseJSON)-> Void) {
+        let relativeUrl = String.init(format: RELATIVE_URL_GET_VIDEO_BY_ID, videoID)
+        Alamofire.request(getAbsoluteUrl(relativeUrl: relativeUrl)).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let content: Dictionary<String, AnyObject>? = response.result.value?.content as! Dictionary<String, AnyObject>?
+                let data = VideoResponseJSON(JSON: content!)
+                successHandler(data!)
+            }
+        }
+    }
+    
     static func getVideosBeyKeyword(keyword: String, pageNumber: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (Array<VideoResponseJSON>)-> Void) {
         let params: Parameters = [KEY_KEYWORD: keyword, KEY_PAGE_NUMBER: pageNumber, KEY_LIMIT: LIMIT_VIDEOS_SEARCH ]
         
