@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchController: BaseSlideController {
+class SearchController: BaseTabController {
     @IBOutlet var tableView: UITableView!
     var pageNumber:Int = 1
     var listVideo: Array<VideoModel> = []
@@ -155,7 +155,9 @@ extension SearchController: UITableViewDataSource, UITableViewDelegate{
 //    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "VideoDetailScreen") as! VideoDetailController
+        vc.videoModel = listVideo[indexPath.section]
+        switchToViewController(viewController: vc)
     }
     
     // Set the spacing between sections

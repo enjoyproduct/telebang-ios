@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryController: BaseSlideController{
+class CategoryController: BaseTabController{
     @IBOutlet var tableView: UITableView!
     var listCategoies: Array<VideoCategoryJSON> = []
     let cellIdentifier = "CategoryViewCell"

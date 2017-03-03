@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoListByCategoryController: BaseSlideController {
+class VideoListByCategoryController: BaseTabController {
     @IBOutlet var tableView: UITableView!
     var pageNumber:Int = 1
     var listVideo: Array<VideoModel> = []

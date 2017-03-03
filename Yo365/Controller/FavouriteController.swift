@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class FavouriteController: BaseSlideController{
+class FavouriteController: BaseTabController{
     @IBOutlet var tableView: UITableView!
     var pageNumber:Int = 1
     var listVideo: Array<VideoEntity> = []
@@ -35,6 +35,7 @@ class FavouriteController: BaseSlideController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         requestGetVideos()
     }
     

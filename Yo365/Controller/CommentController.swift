@@ -9,7 +9,7 @@
 import UIKit
 import RAMAnimatedTabBarController
 
-class CommentController: BaseSlideController {
+class CommentController: BaseTabController {
     var videoModel: VideoModel? = nil
     
     @IBOutlet var utfComment: UITextField!

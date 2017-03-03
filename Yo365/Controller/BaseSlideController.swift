@@ -15,6 +15,15 @@ class BaseSlideController: BaseController{
         
         initHeader()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if ((self.navigationController?.viewControllers.count)! > 1) {
+            enableOpenMenu(enable: false)
+        }else{
+            enableOpenMenu(enable: true)
+        }
+    }
 
     func initHeader() {
         let nav = self.navigationController?.navigationBar
@@ -43,6 +52,7 @@ class BaseSlideController: BaseController{
     }
     
     func initRightHeader() {
+        
     }
     
     func callBackMethod() {
@@ -51,5 +61,13 @@ class BaseSlideController: BaseController{
     
     func callMenuMethod() {
          self.slideMenuController()?.openLeft()
+    }
+    
+    func enableOpenMenu(enable: Bool) {
+        if(enable){
+            self.slideMenuController()?.addLeftGestures()
+        }else{
+            self.slideMenuController()?.removeLeftGestures()
+        }
     }
 }

@@ -12,6 +12,7 @@
 		2802F84B1E4C8BBD000795B8 /* CommentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8491E4C8BBD000795B8 /* CommentViewCell.swift */; };
 		2802F84C1E4C8BBD000795B8 /* CommentViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2802F84A1E4C8BBD000795B8 /* CommentViewCell.xib */; };
 		2802F84F1E4C8E23000795B8 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F84E1E4C8E23000795B8 /* CommentController.swift */; };
+		2805F9331E695F9000A291DA /* BaseTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2805F9321E695F9000A291DA /* BaseTabController.swift */; };
 		2818F6681E4AF88600D408D1 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818F6671E4AF88600D408D1 /* SearchController.swift */; };
 		2818F66B1E4B296900D408D1 /* VideoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818F66A1E4B296900D408D1 /* VideoDetailController.swift */; };
 		281ACF141E37411300F9E063 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281ACF131E37411300F9E063 /* ContainerViewController.swift */; };
@@ -86,6 +87,7 @@
 		2802F8491E4C8BBD000795B8 /* CommentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentViewCell.swift; path = View/CommentViewCell.swift; sourceTree = "<group>"; };
 		2802F84A1E4C8BBD000795B8 /* CommentViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentViewCell.xib; path = View/CommentViewCell.xib; sourceTree = "<group>"; };
 		2802F84E1E4C8E23000795B8 /* CommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentController.swift; path = Controller/CommentController.swift; sourceTree = "<group>"; };
+		2805F9321E695F9000A291DA /* BaseTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTabController.swift; path = Controller/BaseTabController.swift; sourceTree = "<group>"; };
 		2818F6671E4AF88600D408D1 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = Controller/SearchController.swift; sourceTree = "<group>"; };
 		2818F66A1E4B296900D408D1 /* VideoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoDetailController.swift; path = Controller/VideoDetailController.swift; sourceTree = "<group>"; };
 		281ACF131E37411300F9E063 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = Controller/ContainerViewController.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			children = (
 				286C87981E309FEE00539369 /* BaseController.swift */,
 				28975E631E48727F00CB824A /* BaseSlideController.swift */,
+				2805F9321E695F9000A291DA /* BaseTabController.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -783,6 +786,7 @@
 				286C87A21E30C37000539369 /* AppConstant.swift in Sources */,
 				286C879D1E30BE0F00539369 /* ApiClient.swift in Sources */,
 				284E15BB1E49ECCA0090B276 /* FavouriteController.swift in Sources */,
+				2805F9331E695F9000A291DA /* BaseTabController.swift in Sources */,
 				289E53B51E51B3E5002369B7 /* ChangePasswordController.swift in Sources */,
 				286C87991E309FEE00539369 /* BaseController.swift in Sources */,
 				28E69BEE1E5C50F800FEBCC9 /* VideoListByCategoryController.swift in Sources */,

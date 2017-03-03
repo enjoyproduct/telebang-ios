@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeController: BaseSlideController{
+class HomeController: BaseTabController{
     var pageNumber:Int = 1
     var listVideo: Array<VideoModel> = []
     let cellIdentifier = "GridVideoCell"

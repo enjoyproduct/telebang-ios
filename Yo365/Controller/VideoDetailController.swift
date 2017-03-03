@@ -13,7 +13,7 @@ import AVKit
 import XCDYouTubeKit
 import RealmSwift
 
-class VideoDetailController: BaseSlideController {
+class VideoDetailController: BaseTabController {
     var videoModel: VideoModel? = nil
     
     @IBOutlet var viewPlayer: UIView!
