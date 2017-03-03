@@ -572,7 +572,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OMN-90-rHw" id="Lh3-d3-k0Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yv-6A-US1">
@@ -637,7 +637,7 @@
         <!--Video List By Category Controller-->
         <scene sceneID="IJc-Th-gcS">
             <objects>
-                <viewController storyboardIdentifier="VideosByCategory" id="skO-py-EUG" customClass="VideoListByCategoryController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideosByCategory" hidesBottomBarWhenPushed="YES" id="skO-py-EUG" customClass="VideoListByCategoryController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1FZ-YO-mUL"/>
                         <viewControllerLayoutGuide type="bottom" id="JzV-dx-i17"/>
@@ -670,7 +670,7 @@
         <!--Search Controller-->
         <scene sceneID="adr-s2-ARb">
             <objects>
-                <viewController id="SRk-T8-EYO" customClass="SearchController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="SRk-T8-EYO" customClass="SearchController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oxo-lg-0zs"/>
                         <viewControllerLayoutGuide type="bottom" id="k5U-eg-XXU"/>
@@ -712,7 +712,7 @@
         <!--Video Detail Controller-->
         <scene sceneID="TC9-88-Sff">
             <objects>
-                <viewController storyboardIdentifier="VideoDetailScreen" id="Mbi-Jx-xqE" customClass="VideoDetailController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoDetailScreen" hidesBottomBarWhenPushed="YES" id="Mbi-Jx-xqE" customClass="VideoDetailController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wku-2W-hLj"/>
                         <viewControllerLayoutGuide type="bottom" id="wRV-MK-ALL"/>
@@ -969,7 +969,7 @@
         <!--Comment Controller-->
         <scene sceneID="7je-Eg-yEL">
             <objects>
-                <viewController storyboardIdentifier="CommentScreen" id="C2h-YX-kBO" customClass="CommentController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommentScreen" hidesBottomBarWhenPushed="YES" id="C2h-YX-kBO" customClass="CommentController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ohi-2q-tnv"/>
                         <viewControllerLayoutGuide type="bottom" id="jWq-sh-gb8"/>
@@ -2031,7 +2031,7 @@
         <image name="no_image_default" width="480" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ThJ-8T-2Pa"/>
+        <segue reference="aOe-bu-aDH"/>
         <segue reference="0o1-Fu-ya5"/>
     </inferredMetricsTieBreakers>
 </document>
