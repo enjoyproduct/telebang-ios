@@ -10,6 +10,7 @@ import UIKit
 import SwiftOverlays
 
 class BaseController: UIViewController{
+    
     func backView() {
         guard navigationController?.popViewController(animated: true) != nil else { //modal
             print("Not a navigation Controller")

@@ -47,6 +47,7 @@
                             <constraint firstItem="Lc9-pT-ffg" firstAttribute="top" secondItem="yRv-OP-Y9l" secondAttribute="bottom" constant="16" id="zJp-uK-TM4"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

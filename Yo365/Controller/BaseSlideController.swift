@@ -15,7 +15,7 @@ class BaseSlideController: BaseController{
         
         initHeader()
     }
-    
+
     func initHeader() {
         let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.black
