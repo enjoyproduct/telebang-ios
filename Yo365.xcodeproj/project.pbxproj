@@ -58,6 +58,7 @@
 		28E2DA491E2F511200CFD6AC /* Yo365UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E2DA481E2F511200CFD6AC /* Yo365UITests.swift */; };
 		28E69BEE1E5C50F800FEBCC9 /* VideoListByCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E69BED1E5C50F800FEBCC9 /* VideoListByCategoryController.swift */; };
 		28E9BAA11E682B4400BFC1FD /* VideoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E9BAA01E682B4400BFC1FD /* VideoEntity.swift */; };
+		28FCDAF91E698F8500666EF4 /* StaticPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCDAF81E698F8500666EF4 /* StaticPageController.swift */; };
 		28FD82541E320B4300EFA1A4 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD82531E320B4300EFA1A4 /* MainController.swift */; };
 		28FD82571E32113400EFA1A4 /* ValidateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD82561E32113400EFA1A4 /* ValidateUtil.swift */; };
 		384739B9F6941B9F039F3A8C /* Pods_Yo365Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B706AC0847C38FE38ED27AA0 /* Pods_Yo365Tests.framework */; };
@@ -139,6 +140,7 @@
 		28E2DA4A1E2F511200CFD6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28E69BED1E5C50F800FEBCC9 /* VideoListByCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoListByCategoryController.swift; path = Controller/VideoListByCategoryController.swift; sourceTree = "<group>"; };
 		28E9BAA01E682B4400BFC1FD /* VideoEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEntity.swift; sourceTree = "<group>"; };
+		28FCDAF81E698F8500666EF4 /* StaticPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaticPageController.swift; path = Controller/StaticPageController.swift; sourceTree = "<group>"; };
 		28FD82531E320B4300EFA1A4 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainController.swift; path = Controller/MainController.swift; sourceTree = "<group>"; };
 		28FD82561E32113400EFA1A4 /* ValidateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidateUtil.swift; path = Helper/ValidateUtil.swift; sourceTree = "<group>"; };
 		4CBAE9E2D958CCABD6CC3CC4 /* Pods-Yo365UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yo365UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yo365UITests/Pods-Yo365UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 		2848B30D1E2F56F200AAB998 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				28FCDAF71E698F6600666EF4 /* StaticPage */,
 				28E69BEC1E5C50C500FEBCC9 /* VideoListByCategory */,
 				2802F84D1E4C8E13000795B8 /* Comment */,
 				2818F6691E4B294F00D408D1 /* Detail */,
@@ -439,6 +442,14 @@
 				28E69BED1E5C50F800FEBCC9 /* VideoListByCategoryController.swift */,
 			);
 			name = VideoListByCategory;
+			sourceTree = "<group>";
+		};
+		28FCDAF71E698F6600666EF4 /* StaticPage */ = {
+			isa = PBXGroup;
+			children = (
+				28FCDAF81E698F8500666EF4 /* StaticPageController.swift */,
+			);
+			name = StaticPage;
 			sourceTree = "<group>";
 		};
 		28FD82521E320B1500EFA1A4 /* MainScreen */ = {
@@ -788,6 +799,7 @@
 				284E15BB1E49ECCA0090B276 /* FavouriteController.swift in Sources */,
 				2805F9331E695F9000A291DA /* BaseTabController.swift in Sources */,
 				289E53B51E51B3E5002369B7 /* ChangePasswordController.swift in Sources */,
+				28FCDAF91E698F8500666EF4 /* StaticPageController.swift in Sources */,
 				286C87991E309FEE00539369 /* BaseController.swift in Sources */,
 				28E69BEE1E5C50F800FEBCC9 /* VideoListByCategoryController.swift in Sources */,
 				28FD82541E320B4300EFA1A4 /* MainController.swift in Sources */,

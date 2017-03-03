@@ -119,7 +119,11 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
             break
             
         case .AboutUs:
-          
+            let nav = self.storyboard?.instantiateViewController(withIdentifier: "StaticPageScreen") as! UINavigationController
+            let pageController = nav.topViewController as! StaticPageController
+            pageController.staticTitle = "About Us"
+            pageController.staticPath = PAGE_ABOUT_US
+            controller = nav
             break
             
         case .Feedback:
@@ -127,11 +131,19 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
             break
             
         case .Terms:
-            
+            let nav = self.storyboard?.instantiateViewController(withIdentifier: "StaticPageScreen") as! UINavigationController
+            let pageController = nav.topViewController as! StaticPageController
+            pageController.staticTitle = "Terms And Conditions"
+            pageController.staticPath = PAGE_TERM
+            controller = nav
             break
             
         case .Help:
-            
+            let nav = self.storyboard?.instantiateViewController(withIdentifier: "StaticPageScreen") as! UINavigationController
+            let pageController = nav.topViewController as! StaticPageController
+            pageController.staticTitle = "Help"
+            pageController.staticPath = PAGE_HELP
+            controller = nav
             break
             
         case .Share:
