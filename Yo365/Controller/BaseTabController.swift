@@ -26,9 +26,5 @@ class BaseTabController: BaseSlideController{
         atc.animationTabBarHidden(flag)
         
         self.tabBarController?.tabBar.isHidden = flag
-        
-        if(flag){
-            self.tabBarController?.tabBar.layer.zPosition = -1
-        }
     }
 }

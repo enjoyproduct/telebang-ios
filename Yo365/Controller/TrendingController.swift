@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class TrendingController: BaseSlideController{
+class TrendingController: BaseTabController{
     @IBOutlet var tableView: UITableView!
     var pageNumber:Int = 1
     var listVideo: Array<VideoModel> = []

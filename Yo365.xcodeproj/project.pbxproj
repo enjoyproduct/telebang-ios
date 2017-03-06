@@ -520,6 +520,7 @@
 				28E2DA231E2F511100CFD6AC /* Resources */,
 				5567D611D3EE31960A932E9B /* [CP] Embed Pods Frameworks */,
 				592D0AF6AC7F8C733CB40EB5 /* [CP] Copy Pods Resources */,
+				2822E5E41E6D69910086F1A8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -584,7 +585,8 @@
 				TargetAttributes = {
 					28E2DA241E2F511100CFD6AC = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = C84X7X44XZ;
+						ProvisioningStyle = Manual;
 					};
 					28E2DA381E2F511200CFD6AC = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -681,6 +683,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		2822E5E41E6D69910086F1A8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" cad8c5a4f0ccb472ffb7b5d4a65deeba4feee21d e61fcc0bf31d6331911f67c4daf70634879e3e0031764e89c18635667fdce274";
 		};
 		5567D611D3EE31960A932E9B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -987,10 +1002,15 @@
 			baseConfigurationReference = B6CC2262E4AACC7B5A2A5059 /* Pods-Yo365.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tuan Nguyen (C84X7X44XZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = C84X7X44XZ;
 				INFOPLIST_FILE = Yo365/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspius.Yo365;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1f29068b-c2f8-473b-95e1-3bdeb7de4388";
+				PROVISIONING_PROFILE_SPECIFIER = "Yo365 Distribution";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1000,10 +1020,15 @@
 			baseConfigurationReference = C0FE05F569DB3758741EAA99 /* Pods-Yo365.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tuan Nguyen (C84X7X44XZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = C84X7X44XZ;
 				INFOPLIST_FILE = Yo365/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspius.Yo365;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1f29068b-c2f8-473b-95e1-3bdeb7de4388";
+				PROVISIONING_PROFILE_SPECIFIER = "Yo365 Distribution";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

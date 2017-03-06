@@ -8,6 +8,8 @@
 
 import UIKit
 import FacebookCore
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         UIApplication.shared.statusBarStyle = .lightContent
+        
+        Fabric.with([Crashlytics.self])
         return true
     }
     
