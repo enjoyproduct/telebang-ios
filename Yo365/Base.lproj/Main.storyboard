@@ -572,7 +572,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OMN-90-rHw" id="Lh3-d3-k0Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yv-6A-US1">
@@ -2056,6 +2056,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4PL-bs-R6z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3457" y="2229"/>
+        </scene>
+        <!--News Controller-->
+        <scene sceneID="Hkh-qY-IxC">
+            <objects>
+                <viewController id="nON-nl-1j4" customClass="NewsController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fDS-xK-pg9"/>
+                        <viewControllerLayoutGuide type="bottom" id="R7j-dQ-f3f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BuE-Oz-sKz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Km7-Wz-M5b">
+                                <rect key="frame" x="136" y="323" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Km7-Wz-M5b" firstAttribute="centerY" secondItem="BuE-Oz-sKz" secondAttribute="centerY" id="bgS-Xi-ORj"/>
+                            <constraint firstItem="Km7-Wz-M5b" firstAttribute="centerX" secondItem="BuE-Oz-sKz" secondAttribute="centerX" id="vj4-zZ-t6A"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XKA-gK-ONZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k2x-sI-Ee1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4396" y="2909.5952023988007"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zEt-2r-kfU">
+            <objects>
+                <navigationController storyboardIdentifier="NewsScreen" automaticallyAdjustsScrollViewInsets="NO" id="ER0-tq-1hf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LcR-AW-xbO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nON-nl-1j4" kind="relationship" relationship="rootViewController" id="Hid-QT-xdJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oGH-m9-VRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3456.8000000000002" y="2909.5952023988007"/>
         </scene>
     </scenes>
     <resources>

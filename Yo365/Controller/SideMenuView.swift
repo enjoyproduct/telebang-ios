@@ -151,6 +151,11 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
             present(activityViewController, animated: true, completion: {})
             break
             
+        case .News:
+            let newsControler = self.storyboard?.instantiateViewController(withIdentifier: "NewsScreen")
+            controller = newsControler
+            break
+            
         default:
             
             break
