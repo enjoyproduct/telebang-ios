@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class SettingController: BaseSlideController {
+class SettingController: BaseNavController {
     @IBOutlet var imvAvatar: UIImageView!
     @IBOutlet var imvPremium: UIImageView!
     

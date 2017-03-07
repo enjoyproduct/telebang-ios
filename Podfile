@@ -24,6 +24,7 @@ pod "XCDYouTubeKit", "~> 2.5.4"
 pod 'RealmSwift'
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'IHKeyboardAvoiding'
 
 end
 

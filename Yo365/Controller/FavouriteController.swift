@@ -39,17 +39,6 @@ class FavouriteController: BaseTabController{
         requestGetVideos()
     }
     
-    override func initRightHeader() {
-        super.initRightHeader()
-        let rightButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_search"), style: .plain, target: self, action: #selector(self.callSearchMethod))
-        self.navigationItem.rightBarButtonItem = rightButton
-    }
-    
-    func callSearchMethod() {
-        performSegue(withIdentifier: "SearchView",
-                     sender: self)
-    }
-    
     func refresh(sender:AnyObject) {
         self.pageNumber = 1
 //        self.isLoadMore = true
@@ -115,9 +104,12 @@ extension FavouriteController: UITableViewDataSource, UITableViewDelegate{
             self.showMessage(title: "Error", msg: msg)
         }, successHandler: { (model: VideoResponseJSON) in
             self.hideLoading()
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "VideoDetailScreen") as! VideoDetailController
+            let nav = self.storyboard?.instantiateViewController(withIdentifier: "VideoDetailScreen") as!
+            UINavigationController
+            let vc = nav.topViewController as! VideoDetailController
             vc.videoModel = VideoModel.init(videoJSON: model)
-            self.switchToViewController(viewController: vc)
+            self.present(nav, animated: true, completion: nil)
+
         })
     }
     

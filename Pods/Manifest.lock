@@ -25,6 +25,7 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.19.0):
     - FBSDKCoreKit
+  - IHKeyboardAvoiding (3.7)
   - Kingfisher (3.5.0)
   - ObjectMapper (2.2.4)
   - RAMAnimatedTabBarController (2.0.13)
@@ -47,6 +48,7 @@ DEPENDENCIES:
   - Fabric
   - FacebookCore
   - FacebookLogin
+  - IHKeyboardAvoiding
   - Kingfisher (~> 3.0)
   - ObjectMapper (~> 2.2)
   - RAMAnimatedTabBarController (~> 2.0.13)
@@ -68,6 +70,7 @@ SPEC CHECKSUMS:
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FBSDKCoreKit: 894b2b6eda6a4c8c4204e92e59cc355709ef045c
   FBSDKLoginKit: 83ca4d8f12a2022570af9fd6aacf27f6b425b99f
+  IHKeyboardAvoiding: 4c852fae85667469307678c65f14f5cac8a7be92
   Kingfisher: 7c62087039d93d26c54c8dd9b0b588d2ce55cef6
   ObjectMapper: 81d0e5d7c57129e3e93f29a04bdf9669542b37d2
   RAMAnimatedTabBarController: 2510f3b66954c3f77ea1042a35d34df8f5f3b604
@@ -79,6 +82,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCDYouTubeKit: 80eb3978dae220a0116d198bca6852c6c969fa66
 
-PODFILE CHECKSUM: 4d22d89d63fd8a253a6cb29e972c6505b3039fab
+PODFILE CHECKSUM: c610834a26a54d6bfd08f7bf2bd21c1664fa5b60
 
 COCOAPODS: 1.1.1

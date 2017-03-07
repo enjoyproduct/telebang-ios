@@ -17,10 +17,13 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var lbEmail: UILabel!
     
     let cellIdentifier = "SlideMenuCellScreen"
+    let picker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        picker.delegate = self
+        
         elements = try! SlideMenuElement.loadFromPlist()
         
         tableView.delegate = self
@@ -58,8 +61,15 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
         tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
         
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "SettingScreen") {
-           self.slideMenuController()?.changeMainViewController(controller, close: true)
+            self.slideMenuController()?.changeMainViewController(controller, close: true)
         }
+    }
+    
+    @IBAction func tapAvatar(_ sender: UITapGestureRecognizer) {
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(picker, animated: true, completion: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -111,11 +121,11 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
             break
             
         case .Download:
-      
+            
             break
             
         case .Upload:
-         
+            
             break
             
         case .AboutUs:
@@ -177,4 +187,31 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
         let cellToDeSelect:UITableViewCell = tableView.cellForRow(at: indexPath)!
         cellToDeSelect.contentView.backgroundColor = UIColor.white
     }
+}
+
+extension SideMenuView: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+        
+        //        let imageUrl          = info[UIImagePickerControllerReferenceURL] as! NSURL
+        //        let imageName         = imageUrl.lastPathComponent
+        
+        dismiss(animated:true, completion: nil) //5
+        showLoading(msg: "Please wait while the content loads")
+        ApiClient.changeAvatar(customerID: customerManager.getCustomerID(), image: chosenImage, errorHandler: { (msg: String?) in
+            self.hideLoading()
+            self.showMessage(title: "Error", msg: msg!)
+        }, successHandler: { (response: CustomerResponse?) in
+            self.hideLoading()
+            self.imvAvatar.image = chosenImage //4
+            customerManager.onChangeProfileSuccessfully(customer: response!)
+            self.showMessage(title: "Sucessfully", msg: "Change Avatar Successfully!")
+        }) { (progressCompletted: Int) in
+            self.updateOverlayText(String.init(format: "Processing... %d%%", progressCompletted))
+        }
+    }   
 }

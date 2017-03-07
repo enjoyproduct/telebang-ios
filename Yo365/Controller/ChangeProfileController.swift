@@ -9,8 +9,9 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import IHKeyboardAvoiding
 
-class ChangeProfileController: BaseSlideController {
+class ChangeProfileController: BaseNavController {
     @IBOutlet var imvBgrAvatar: UIImageView!
     @IBOutlet var imvAvatar: UIImageView!
     @IBOutlet var lbUsername: UILabel!
@@ -18,6 +19,7 @@ class ChangeProfileController: BaseSlideController {
     @IBOutlet var utfLastName: UITextField!
     @IBOutlet var utfEmail: UITextField!
     @IBOutlet var utfPhone: UITextField!
+    @IBOutlet var avoidingView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,36 @@ class ChangeProfileController: BaseSlideController {
         utfFirstName.text = customerManager.getCustomerModel().firstName
         utfLastName.text = customerManager.getCustomerModel().lastName
         utfPhone.text = customerManager.getCustomerModel().phone
+        
+        utfFirstName.delegate = self
+        utfLastName.delegate = self
+        utfEmail.delegate = self
+        utfPhone.delegate = self
+        
+        enableTapDismissKeyboar()
+        addDoneButtonOnKeyboard()
+        
+        KeyboardAvoiding.avoidingView = self.avoidingView
+    }
+    
+    func addDoneButtonOnKeyboard() {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle       = UIBarStyle.default
+        let flexSpace              = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem  = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(self.doneButtonAction))
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.utfPhone.inputAccessoryView = doneToolbar
+    }
+    
+    func doneButtonAction() {
+        self.utfPhone.resignFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,7 +108,7 @@ class ChangeProfileController: BaseSlideController {
     
     func validate() -> String {
         var message:String = ""
-
+        
         let email = utfEmail.text
         let firstName = utfFirstName.text
         let lastName = utfLastName.text
@@ -91,5 +123,18 @@ class ChangeProfileController: BaseSlideController {
         
         return message
     }
+}
 
+extension ChangeProfileController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == utfFirstName {
+            utfLastName.becomeFirstResponder() //move it to your next textField.
+        }else if textField == utfLastName {
+            utfEmail.becomeFirstResponder()
+        }else if textField == utfEmail{
+            utfPhone.becomeFirstResponder()
+        }
+        
+        return true
+    }
 }

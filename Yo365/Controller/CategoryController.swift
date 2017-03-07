@@ -24,17 +24,6 @@ class CategoryController: BaseTabController{
         requestGetCategories()
     }
     
-    override func initRightHeader() {
-        super.initRightHeader()
-        let rightButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_search"), style: .plain, target: self, action: #selector(self.callSearchMethod))
-        self.navigationItem.rightBarButtonItem = rightButton
-    }
-    
-    func callSearchMethod() {
-        performSegue(withIdentifier: "SearchView",
-                     sender: self)
-    }
-    
     func requestGetCategories() {
         ApiClient.getVideoCategories(errorHandler: { (message: String) in
             
@@ -66,10 +55,12 @@ extension CategoryController: UITableViewDataSource, UITableViewDelegate{
         return 100
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "VideosByCategory") as! VideoListByCategoryController
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {       
+        let nav = storyboard?.instantiateViewController(withIdentifier: "VideosByCategory") as!
+        UINavigationController
+        let vc = nav.topViewController as! VideoListByCategoryController
         vc.categoryModel = listCategoies[indexPath.row]
-        switchToViewController(viewController: vc)
+        present(nav, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {

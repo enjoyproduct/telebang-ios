@@ -27,17 +27,19 @@ class BaseController: UIViewController{
         }
     }
 
-    func switchToViewController(identifier: String) {
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: identifier) else {
-            print("View controller not found")
-            return
-        }
+    func enableTapDismissKeyboar() {
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         
-        switchToViewController(viewController: vc)
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
     }
-    
-    func switchToViewController(viewController: UIViewController) {
-        navigationController?.pushViewController(viewController, animated: true )
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func showMessage(title: String, msg: String) {

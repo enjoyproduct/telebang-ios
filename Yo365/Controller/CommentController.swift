@@ -8,17 +8,21 @@
 
 import UIKit
 import RAMAnimatedTabBarController
+import IHKeyboardAvoiding
 
-class CommentController: BaseTabController {
+class CommentController: BaseNavController {
     var videoModel: VideoModel? = nil
     
     @IBOutlet var utfComment: UITextField!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var avoidingView: UIView!
+    
     var listComment: Array<CommentJSON> = []
     let cellIdentifier = "CommentViewCell"
     var isLoadMore: Bool = true
     var pageNumber:Int = 1
     var refreshControl: UIRefreshControl!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,19 +51,9 @@ class CommentController: BaseTabController {
         showLoading(msg: "Please wait while the content loads")
         requestGetComment()
         
-        //Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CommentController.dismissKeyboard))
+        enableTapDismissKeyboar()
         
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
-        view.addGestureRecognizer(tap)
-    }
-    
-    //Calls this function when the tap is recognized.
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
+        KeyboardAvoiding.avoidingView = self.avoidingView
     }
 
     func refresh(sender:AnyObject) {
@@ -154,4 +148,6 @@ extension CommentController: UITableViewDataSource, UITableViewDelegate{
         let commentCell = cell as! CommentViewCell
         commentCell.updateView(model: listComment[indexPath.row])
     }
+    
+    
 }

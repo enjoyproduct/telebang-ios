@@ -7,22 +7,13 @@
 //
 import UIKit
 
-class BaseSlideController: BaseController{
+class BaseNavController: BaseController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         
         initHeader()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if ((self.navigationController?.viewControllers.count)! > 1) {
-            enableOpenMenu(enable: false)
-        }else{
-            enableOpenMenu(enable: true)
-        }
     }
 
     func initHeader() {
@@ -42,17 +33,25 @@ class BaseSlideController: BaseController{
     }
     
     func initLeftHeader() {
-        var leftButton: UIBarButtonItem
         if ((self.navigationController?.viewControllers.count)! > 1) {
-            leftButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_customer_back"), style: .plain, target: self, action: #selector(self.callBackMethod))
+            addBackButton()
         }else{
-            leftButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_slide_menu"), style: .plain, target: self, action: #selector(self.callMenuMethod))
+            addMenuButton()
         }
-        self.navigationItem.leftBarButtonItem = leftButton
     }
     
     func initRightHeader() {
         
+    }
+    
+    func addBackButton() {
+        let leftButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_customer_back"), style: .plain, target: self, action: #selector(self.callBackMethod))
+        self.navigationItem.leftBarButtonItem = leftButton
+    }
+    
+    func addMenuButton() {
+        let leftButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_slide_menu"), style: .plain, target: self, action: #selector(self.callMenuMethod))
+        self.navigationItem.leftBarButtonItem = leftButton
     }
     
     func callBackMethod() {

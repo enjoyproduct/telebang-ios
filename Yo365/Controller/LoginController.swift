@@ -9,36 +9,42 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
+import IHKeyboardAvoiding
 
 class LoginController: BaseController {
     @IBOutlet var tfUsername: UITextField!
     @IBOutlet var tfPassword: UITextField!
     @IBOutlet var switchRemember: UISwitch!
-
+    @IBOutlet var avoidingView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         let preferences = UserDefaults.standard
         
+        tfUsername.delegate = self
+        tfPassword.delegate = self
+        
         if let accessToken = AccessToken.current {
             requestSignInWithFacebook(accessToken: accessToken.authenticationToken)
         }else if(preferences.object(forKey: KEY_USERNAME) != nil && preferences.object(forKey: KEY_PASSWORD) != nil){
             let username = preferences.object(forKey: KEY_USERNAME) as! String
             let password = preferences.object(forKey: KEY_PASSWORD) as! String
-
+            
             tfUsername.text = username
             tfPassword.text = password
             
             requestLogin(username: username, password: password)
         }
+        KeyboardAvoiding.avoidingView = self.avoidingView
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func doLogin(_ sender: Any) {
         let username = tfUsername.text
         let password = tfPassword.text
@@ -63,7 +69,7 @@ class LoginController: BaseController {
     
     @IBAction func doFacebookLogin(_ sender: Any){
         let loginManager = LoginManager()
-    
+        
         loginManager.logIn([ .email ], viewController: self) { loginResult in
             switch loginResult {
             case .failed(let error):
@@ -103,8 +109,8 @@ class LoginController: BaseController {
             self.hideLoading()
             self.saveAccountLogin(username: username, password: password)
             customerManager.onLoginSuccessfully(loginStatus: .LoginWithSystem, customer: customer)
-//            self.performSegue(withIdentifier: "MainScreen",
-//                         sender: self)
+            //            self.performSegue(withIdentifier: "MainScreen",
+            //                         sender: self)
             (UIApplication.shared.delegate as? AppDelegate)?.changeRootViewController((UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContainerViewController") as? ContainerViewController)!, completion: nil)
         }
     }
@@ -118,8 +124,8 @@ class LoginController: BaseController {
         }) { (customer: CustomerResponse) in
             self.hideLoading()
             customerManager.onLoginSuccessfully(loginStatus: .LoginWithFacebook, customer: customer)
-//            self.performSegue(withIdentifier: "MainScreen",
-//                              sender: self)
+            //            self.performSegue(withIdentifier: "MainScreen",
+            //                              sender: self)
             
             (UIApplication.shared.delegate as? AppDelegate)?.changeRootViewController((UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContainerViewController") as? ContainerViewController)!, completion: nil)
         }
@@ -131,6 +137,18 @@ class LoginController: BaseController {
         }
         
         customerManager.saveAuthenticAccount(username: username, password: password)
+    }
+}
+
+extension LoginController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == tfUsername {
+            tfPassword.becomeFirstResponder() //move it to your next textField.
+        }else if textField == tfPassword {
+            tfPassword.resignFirstResponder()
+        }
+        
+        return true
     }
 }
 

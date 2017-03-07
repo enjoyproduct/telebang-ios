@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class StaticPageController: BaseSlideController, UIWebViewDelegate{
+class StaticPageController: BaseNavController, UIWebViewDelegate{
     @IBOutlet var webView: UIWebView!
     
     var staticTitle: String?

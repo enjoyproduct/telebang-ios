@@ -9,16 +9,17 @@
 import UIKit
 import RAMAnimatedTabBarController
 
-class BaseTabController: BaseSlideController{
+class BaseTabController: BaseNavController{
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if ((self.navigationController?.viewControllers.count)! > 1) {
-            hideTabBar(flag: true)
-        }else{
-            hideTabBar(flag: false)
-        }
+    override func initRightHeader() {
+        super.initRightHeader()
+        let rightButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_search"), style: .plain, target: self, action: #selector(self.callSearchMethod))
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    func callSearchMethod() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SearchView")
+        present(vc!, animated: true, completion: nil)
     }
     
     func hideTabBar(flag:Bool) {

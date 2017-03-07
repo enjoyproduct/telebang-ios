@@ -8,6 +8,6 @@
 
 import UIKit
 
-class NewsController: BaseSlideController{
+class NewsController: BaseNavController{
     
 }

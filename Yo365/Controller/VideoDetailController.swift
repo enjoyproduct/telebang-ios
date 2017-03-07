@@ -13,7 +13,7 @@ import AVKit
 import XCDYouTubeKit
 import RealmSwift
 
-class VideoDetailController: BaseTabController {
+class VideoDetailController: BaseNavController {
     var videoModel: VideoModel? = nil
     
     @IBOutlet var viewPlayer: UIView!
@@ -27,6 +27,8 @@ class VideoDetailController: BaseTabController {
     var favouriteButton:UIBarButtonItem?
     var realm: Realm?
     var videoFavouriteSaved: VideoEntity?
+    var youtubePlayer : XCDYouTubeVideoPlayerViewController? = nil
+    var avPlayer: AVPlayer? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +54,22 @@ class VideoDetailController: BaseTabController {
         initPlayer()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CommentView" {
+            if let toViewController = segue.destination as? CommentController {
+                toViewController.videoModel = videoModel
+            }
+        }
+    }
+    
+    override func initLeftHeader() {
+        addBackButton()
+    }
+    
     override func initRightHeader() {
         super.initRightHeader()
         favouriteButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_video_favourite"), style: .plain, target: self, action: #selector(self.callFavouriteMethod))
@@ -62,7 +80,6 @@ class VideoDetailController: BaseTabController {
     }
     
     func initFavourite(){
-
         let predicate = NSPredicate.init(format: "userID = %d AND videoID = %d", customerManager.getCustomerID(), (videoModel?.getID())!)
         videoFavouriteSaved = realm?.objects(VideoEntity.self).filter(predicate).first
         
@@ -84,6 +101,19 @@ class VideoDetailController: BaseTabController {
         }
     }
     
+    func pausePlayer() {
+        let player = videoModel?.getPlayerType()
+        if(player == .YOUTUBE){
+            if(youtubePlayer != nil){
+                youtubePlayer?.moviePlayer.pause()
+            }
+        }else if(player == .UPLOAD){
+            if(avPlayer != nil){
+                avPlayer?.pause()
+            }
+        }
+    }
+
     func callFavouriteMethod() {
         if(videoFavouriteSaved != nil){
             videoFavouriteSaved?.delete()
@@ -126,23 +156,23 @@ class VideoDetailController: BaseTabController {
         let videoPath = videoModel?.getVideoPath()
         let videoUrl: URL = URL.init(string: videoPath!)!
         
-        let player = AVPlayer(url: videoUrl)
+        avPlayer = AVPlayer(url: videoUrl)
         let playerController = AVPlayerViewController()
         
-        playerController.player = player
+        playerController.player = avPlayer
         self.addChildViewController(playerController)
         self.viewPlayer.addSubview(playerController.view)
         playerController.view.frame = self.viewPlayer.frame
         
-        player.play()
+        avPlayer?.play()
     }
     
     func initYoutubePlayer(){
         let youtubeID = getYoutubeId(youtubeUrl: (videoModel?.getVideoPath())!)
-        let vidplayer : XCDYouTubeVideoPlayerViewController = XCDYouTubeVideoPlayerViewController(videoIdentifier: youtubeID)
+        youtubePlayer = XCDYouTubeVideoPlayerViewController(videoIdentifier: youtubeID)
   
-        vidplayer.present(in: viewPlayer)
-        vidplayer.moviePlayer.play()
+        youtubePlayer?.present(in: viewPlayer)
+        youtubePlayer?.moviePlayer.play()
     }
     
     func getYoutubeId(youtubeUrl: String) -> String? {
@@ -174,9 +204,8 @@ class VideoDetailController: BaseTabController {
     }
     
     @IBAction func doComment(_ sender: UITapGestureRecognizer) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "CommentScreen") as! CommentController
-        vc.videoModel = videoModel
-        switchToViewController(viewController: vc)
+        pausePlayer()
+        performSegue(withIdentifier: "CommentView", sender: self)
     }
     
     func displayShareSheet(shareContent:String) {

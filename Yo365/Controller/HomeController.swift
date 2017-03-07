@@ -34,17 +34,6 @@ class HomeController: BaseTabController{
         
         requestGetVideos()
     }
-    
-    override func initRightHeader() {
-        super.initRightHeader()
-        let rightButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_search"), style: .plain, target: self, action: #selector(self.callSearchMethod))
-        self.navigationItem.rightBarButtonItem = rightButton
-    }
-    
-    func callSearchMethod() {
-        performSegue(withIdentifier: "SearchView",
-                     sender: self)
-    }
 
     func refresh(sender:AnyObject) {
         self.pageNumber = 1
@@ -107,9 +96,11 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "VideoDetailScreen") as! VideoDetailController
+        let nav = storyboard?.instantiateViewController(withIdentifier: "VideoDetailScreen") as! UINavigationController
+        let vc = nav.topViewController as! VideoDetailController
         vc.videoModel = listVideo[indexPath.row]
-        switchToViewController(viewController: vc)
+        present(nav, animated: true, completion: nil)
+        //switchToViewController(viewController: vc)
     }
     
     func collectionView(_ collectionView: UICollectionView,

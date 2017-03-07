@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoListByCategoryController: BaseTabController {
+class VideoListByCategoryController: BaseNavController {
     @IBOutlet var tableView: UITableView!
     var pageNumber:Int = 1
     var listVideo: Array<VideoModel> = []
@@ -41,6 +41,21 @@ class VideoListByCategoryController: BaseTabController {
         super.didReceiveMemoryWarning()
     }
 
+    override func initLeftHeader() {
+        addBackButton()
+    }
+    
+    override func initRightHeader() {
+        super.initRightHeader()
+        let rightButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_search"), style: .plain, target: self, action: #selector(self.callSearchMethod))
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    func callSearchMethod() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SearchView")
+        present(vc!, animated: true, completion: nil)
+    }
+    
     func requestGetVideos() {
         if(pageNumber == 1){
             listVideo.removeAll()
@@ -97,9 +112,11 @@ extension VideoListByCategoryController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "VideoDetailScreen") as! VideoDetailController
+        let nav = storyboard?.instantiateViewController(withIdentifier: "VideoDetailScreen") as!
+        UINavigationController
+        let vc = nav.topViewController as! VideoDetailController
         vc.videoModel = listVideo[indexPath.section]
-        switchToViewController(viewController: vc)
+        present(nav, animated: true, completion: nil)
     }
     
     // Set the spacing between sections

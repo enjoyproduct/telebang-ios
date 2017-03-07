@@ -12,7 +12,7 @@
 		2802F84B1E4C8BBD000795B8 /* CommentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8491E4C8BBD000795B8 /* CommentViewCell.swift */; };
 		2802F84C1E4C8BBD000795B8 /* CommentViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2802F84A1E4C8BBD000795B8 /* CommentViewCell.xib */; };
 		2802F84F1E4C8E23000795B8 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802F84E1E4C8E23000795B8 /* CommentController.swift */; };
-		2805F9331E695F9000A291DA /* BaseTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2805F9321E695F9000A291DA /* BaseTabController.swift */; };
+		2808EF741E6D8F330080D2E8 /* BaseTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2808EF731E6D8F330080D2E8 /* BaseTabController.swift */; };
 		2818F6681E4AF88600D408D1 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818F6671E4AF88600D408D1 /* SearchController.swift */; };
 		2818F66B1E4B296900D408D1 /* VideoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818F66A1E4B296900D408D1 /* VideoDetailController.swift */; };
 		281ACF141E37411300F9E063 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281ACF131E37411300F9E063 /* ContainerViewController.swift */; };
@@ -37,7 +37,7 @@
 		286C87A21E30C37000539369 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87A11E30C37000539369 /* AppConstant.swift */; };
 		286C87A41E30C87A00539369 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87A31E30C87A00539369 /* ResponseModel.swift */; };
 		287A2E3C1E331EF100D92A01 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A2E3B1E331EF100D92A01 /* HomeController.swift */; };
-		28975E641E48727F00CB824A /* BaseSlideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E631E48727F00CB824A /* BaseSlideController.swift */; };
+		28975E641E48727F00CB824A /* BaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E631E48727F00CB824A /* BaseNavController.swift */; };
 		28975E681E487B7500CB824A /* GridVideoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E661E487B7500CB824A /* GridVideoViewCell.swift */; };
 		28975E6B1E4882EF00CB824A /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E6A1E4882EF00CB824A /* VideoModel.swift */; };
 		28975E6D1E4890A900CB824A /* VideoCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E6C1E4890A900CB824A /* VideoCategoryModel.swift */; };
@@ -89,7 +89,7 @@
 		2802F8491E4C8BBD000795B8 /* CommentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentViewCell.swift; path = View/CommentViewCell.swift; sourceTree = "<group>"; };
 		2802F84A1E4C8BBD000795B8 /* CommentViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentViewCell.xib; path = View/CommentViewCell.xib; sourceTree = "<group>"; };
 		2802F84E1E4C8E23000795B8 /* CommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentController.swift; path = Controller/CommentController.swift; sourceTree = "<group>"; };
-		2805F9321E695F9000A291DA /* BaseTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTabController.swift; path = Controller/BaseTabController.swift; sourceTree = "<group>"; };
+		2808EF731E6D8F330080D2E8 /* BaseTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTabController.swift; path = Controller/BaseTabController.swift; sourceTree = "<group>"; };
 		2818F6671E4AF88600D408D1 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = Controller/SearchController.swift; sourceTree = "<group>"; };
 		2818F66A1E4B296900D408D1 /* VideoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoDetailController.swift; path = Controller/VideoDetailController.swift; sourceTree = "<group>"; };
 		281ACF131E37411300F9E063 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = Controller/ContainerViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		286C87A11E30C37000539369 /* AppConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConstant.swift; path = Config/AppConstant.swift; sourceTree = "<group>"; };
 		286C87A31E30C87A00539369 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseModel.swift; path = Model/ResponseModel.swift; sourceTree = "<group>"; };
 		287A2E3B1E331EF100D92A01 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeController.swift; path = Controller/HomeController.swift; sourceTree = "<group>"; };
-		28975E631E48727F00CB824A /* BaseSlideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseSlideController.swift; path = Controller/BaseSlideController.swift; sourceTree = "<group>"; };
+		28975E631E48727F00CB824A /* BaseNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseNavController.swift; path = Controller/BaseNavController.swift; sourceTree = "<group>"; };
 		28975E661E487B7500CB824A /* GridVideoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridVideoViewCell.swift; path = View/GridVideoViewCell.swift; sourceTree = "<group>"; };
 		28975E6A1E4882EF00CB824A /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoModel.swift; path = Model/VideoModel.swift; sourceTree = "<group>"; };
 		28975E6C1E4890A900CB824A /* VideoCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCategoryModel.swift; path = Model/VideoCategoryModel.swift; sourceTree = "<group>"; };
@@ -327,9 +327,9 @@
 		286C87971E309FD900539369 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				2808EF731E6D8F330080D2E8 /* BaseTabController.swift */,
 				286C87981E309FEE00539369 /* BaseController.swift */,
-				28975E631E48727F00CB824A /* BaseSlideController.swift */,
-				2805F9321E695F9000A291DA /* BaseTabController.swift */,
+				28975E631E48727F00CB824A /* BaseNavController.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -815,7 +815,7 @@
 				28FD82571E32113400EFA1A4 /* ValidateUtil.swift in Sources */,
 				2818F66B1E4B296900D408D1 /* VideoDetailController.swift in Sources */,
 				284E15B21E49E3AA0090B276 /* VideoViewCell1.swift in Sources */,
-				28975E641E48727F00CB824A /* BaseSlideController.swift in Sources */,
+				28975E641E48727F00CB824A /* BaseNavController.swift in Sources */,
 				28975E6B1E4882EF00CB824A /* VideoModel.swift in Sources */,
 				284E15AE1E49D2710090B276 /* CategoryViewCell.swift in Sources */,
 				28AC54881E35DD0500CE5598 /* SideMenuView.swift in Sources */,
@@ -824,7 +824,6 @@
 				28E936241E6D50D400A617A4 /* NewsController.swift in Sources */,
 				286C879D1E30BE0F00539369 /* ApiClient.swift in Sources */,
 				284E15BB1E49ECCA0090B276 /* FavouriteController.swift in Sources */,
-				2805F9331E695F9000A291DA /* BaseTabController.swift in Sources */,
 				289E53B51E51B3E5002369B7 /* ChangePasswordController.swift in Sources */,
 				28FCDAF91E698F8500666EF4 /* StaticPageController.swift in Sources */,
 				286C87991E309FEE00539369 /* BaseController.swift in Sources */,
@@ -832,6 +831,7 @@
 				28FD82541E320B4300EFA1A4 /* MainController.swift in Sources */,
 				282A11DC1E6851990088AFEE /* FavouriteViewCell.swift in Sources */,
 				286C87941E3099E100539369 /* RegisterController.swift in Sources */,
+				2808EF741E6D8F330080D2E8 /* BaseTabController.swift in Sources */,
 				28E9BAA11E682B4400BFC1FD /* VideoEntity.swift in Sources */,
 				284E15BD1E49FA700090B276 /* TrendingController.swift in Sources */,
 				289E53B71E51B3F4002369B7 /* ChangeProfileController.swift in Sources */,
