@@ -12,6 +12,7 @@ import AVFoundation
 import AVKit
 import XCDYouTubeKit
 import RealmSwift
+import Kingfisher
 
 class VideoDetailController: BaseNavController {
     var videoModel: VideoModel? = nil
@@ -23,6 +24,7 @@ class VideoDetailController: BaseNavController {
     @IBOutlet var lbDescription: UITextView!
     @IBOutlet var imvLike: UIImageView!
     @IBOutlet var lbLike: UILabel!
+    @IBOutlet var imvThumbnail: UIImageView!
     
     var favouriteButton:UIBarButtonItem?
     var realm: Realm?
@@ -52,6 +54,10 @@ class VideoDetailController: BaseNavController {
         requestUpdateCounter(field: .view)
         requestGetLikeStatus()
         initPlayer()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -94,11 +100,15 @@ class VideoDetailController: BaseNavController {
     }
     
     func initPlayer() {
-        let player = videoModel?.getPlayerType()
-        if(player == .YOUTUBE){
-            initYoutubePlayer()
-        }else if(player == .UPLOAD){
-            initDefaultPlayer()
+        if(FULL_SCREEN_PLAYER){
+            
+        }else{
+            let player = videoModel?.getPlayerType()
+            if(player == .YOUTUBE){
+                initYoutubePlayer()
+            }else if(player == .UPLOAD){
+                initDefaultPlayer()
+            }
         }
     }
     
@@ -151,6 +161,9 @@ class VideoDetailController: BaseNavController {
         let fmDescription = "<span style=\"font-family: Helvetica; line-height: 1.5;color: #555555; font-size: 13\">%@</span>"
         let description = String.init(format: fmDescription, (videoModel?.getDescription())!)
         lbDescription.attributedText = AppUtil.stringFromHtml(string: description)
+        
+        let urlThumbnail = URL(string: (videoModel?.getThumbnail())!)!
+        imvThumbnail.kf.setImage(with: urlThumbnail, placeholder: Image.init(named: "no_image_default"), options: nil, progressBlock: nil, completionHandler: nil)
     }
     
     func initDefaultPlayer(){
@@ -176,6 +189,35 @@ class VideoDetailController: BaseNavController {
         youtubePlayer?.moviePlayer.play()
     }
     
+    func playYoutube(){
+        let youtubeID = getYoutubeId(youtubeUrl: (videoModel?.getVideoPath())!)
+        youtubePlayer = XCDYouTubeVideoPlayerViewController(videoIdentifier: youtubeID)
+        present(youtubePlayer!, animated: true, completion: nil)
+    }
+    
+    func playDefault(){
+        let videoPath = videoModel?.getVideoPath()
+        let videoUrl: URL = URL.init(string: videoPath!)!
+        
+        avPlayer = AVPlayer(url: videoUrl)
+        let playerController = AVPlayerViewController()
+        
+        playerController.player = avPlayer
+        self.addChildViewController(playerController)
+        
+        avPlayer?.play()
+        
+        NotificationCenter.default.addObserver(self, selector:#selector(self.playerDidFinishPlaying(note:)),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer?.currentItem)
+        
+        let fullScreenPlayerViewController = AVPlayerViewController()
+        fullScreenPlayerViewController.player = avPlayer
+        present(fullScreenPlayerViewController, animated: true, completion: nil)
+    }
+    
+    func playerDidFinishPlaying(note:NSNotification){
+        dismiss(animated: true, completion: nil)
+    }
+    
     func getYoutubeId(youtubeUrl: String) -> String? {
         return URLComponents(string: youtubeUrl)?.queryItems?.first(where: { $0.name == "v" })?.value
     }
@@ -191,9 +233,13 @@ class VideoDetailController: BaseNavController {
             lbLike.text = "Like"
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @IBAction func doPLayVideo(_ sender: UITapGestureRecognizer) {
+        let player = videoModel?.getPlayerType()
+        if(player == .YOUTUBE){
+            playYoutube()
+        }else if(player == .UPLOAD){
+            playDefault()
+        }
     }
     
     @IBAction func doLike(_ sender: UITapGestureRecognizer) {

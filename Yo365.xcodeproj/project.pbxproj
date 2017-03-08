@@ -274,6 +274,7 @@
 		2848B30D1E2F56F200AAB998 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				28B0A0611E6FDCD00099CD9C /* Player */,
 				28E936221E6D4F5F00A617A4 /* News */,
 				28FCDAF71E698F6600666EF4 /* StaticPage */,
 				28E69BEC1E5C50C500FEBCC9 /* VideoListByCategory */,
@@ -360,6 +361,13 @@
 				28975E661E487B7500CB824A /* GridVideoViewCell.swift */,
 			);
 			name = VideoGridCell;
+			sourceTree = "<group>";
+		};
+		28B0A0611E6FDCD00099CD9C /* Player */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Player;
 			sourceTree = "<group>";
 		};
 		28CD249C1E445DED00CEEEF4 /* SlideMenuCell */ = {

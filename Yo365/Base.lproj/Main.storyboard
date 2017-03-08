@@ -565,7 +565,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OMN-90-rHw" id="Lh3-d3-k0Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yv-6A-US1">
@@ -723,10 +723,27 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdU-B2-E7D">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image_default" translatesAutoresizingMaskIntoConstraints="NO" id="Psm-Ur-Pk8">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_play_video" translatesAutoresizingMaskIntoConstraints="NO" id="imW-sL-v9T">
+                                        <rect key="frame" x="172" y="85" width="30" height="30"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="3iK-Cp-bgi"/>
+                                    <constraint firstItem="imW-sL-v9T" firstAttribute="centerX" secondItem="Psm-Ur-Pk8" secondAttribute="centerX" id="4A1-ZK-hat"/>
+                                    <constraint firstAttribute="trailing" secondItem="Psm-Ur-Pk8" secondAttribute="trailing" id="6Jh-uQ-lv6"/>
+                                    <constraint firstAttribute="bottom" secondItem="Psm-Ur-Pk8" secondAttribute="bottom" id="BK8-xn-apM"/>
+                                    <constraint firstItem="imW-sL-v9T" firstAttribute="centerY" secondItem="Psm-Ur-Pk8" secondAttribute="centerY" id="Bow-cI-S5q"/>
+                                    <constraint firstItem="Psm-Ur-Pk8" firstAttribute="top" secondItem="AdU-B2-E7D" secondAttribute="top" id="Gvn-Ro-gR2"/>
+                                    <constraint firstItem="Psm-Ur-Pk8" firstAttribute="leading" secondItem="AdU-B2-E7D" secondAttribute="leading" id="zmU-49-MbC"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="z44-kK-8GW" appends="YES" id="HVb-jx-wtU"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLE-Nz-bav">
                                 <rect key="frame" x="0.0" y="200" width="375" height="50"/>
@@ -939,8 +956,10 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="fug-TJ-te4"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="imvLike" destination="CYb-6h-t1g" id="jyH-nw-6ZA"/>
+                        <outlet property="imvThumbnail" destination="Psm-Ur-Pk8" id="rbI-8f-0NW"/>
                         <outlet property="lbDescription" destination="geS-VB-enN" id="a6g-2A-VcP"/>
                         <outlet property="lbInfo" destination="qdj-8d-VL7" id="Zp6-cI-eaT"/>
                         <outlet property="lbLike" destination="fJL-vn-xJs" id="dm8-cS-Z4g"/>
@@ -951,6 +970,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEG-AY-h9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="z44-kK-8GW">
+                    <connections>
+                        <action selector="doPLayVideo:" destination="Mbi-Jx-xqE" id="u9c-NW-fzA"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <tapGestureRecognizer id="1TE-uN-Dpd">
                     <connections>
                         <action selector="doLike:" destination="Mbi-Jx-xqE" id="zMa-Dl-gkO"/>
@@ -2106,6 +2130,7 @@
         <image name="bgr_login" width="375" height="667"/>
         <image name="ic_close" width="14" height="14"/>
         <image name="ic_customer_back" width="16" height="16"/>
+        <image name="ic_play_video" width="30" height="30"/>
         <image name="ic_send_comment" width="21" height="18"/>
         <image name="ic_setting" width="18" height="18"/>
         <image name="ic_slide_menu_news" width="24" height="16"/>
