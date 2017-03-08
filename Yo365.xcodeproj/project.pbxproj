@@ -41,6 +41,8 @@
 		28975E681E487B7500CB824A /* GridVideoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E661E487B7500CB824A /* GridVideoViewCell.swift */; };
 		28975E6B1E4882EF00CB824A /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E6A1E4882EF00CB824A /* VideoModel.swift */; };
 		28975E6D1E4890A900CB824A /* VideoCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28975E6C1E4890A900CB824A /* VideoCategoryModel.swift */; };
+		28996B881E6FB20D0023F114 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28996B861E6FB20D0023F114 /* NewsController.swift */; };
+		28996B891E6FB20D0023F114 /* NewsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28996B871E6FB20D0023F114 /* NewsController.xib */; };
 		289E53B51E51B3E5002369B7 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E53B41E51B3E5002369B7 /* ChangePasswordController.swift */; };
 		289E53B71E51B3F4002369B7 /* ChangeProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E53B61E51B3F4002369B7 /* ChangeProfileController.swift */; };
 		28AC54881E35DD0500CE5598 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC54871E35DD0500CE5598 /* SideMenuView.swift */; };
@@ -57,7 +59,6 @@
 		28E2DA3E1E2F511200CFD6AC /* Yo365Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E2DA3D1E2F511200CFD6AC /* Yo365Tests.swift */; };
 		28E2DA491E2F511200CFD6AC /* Yo365UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E2DA481E2F511200CFD6AC /* Yo365UITests.swift */; };
 		28E69BEE1E5C50F800FEBCC9 /* VideoListByCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E69BED1E5C50F800FEBCC9 /* VideoListByCategoryController.swift */; };
-		28E936241E6D50D400A617A4 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E936231E6D50D400A617A4 /* NewsController.swift */; };
 		28E9BAA11E682B4400BFC1FD /* VideoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E9BAA01E682B4400BFC1FD /* VideoEntity.swift */; };
 		28FCDAF91E698F8500666EF4 /* StaticPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCDAF81E698F8500666EF4 /* StaticPageController.swift */; };
 		28FD82541E320B4300EFA1A4 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD82531E320B4300EFA1A4 /* MainController.swift */; };
@@ -118,6 +119,8 @@
 		28975E661E487B7500CB824A /* GridVideoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridVideoViewCell.swift; path = View/GridVideoViewCell.swift; sourceTree = "<group>"; };
 		28975E6A1E4882EF00CB824A /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoModel.swift; path = Model/VideoModel.swift; sourceTree = "<group>"; };
 		28975E6C1E4890A900CB824A /* VideoCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCategoryModel.swift; path = Model/VideoCategoryModel.swift; sourceTree = "<group>"; };
+		28996B861E6FB20D0023F114 /* NewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsController.swift; path = Controller/NewsController.swift; sourceTree = "<group>"; };
+		28996B871E6FB20D0023F114 /* NewsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsController.xib; path = Controller/NewsController.xib; sourceTree = "<group>"; };
 		289E53B41E51B3E5002369B7 /* ChangePasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordController.swift; path = Controller/ChangePasswordController.swift; sourceTree = "<group>"; };
 		289E53B61E51B3F4002369B7 /* ChangeProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeProfileController.swift; path = Controller/ChangeProfileController.swift; sourceTree = "<group>"; };
 		28AC54871E35DD0500CE5598 /* SideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuView.swift; path = Controller/SideMenuView.swift; sourceTree = "<group>"; };
@@ -140,7 +143,6 @@
 		28E2DA481E2F511200CFD6AC /* Yo365UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yo365UITests.swift; sourceTree = "<group>"; };
 		28E2DA4A1E2F511200CFD6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28E69BED1E5C50F800FEBCC9 /* VideoListByCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoListByCategoryController.swift; path = Controller/VideoListByCategoryController.swift; sourceTree = "<group>"; };
-		28E936231E6D50D400A617A4 /* NewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsController.swift; path = Controller/NewsController.swift; sourceTree = "<group>"; };
 		28E9BAA01E682B4400BFC1FD /* VideoEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEntity.swift; sourceTree = "<group>"; };
 		28FCDAF81E698F8500666EF4 /* StaticPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaticPageController.swift; path = Controller/StaticPageController.swift; sourceTree = "<group>"; };
 		28FD82531E320B4300EFA1A4 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainController.swift; path = Controller/MainController.swift; sourceTree = "<group>"; };
@@ -450,7 +452,8 @@
 		28E936221E6D4F5F00A617A4 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				28E936231E6D50D400A617A4 /* NewsController.swift */,
+				28996B861E6FB20D0023F114 /* NewsController.swift */,
+				28996B871E6FB20D0023F114 /* NewsController.xib */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 			files = (
 				284E15B91E49E3CD0090B276 /* VideoViewCell2.xib in Resources */,
 				28CD24A01E445E3200CEEEF4 /* SlideMenuCell.xib in Resources */,
+				28996B891E6FB20D0023F114 /* NewsController.xib in Resources */,
 				2802F84C1E4C8BBD000795B8 /* CommentViewCell.xib in Resources */,
 				28E2DA331E2F511100CFD6AC /* LaunchScreen.storyboard in Resources */,
 				282A11DD1E6851990088AFEE /* FavouriteViewCell.xib in Resources */,
@@ -821,7 +825,7 @@
 				28AC54881E35DD0500CE5598 /* SideMenuView.swift in Sources */,
 				287A2E3C1E331EF100D92A01 /* HomeController.swift in Sources */,
 				286C87A21E30C37000539369 /* AppConstant.swift in Sources */,
-				28E936241E6D50D400A617A4 /* NewsController.swift in Sources */,
+				28996B881E6FB20D0023F114 /* NewsController.swift in Sources */,
 				286C879D1E30BE0F00539369 /* ApiClient.swift in Sources */,
 				284E15BB1E49ECCA0090B276 /* FavouriteController.swift in Sources */,
 				289E53B51E51B3E5002369B7 /* ChangePasswordController.swift in Sources */,

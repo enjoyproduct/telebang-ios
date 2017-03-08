@@ -79,6 +79,23 @@ class CustomerManager {
         return customerModel
     }
     
+    func getFullName() -> String {
+        var fullname: String = "";
+        if(customerModel.firstName != nil && !(customerModel.firstName?.isEmpty)!){
+            fullname += customerModel.firstName!
+        }
+        
+        if(customerModel.lastName != nil && !(customerModel.lastName?.isEmpty)!){
+            fullname = fullname+" "+customerModel.lastName!
+        }
+        
+        if(fullname.isEmpty){
+            fullname = customerModel.username!
+        }
+        
+        return fullname
+    }
+    
     func getCustomerAvatar() -> String {
         if(customerModel.avatar == nil){
             return ""

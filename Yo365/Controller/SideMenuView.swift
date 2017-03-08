@@ -8,7 +8,7 @@
 
 import UIKit
 import Kingfisher
-
+import SlideMenuControllerSwift
 class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
     var elements: [SlideMenuElement] = []
     @IBOutlet var tableView: UITableView!
@@ -38,6 +38,14 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
         initAccount()
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        UIApplication.shared.setStatusBarHidden(true, with: .none)
+//    }
+//    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        UIApplication.shared.setStatusBarHidden(false, with: .none)
+//    }
+//    
     func initAccount() {
         // Circular avatar
         imvAvatar.layer.cornerRadius = imvAvatar.frame.size.width / 2;
@@ -47,7 +55,7 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
         
         let urlAvatar = URL(string: customerManager.getCustomerAvatar())
         imvAvatar.kf.setImage(with: urlAvatar, placeholder: Image.init(named: "img_avatar_default"), options: nil, progressBlock: nil, completionHandler: nil)
-        lbUsername.text = customerManager.getCustomerModel().username
+        lbUsername.text = customerManager.getFullName()
         lbEmail.text = customerManager.getCustomerModel().email
     }
     
@@ -162,8 +170,10 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
             break
             
         case .News:
-            let newsControler = self.storyboard?.instantiateViewController(withIdentifier: "NewsScreen")
-            controller = newsControler
+            var newsController = NewsController(nibName: "NewsController", bundle: nil)
+            let nav = UINavigationController(rootViewController: newsController)
+            controller = nav
+            
             break
             
         default:

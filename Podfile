@@ -20,7 +20,7 @@ pod 'FacebookLogin'
 pod 'RAMAnimatedTabBarController', "~> 2.0.13"
 pod 'SlideMenuControllerSwift'
 pod 'SwiftOverlays', '~> 3.0.0'
-pod "XCDYouTubeKit", "~> 2.5.4"
+pod "XCDYouTubeKit", "~> 2.5.5"
 pod 'RealmSwift'
 pod 'Fabric'
 pod 'Crashlytics'

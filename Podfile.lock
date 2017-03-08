@@ -38,7 +38,7 @@ PODS:
   - SnapKit (3.1.2)
   - SwiftOverlays (3.0.0)
   - SwiftyJSON (3.1.4)
-  - XCDYouTubeKit (2.5.4)
+  - XCDYouTubeKit (2.5.5)
 
 DEPENDENCIES:
   - Alamofire (~> 4.3)
@@ -80,8 +80,8 @@ SPEC CHECKSUMS:
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   SwiftOverlays: 4cdd9e4f5c7817fb6348882059eb697e11685fad
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  XCDYouTubeKit: 80eb3978dae220a0116d198bca6852c6c969fa66
+  XCDYouTubeKit: 86f4e7a9c2baa7b7adf6abfc28ac3ab34927be2d
 
-PODFILE CHECKSUM: c610834a26a54d6bfd08f7bf2bd21c1664fa5b60
+PODFILE CHECKSUM: a9729f7920398177f414e0417cd9d3c1caca24a2
 
 COCOAPODS: 1.1.1

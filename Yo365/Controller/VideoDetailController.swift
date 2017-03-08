@@ -20,7 +20,7 @@ class VideoDetailController: BaseNavController {
     @IBOutlet var lbInfo: UILabel!
     @IBOutlet var lbTitle: UILabel!
     @IBOutlet var lbSeries: UILabel!
-    @IBOutlet var lbDescription: UILabel!
+    @IBOutlet var lbDescription: UITextView!
     @IBOutlet var imvLike: UIImageView!
     @IBOutlet var lbLike: UILabel!
     
@@ -74,9 +74,10 @@ class VideoDetailController: BaseNavController {
         super.initRightHeader()
         favouriteButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_video_favourite"), style: .plain, target: self, action: #selector(self.callFavouriteMethod))
         
-        let downloadButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_video_download"), style: .plain, target: self, action: #selector(self.callDownloadMethod))
+//        let downloadButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_video_download"), style: .plain, target: self, action: #selector(self.callDownloadMethod))
         
-        self.navigationItem.rightBarButtonItems = [downloadButton, favouriteButton!]
+//        self.navigationItem.rightBarButtonItems = [downloadButton, favouriteButton!]
+        self.navigationItem.rightBarButtonItems = [favouriteButton!]
     }
     
     func initFavourite(){
