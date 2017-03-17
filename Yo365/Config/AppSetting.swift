@@ -15,6 +15,8 @@ let APP_STORE_ID        = "your_id"
 
 let FULL_SCREEN_PLAYER  = true
 
-let ADMOB_APP_ID        = "ca-app-pub-8000676937410247~4440076812"
-let BANNER_AD_ENABLE    = true
-let BANNER_AD_UNIT_ID   = "ca-app-pub-8000676937410247/5916810013"
+let BANNER_AD_ENABLE            = true
+let INTERSTITIAL_AD_ENABLE      = false
+let ADMOB_APP_ID                = "ca-app-pub-8000676937410247~4440076812"
+let BANNER_AD_UNIT_ID           = "ca-app-pub-8000676937410247/5916810013"
+let INTERSTITIAL_AD_UNIT_ID     = "ca-app-pub-8000676937410247/2823742819"

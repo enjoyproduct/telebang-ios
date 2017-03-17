@@ -35,6 +35,9 @@ class VideoDetailController: BaseNavController {
     var youtubePlayer : XCDYouTubeVideoPlayerViewController? = nil
     var avPlayer: AVPlayer? = nil
     
+    /// The interstitial ad.
+    var interstitial: GADInterstitial!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -104,7 +107,19 @@ class VideoDetailController: BaseNavController {
             heightAdConstraint.constant = 0
         }
         bannerView.layoutIfNeeded()
+        
+        if(INTERSTITIAL_AD_ENABLE){
+            interstitial = createAndLoadInterstitial()
+        }
     }
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitialAd = GADInterstitial(adUnitID: INTERSTITIAL_AD_UNIT_ID)
+        interstitialAd.delegate = self
+        interstitialAd.load(GADRequest())
+        return interstitialAd
+    }
+    
     func initFavourite(){
         let predicate = NSPredicate.init(format: "userID = %d AND videoID = %d", customerManager.getCustomerID(), (videoModel?.getID())!)
         videoFavouriteSaved = realm?.objects(VideoEntity.self).filter(predicate).first
@@ -315,5 +330,16 @@ class VideoDetailController: BaseNavController {
                 self.updateLikeState(isLiked: false)
             }
         })
+    }
+}
+
+extension VideoDetailController: GADInterstitialDelegate{
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        print("Interstitial loaded successfully")
+        ad.present(fromRootViewController: self)
+    }
+    
+    func interstitialDidFail(toPresentScreen ad: GADInterstitial) {
+        print("Fail to receive interstitial")
     }
 }
