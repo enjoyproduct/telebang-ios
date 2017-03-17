@@ -39,9 +39,9 @@ class VideoModel{
         let strView = formatter.string(from: NSNumber.init(value: (videoJSON.statsCounter?.viewCounter)!))!
         self.viewCounterFormat = String.init(format: "%@ views", strView)
         
-        self.series = videoJSON.series
-        if(series?.isEmpty)!{
-            series = "No Series";
+        self.series = "No Series"
+        if(videoJSON.series != nil && !(videoJSON.series?.title?.isEmpty)!){
+            self.series = videoJSON.series?.title;
         }
         
         shareContent = videoJSON.urlSocial
@@ -96,8 +96,8 @@ class VideoResponseJSON: Mappable {
     var id: Int?
     var urlSocial: String?
     var categoryId: Int?
-    var series: String?
-    var author: String?
+    var series: SeriesJSON?
+    var author: CustomerResponse?
     var thumbnail: String?
     var description: String?
     var title: String?
@@ -199,5 +199,25 @@ class CommentJSON: Mappable {
         createAt        <- map["create_at"]
         videoId         <- map["video_id"]
         customerJSON    <- map["user"]
+    }
+}
+
+class SeriesJSON: Mappable {
+    var id: String?
+    var thumbnail: String?
+    var title: String?
+    var shortDesc: String?
+    var completed: Int?
+    
+    required init?(map: Map){
+        
+    }
+    
+    func mapping(map: Map) {
+        id         <- map["id"]
+        thumbnail  <- map["thumbnail"]
+        title      <- map["title"]
+        shortDesc  <- map["short_description"]
+        completed  <- map["completed"]
     }
 }
