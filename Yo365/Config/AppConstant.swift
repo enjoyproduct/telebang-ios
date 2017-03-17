@@ -8,12 +8,6 @@
 
 import Foundation
 
-enum EnvironmentType {
-    case DEVELOPMENT
-    case STAGING
-    case PRODUCTION
-}
-
 enum VideoCounterField: String {
     case view, share
 }

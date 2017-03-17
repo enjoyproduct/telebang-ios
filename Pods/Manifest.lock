@@ -25,6 +25,23 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.19.0):
     - FBSDKCoreKit
+  - Firebase/AdMob (3.14.0):
+    - Firebase/Core
+    - Google-Mobile-Ads-SDK (= 7.18.0)
+  - Firebase/Core (3.14.0):
+    - FirebaseAnalytics (= 3.7.0)
+    - FirebaseCore (= 3.5.1)
+  - FirebaseAnalytics (3.7.0):
+    - FirebaseCore (~> 3.5)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (3.5.1):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (1.0.9)
+  - Google-Mobile-Ads-SDK (7.18.0)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - IHKeyboardAvoiding (3.7)
   - Kingfisher (3.5.0)
   - ObjectMapper (2.2.4)
@@ -48,6 +65,8 @@ DEPENDENCIES:
   - Fabric
   - FacebookCore
   - FacebookLogin
+  - Firebase/AdMob
+  - Firebase/Core
   - IHKeyboardAvoiding
   - Kingfisher (~> 3.0)
   - ObjectMapper (~> 2.2)
@@ -57,7 +76,7 @@ DEPENDENCIES:
   - SnapKit (~> 3.1.2)
   - SwiftOverlays (~> 3.0.0)
   - SwiftyJSON
-  - XCDYouTubeKit (~> 2.5.4)
+  - XCDYouTubeKit (~> 2.5.5)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -70,6 +89,12 @@ SPEC CHECKSUMS:
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FBSDKCoreKit: 894b2b6eda6a4c8c4204e92e59cc355709ef045c
   FBSDKLoginKit: 83ca4d8f12a2022570af9fd6aacf27f6b425b99f
+  Firebase: 85a581fb04e44f63ae9f4fbc8d6dabf4a4c18653
+  FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
+  FirebaseCore: 225d40532489835a034b8f4e2c9c87fbf4f615a2
+  FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
+  Google-Mobile-Ads-SDK: 658065b4cb5a299bea254c4d24bf7786b6d3e75d
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   IHKeyboardAvoiding: 4c852fae85667469307678c65f14f5cac8a7be92
   Kingfisher: 7c62087039d93d26c54c8dd9b0b588d2ce55cef6
   ObjectMapper: 81d0e5d7c57129e3e93f29a04bdf9669542b37d2
@@ -82,6 +107,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCDYouTubeKit: 86f4e7a9c2baa7b7adf6abfc28ac3ab34927be2d
 
-PODFILE CHECKSUM: a9729f7920398177f414e0417cd9d3c1caca24a2
+PODFILE CHECKSUM: 5b2cbfda881dad99f797f1260600c9c18c571c6a
 
 COCOAPODS: 1.1.1

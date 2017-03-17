@@ -25,6 +25,8 @@ pod 'RealmSwift'
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'IHKeyboardAvoiding'
+pod 'Firebase/Core'
+pod 'Firebase/AdMob'
 
 end
 

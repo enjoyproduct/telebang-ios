@@ -13,6 +13,7 @@ import AVKit
 import XCDYouTubeKit
 import RealmSwift
 import Kingfisher
+import GoogleMobileAds
 
 class VideoDetailController: BaseNavController {
     var videoModel: VideoModel? = nil
@@ -25,6 +26,8 @@ class VideoDetailController: BaseNavController {
     @IBOutlet var imvLike: UIImageView!
     @IBOutlet var lbLike: UILabel!
     @IBOutlet var imvThumbnail: UIImageView!
+    @IBOutlet var bannerView: GADBannerView!
+    @IBOutlet var heightAdConstraint: NSLayoutConstraint!
     
     var favouriteButton:UIBarButtonItem?
     var realm: Realm?
@@ -36,6 +39,7 @@ class VideoDetailController: BaseNavController {
         super.viewDidLoad()
 
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
+        
         
         if(videoModel == nil){
             return
@@ -54,6 +58,9 @@ class VideoDetailController: BaseNavController {
         requestUpdateCounter(field: .view)
         requestGetLikeStatus()
         initPlayer()
+        
+        // load ads
+        initAd();
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,6 +93,18 @@ class VideoDetailController: BaseNavController {
         self.navigationItem.rightBarButtonItems = [favouriteButton!]
     }
     
+    func initAd() {
+        bannerView.isHidden = !BANNER_AD_ENABLE
+        if(BANNER_AD_ENABLE){
+            heightAdConstraint.constant = 50
+            bannerView.adUnitID = BANNER_AD_UNIT_ID
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+        }else{
+            heightAdConstraint.constant = 0
+        }
+        bannerView.layoutIfNeeded()
+    }
     func initFavourite(){
         let predicate = NSPredicate.init(format: "userID = %d AND videoID = %d", customerManager.getCustomerID(), (videoModel?.getID())!)
         videoFavouriteSaved = realm?.objects(VideoEntity.self).filter(predicate).first

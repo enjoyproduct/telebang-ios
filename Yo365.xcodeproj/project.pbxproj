@@ -90,6 +90,7 @@
 		2802F8491E4C8BBD000795B8 /* CommentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentViewCell.swift; path = View/CommentViewCell.swift; sourceTree = "<group>"; };
 		2802F84A1E4C8BBD000795B8 /* CommentViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentViewCell.xib; path = View/CommentViewCell.xib; sourceTree = "<group>"; };
 		2802F84E1E4C8E23000795B8 /* CommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentController.swift; path = Controller/CommentController.swift; sourceTree = "<group>"; };
+		280346F81E7BAB28008DE46B /* Yo365.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Yo365.entitlements; sourceTree = "<group>"; };
 		2808EF731E6D8F330080D2E8 /* BaseTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTabController.swift; path = Controller/BaseTabController.swift; sourceTree = "<group>"; };
 		2818F6671E4AF88600D408D1 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = Controller/SearchController.swift; sourceTree = "<group>"; };
 		2818F66A1E4B296900D408D1 /* VideoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoDetailController.swift; path = Controller/VideoDetailController.swift; sourceTree = "<group>"; };
@@ -413,6 +414,7 @@
 		28E2DA271E2F511100CFD6AC /* Yo365 */ = {
 			isa = PBXGroup;
 			children = (
+				280346F81E7BAB28008DE46B /* Yo365.entitlements */,
 				28CD24A11E4481BF00CEEEF4 /* Manager */,
 				28FD82551E32111C00EFA1A4 /* Helper */,
 				286C879E1E30C28200539369 /* Config */,
@@ -598,6 +600,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = C84X7X44XZ;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					28E2DA381E2F511200CFD6AC = {
 						CreatedOnToolsVersion = 8.2.1;

@@ -918,12 +918,19 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geS-VB-enN">
-                                <rect key="frame" x="15" y="356" width="345" height="311"/>
+                                <rect key="frame" x="15" y="356" width="345" height="261"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCJ-GF-yD8" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4Pe-3y-h4r"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -940,24 +947,39 @@
                             <constraint firstItem="1wO-4a-97B" firstAttribute="leading" secondItem="wTL-ad-nAV" secondAttribute="leading" constant="15" id="Rja-tk-8Aq"/>
                             <constraint firstAttribute="trailing" secondItem="lVd-QS-FVk" secondAttribute="trailing" id="TkS-cA-EgW"/>
                             <constraint firstItem="kBI-3u-Jhd" firstAttribute="top" secondItem="qdj-8d-VL7" secondAttribute="bottom" constant="5" id="Uda-o2-9T5"/>
+                            <constraint firstItem="wRV-MK-ALL" firstAttribute="top" secondItem="gCJ-GF-yD8" secondAttribute="bottom" id="UkY-ct-Z1D"/>
                             <constraint firstItem="1wO-4a-97B" firstAttribute="top" secondItem="sLE-Nz-bav" secondAttribute="bottom" constant="15" id="V1u-Bk-i4B"/>
+                            <constraint firstItem="gCJ-GF-yD8" firstAttribute="top" secondItem="geS-VB-enN" secondAttribute="bottom" id="Z81-xe-8Wd"/>
                             <constraint firstAttribute="trailing" secondItem="1wO-4a-97B" secondAttribute="trailing" constant="15" id="Zwo-BI-laz"/>
                             <constraint firstItem="sLE-Nz-bav" firstAttribute="top" secondItem="AdU-B2-E7D" secondAttribute="bottom" id="b6F-HW-7EV"/>
                             <constraint firstItem="wRV-MK-ALL" firstAttribute="top" secondItem="geS-VB-enN" secondAttribute="bottom" id="cVW-72-emM"/>
                             <constraint firstItem="sLE-Nz-bav" firstAttribute="leading" secondItem="wTL-ad-nAV" secondAttribute="leading" id="cXb-2l-n2e"/>
+                            <constraint firstItem="gCJ-GF-yD8" firstAttribute="leading" secondItem="wTL-ad-nAV" secondAttribute="leading" id="fBJ-GK-F2X"/>
                             <constraint firstItem="sLE-Nz-bav" firstAttribute="top" secondItem="AdU-B2-E7D" secondAttribute="bottom" id="g8k-EF-xBm"/>
                             <constraint firstItem="kBI-3u-Jhd" firstAttribute="leading" secondItem="wTL-ad-nAV" secondAttribute="leading" constant="15" id="l5D-hY-Hb9"/>
+                            <constraint firstItem="gCJ-GF-yD8" firstAttribute="trailing" secondItem="wTL-ad-nAV" secondAttribute="trailingMargin" id="q7F-Zb-Zzs"/>
                             <constraint firstItem="3Cm-m6-Tk6" firstAttribute="centerY" secondItem="kBI-3u-Jhd" secondAttribute="centerY" id="rQk-jD-5JG"/>
+                            <constraint firstItem="gCJ-GF-yD8" firstAttribute="leading" secondItem="wTL-ad-nAV" secondAttribute="leadingMargin" id="t0O-Zb-6dd"/>
                             <constraint firstItem="AdU-B2-E7D" firstAttribute="top" secondItem="wTL-ad-nAV" secondAttribute="top" id="t9B-20-Xei"/>
+                            <constraint firstAttribute="trailing" secondItem="gCJ-GF-yD8" secondAttribute="trailing" id="tfF-ib-sRw"/>
                             <constraint firstAttribute="trailing" secondItem="sLE-Nz-bav" secondAttribute="trailing" id="wIJ-O6-UWC"/>
                             <constraint firstAttribute="trailing" secondItem="geS-VB-enN" secondAttribute="trailing" constant="15" id="zEq-WY-ilV"/>
                             <constraint firstAttribute="trailing" secondItem="qdj-8d-VL7" secondAttribute="trailing" constant="15" id="zpU-o8-0DC"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="q7F-Zb-Zzs"/>
+                                <exclude reference="t0O-Zb-6dd"/>
+                                <exclude reference="cVW-72-emM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="fug-TJ-te4"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="bannerView" destination="gCJ-GF-yD8" id="QYi-3X-zd0"/>
+                        <outlet property="heightAdConstraint" destination="4Pe-3y-h4r" id="HG9-bS-wkN"/>
                         <outlet property="imvLike" destination="CYb-6h-t1g" id="jyH-nw-6ZA"/>
                         <outlet property="imvThumbnail" destination="Psm-Ur-Pk8" id="rbI-8f-0NW"/>
                         <outlet property="lbDescription" destination="geS-VB-enN" id="a6g-2A-VcP"/>
