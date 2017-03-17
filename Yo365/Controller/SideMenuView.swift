@@ -145,7 +145,7 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
             break
             
         case .Feedback:
-            UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/app/id" + APP_STORE_ID)!)
+            UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/app/" + APP_STORE_ID)!)
             break
             
         case .Terms:
@@ -165,7 +165,7 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
             break
             
         case .Share:
-            let activityViewController = UIActivityViewController(activityItems: [String.init(format: "https://itunes.apple.com/app/id%@", APP_STORE_ID) as NSString], applicationActivities: nil)
+            let activityViewController = UIActivityViewController(activityItems: [String.init(format: "https://itunes.apple.com/app/%@", APP_STORE_ID) as NSString], applicationActivities: nil)
             present(activityViewController, animated: true, completion: {})
             break
             
