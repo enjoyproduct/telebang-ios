@@ -103,6 +103,7 @@ class RegisterController: BaseController {
         }) { (customer: CustomerResponse) in
             self.hideLoading()
             customerManager.onLoginSuccessfully(loginStatus: .LoginWithFacebook, customer: customer)
+            customerManager.saveSubscription(paystack_auth_code: customer.paystack_auth_code!, subscription_date: customer.subscribed_date!)
 //            self.performSegue(withIdentifier: "MainScreen",
 //                              sender: self)
             

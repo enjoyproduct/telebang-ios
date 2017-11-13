@@ -21,6 +21,8 @@ class CustomerResponse: Mappable {
     var country: String?
     var zip: String?
     var vip: Int?
+    var paystack_auth_code : String?
+    var subscribed_date: Int?
     
     init() {
         
@@ -43,6 +45,11 @@ class CustomerResponse: Mappable {
         country         <- map["country"]
         zip             <- map["zip"]
         vip             <- map["vip"]
+        var time: String?
+        time            <- map["subscribed_date"]
+        subscribed_date = Int(time!)
+        paystack_auth_code    <- map["paystack_auth_code"]
+        
     }
 }
 

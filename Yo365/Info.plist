@@ -21,7 +21,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1907357799494032</string>
+				<string>fb201599816845832</string>
 			</array>
 		</dict>
 	</array>
@@ -42,9 +42,9 @@
 		</array>
 	</dict>
 	<key>FacebookAppID</key>
-	<string>1907357799494032</string>
+	<string>201599816845832</string>
 	<key>FacebookDisplayName</key>
-	<string>Yo365</string>
+	<string>telebang</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

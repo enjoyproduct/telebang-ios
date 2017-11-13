@@ -22,6 +22,19 @@ class AppUtil {
         }
         return nil
     }
+    static func getDateFromTimestamp(timestamp: Int) -> String  {
     
+        let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd" //Specify your format that you want
+        let strDate = dateFormatter.string(from: date)
+        
+        return strDate
+    }
+    static var currentTimestamp: TimeInterval {
+        return Date().timeIntervalSince1970
+    }
 
 }

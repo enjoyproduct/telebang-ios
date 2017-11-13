@@ -1,6 +1,0 @@
-framework module Pods_Yo365 {
-  umbrella header "Pods-Yo365-umbrella.h"
-
-  export *
-  module * { export * }
-}

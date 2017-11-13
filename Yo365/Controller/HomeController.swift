@@ -22,7 +22,7 @@ class HomeController: BaseTabController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateTitleHeader(title: "Yo365")
+        updateTitleHeader(title: "teleBang")
         
         collectionView.delegate = self
         collectionView.dataSource = self

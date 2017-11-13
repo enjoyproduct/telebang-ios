@@ -112,5 +112,16 @@
 		<key>enable</key>
 		<true/>
 	</dict>
+    <dict>
+        <key>icon</key>
+        <string>ic_slide_menu_news</string>
+        <key>title</key>
+        <string>Subscription History</string>
+        <key>type</key>
+        <string>SubscriptionHistory</string>
+        <key>enable</key>
+        <true/>
+    </dict>
+
 </array>
 </plist>

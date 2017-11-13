@@ -170,15 +170,18 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
             break
             
         case .News:
-            var newsController = NewsController(nibName: "NewsController", bundle: nil)
+            let newsController = NewsController(nibName: "NewsController", bundle: nil)
             let nav = UINavigationController(rootViewController: newsController)
             controller = nav
             
             break
-            
-        default:
-            
+        case .SubscriptionHistory:
+            let nav = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionNav") as! UINavigationController
+//            let vc = nav.topViewController as! SubscriptionHistoryViewController
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionHistoryViewController") as! SubscriptionHistoryViewController
+            controller = nav
             break
+        
         }
         
         if controller != nil {

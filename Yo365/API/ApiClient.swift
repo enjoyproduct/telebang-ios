@@ -12,6 +12,44 @@ import SwiftyJSON
 import ObjectMapper
 
 class ApiClient {
+    static func getNewAccessCode(accountID: Int, type: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (String)-> Void) {
+        let params: Parameters = [KEY_USER_ID: String(accountID), KEY_SUBSCRIPTION_TYPE: type]
+        
+        Alamofire.request(getAbsoluteUrl(relativeUrl: RELATIVE_URL_GET_NEW_ACCESS_CODE), method: .post ,parameters: params).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                successHandler(response.result.value!.content as! String)
+            }
+        }
+    }
+
+    static func updateSubscription(accountID: Int,card_number: String, paystack_auth_key: String, subscribed_date: Int, type: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping ()-> Void) {
+        let params: Parameters = [KEY_USER_ID: String(accountID),KEY_PAYSTACK_AUTH_CODE: paystack_auth_key, KEY_SUBSCRIBED_DATE: String(subscribed_date), KEY_CARD_NUMBER: card_number, KEY_SUBSCRIPTION_TYPE: type]
+        
+        Alamofire.request(getAbsoluteUrl(relativeUrl: RELATIVE_URL_UPDATE_SUBSCRIPTION), method: .post ,parameters: params).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                successHandler()
+            }
+        }
+    }
+    static func getSubscriptions(accountID: Int, errorHandler: @escaping (String) -> Void, successHandler: @escaping (Array<SubscriptionModel>)-> Void) {
+        let params: Parameters = [KEY_USER_ID: String(accountID)]
+        
+        Alamofire.request(getAbsoluteUrl(relativeUrl: RELATIVE_URL_GET_SUBSCRIPTIONS), method: .post ,parameters: params).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let data: Array<Dictionary<String, AnyObject>>! = response.result.value!.content as! Array<Dictionary<String, AnyObject>>
+                let subscriptionList: Array<SubscriptionModel>! = Mapper<SubscriptionModel>().mapArray(JSONArray: data)
+                successHandler(subscriptionList)
+                
+            }
+        }
+    }
+
     static func login(username: String,password: String, errorHandler: @escaping (String) -> Void, successHandler: @escaping (CustomerResponse)-> Void) {
         let params: Parameters = [KEY_USERNAME: username,KEY_PASSWORD: password  ]
         
@@ -55,7 +93,7 @@ class ApiClient {
     }
     
     static func changePassword(accountID: Int, currentPassword: String, newPassword: String,  errorHandler: @escaping (String) -> Void, successHandler: @escaping ()-> Void) {
-        let params: Parameters = [KEY_USER_ID: accountID, KEY_OLD_PASS: currentPassword, KEY_NEW_PASS: newPassword ]
+        let params: Parameters = [KEY_USER_ID: String(accountID), KEY_OLD_PASS: currentPassword, KEY_NEW_PASS: newPassword ]
         
         Alamofire.request(getAbsoluteUrl(relativeUrl: RELATIVE_URL_CHANGE_PASSWORD), method: .post ,parameters: params).responseObject { (response: DataResponse<ResponseModel>) in
             

@@ -109,6 +109,7 @@ class LoginController: BaseController {
             self.hideLoading()
             self.saveAccountLogin(username: username, password: password)
             customerManager.onLoginSuccessfully(loginStatus: .LoginWithSystem, customer: customer)
+            customerManager.saveSubscription(paystack_auth_code: customer.paystack_auth_code!, subscription_date: customer.subscribed_date!)
             //            self.performSegue(withIdentifier: "MainScreen",
             //                         sender: self)
             (UIApplication.shared.delegate as? AppDelegate)?.changeRootViewController((UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContainerViewController") as? ContainerViewController)!, completion: nil)
@@ -124,6 +125,7 @@ class LoginController: BaseController {
         }) { (customer: CustomerResponse) in
             self.hideLoading()
             customerManager.onLoginSuccessfully(loginStatus: .LoginWithFacebook, customer: customer)
+            customerManager.saveSubscription(paystack_auth_code: customer.paystack_auth_code!, subscription_date: customer.subscribed_date!)
             //            self.performSegue(withIdentifier: "MainScreen",
             //                              sender: self)
             

@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -15,7 +15,7 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginController" id="BYZ-38-t0r" customClass="LoginController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginController" id="BYZ-38-t0r" customClass="LoginController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -71,7 +71,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ub-Jd-NBL">
-                                        <rect key="frame" x="0.0" y="54.5" width="275" height="47"/>
+                                        <rect key="frame" x="0.0" y="54" width="275" height="47"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -86,11 +86,11 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V84-hl-0jm">
-                                        <rect key="frame" x="0.0" y="116.5" width="51" height="31"/>
+                                        <rect key="frame" x="0.0" y="116" width="51" height="31"/>
                                     </switch>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQJ-1R-bYj">
-                                        <rect key="frame" x="0.0" y="162.5" width="275" height="46"/>
-                                        <color key="backgroundColor" red="0.95294117647058818" green="0.34509803921568627" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="162" width="275" height="46"/>
+                                        <color key="backgroundColor" red="0.90553349256515503" green="0.76507668354072833" blue="0.1073088884468658" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="LOGIN">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -102,13 +102,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0Y-rd-b4J">
-                                        <rect key="frame" x="57" y="121.5" width="120" height="21"/>
+                                        <rect key="frame" x="57" y="121" width="120" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Njb-Fk-7hF">
-                                        <rect key="frame" x="74" y="216.5" width="127" height="30"/>
+                                        <rect key="frame" x="74" y="216" width="127" height="30"/>
                                         <state key="normal" title="Forgot password ?">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -146,7 +146,7 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6B-pu-tDI">
-                                <rect key="frame" x="50" y="560.5" width="275" height="46.5"/>
+                                <rect key="frame" x="50" y="560" width="275" height="46.5"/>
                                 <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="VOk-pL-any"/>
@@ -216,7 +216,7 @@
         <!--Register Controller-->
         <scene sceneID="xaW-f7-zBE">
             <objects>
-                <viewController storyboardIdentifier="RegisterController" id="dlN-cz-2Gb" customClass="RegisterController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterController" id="dlN-cz-2Gb" customClass="RegisterController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pi1-ZK-P9n"/>
                         <viewControllerLayoutGuide type="bottom" id="rpF-LA-h5T"/>
@@ -270,7 +270,7 @@
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hx6-8E-oIr">
-                                <rect key="frame" x="50" y="217.5" width="275" height="46.5"/>
+                                <rect key="frame" x="50" y="217" width="275" height="46.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="82f-Oa-ceZ"/>
                                 </constraints>
@@ -316,7 +316,7 @@
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DfT-bd-Dkc">
-                                <rect key="frame" x="50" y="342.5" width="275" height="46.5"/>
+                                <rect key="frame" x="50" y="342" width="275" height="46.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Dis-cP-4fS"/>
                                 </constraints>
@@ -339,7 +339,7 @@
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODi-WN-5FM">
-                                <rect key="frame" x="50" y="586.5" width="275" height="46.5"/>
+                                <rect key="frame" x="50" y="586" width="275" height="46.5"/>
                                 <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Qo6-3p-r49"/>
@@ -432,7 +432,7 @@
         <!--Forgot Password Controller-->
         <scene sceneID="RnV-cS-JbW">
             <objects>
-                <viewController id="a8C-JM-CJp" customClass="ForgotPasswordController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="a8C-JM-CJp" customClass="ForgotPasswordController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bub-r8-HCg"/>
                         <viewControllerLayoutGuide type="bottom" id="zPj-nX-TNs"/>
@@ -486,7 +486,7 @@
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm4-MU-4xH">
-                                <rect key="frame" x="50" y="323.5" width="275" height="46.5"/>
+                                <rect key="frame" x="50" y="323" width="275" height="46.5"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.34509803919999998" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1a8-Hx-4cZ"/>
@@ -547,7 +547,7 @@
         <!--Category Controller-->
         <scene sceneID="bZy-4g-Afr">
             <objects>
-                <viewController id="iNX-k5-Gw9" customClass="CategoryController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iNX-k5-Gw9" customClass="CategoryController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IcO-k0-TQP"/>
                         <viewControllerLayoutGuide type="bottom" id="7xZ-JS-THp"/>
@@ -561,7 +561,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryViewCell" rowHeight="100" id="OMN-90-rHw" customClass="CategoryViewCell" customModule="Yo365" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryViewCell" rowHeight="100" id="OMN-90-rHw" customClass="CategoryViewCell" customModule="teleBang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OMN-90-rHw" id="Lh3-d3-k0Q">
@@ -628,7 +628,7 @@
         <!--Video List By Category Controller-->
         <scene sceneID="IJc-Th-gcS">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="skO-py-EUG" customClass="VideoListByCategoryController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="skO-py-EUG" customClass="VideoListByCategoryController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1FZ-YO-mUL"/>
                         <viewControllerLayoutGuide type="bottom" id="JzV-dx-i17"/>
@@ -662,7 +662,7 @@
         <!--Search Controller-->
         <scene sceneID="adr-s2-ARb">
             <objects>
-                <viewController id="SRk-T8-EYO" customClass="SearchController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SRk-T8-EYO" customClass="SearchController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oxo-lg-0zs"/>
                         <viewControllerLayoutGuide type="bottom" id="k5U-eg-XXU"/>
@@ -712,7 +712,7 @@
         <!--Video Detail Controller-->
         <scene sceneID="TC9-88-Sff">
             <objects>
-                <viewController id="Mbi-Jx-xqE" customClass="VideoDetailController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mbi-Jx-xqE" customClass="VideoDetailController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wku-2W-hLj"/>
                         <viewControllerLayoutGuide type="bottom" id="wRV-MK-ALL"/>
@@ -728,7 +728,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_play_video" translatesAutoresizingMaskIntoConstraints="NO" id="imW-sL-v9T">
-                                        <rect key="frame" x="172" y="85" width="30" height="30"/>
+                                        <rect key="frame" x="172.5" y="84.5" width="30" height="30"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1018,7 +1018,7 @@
         <!--Comment Controller-->
         <scene sceneID="7je-Eg-yEL">
             <objects>
-                <viewController storyboardIdentifier="CommentScreen" hidesBottomBarWhenPushed="YES" id="C2h-YX-kBO" customClass="CommentController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommentScreen" hidesBottomBarWhenPushed="YES" id="C2h-YX-kBO" customClass="CommentController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ohi-2q-tnv"/>
                         <viewControllerLayoutGuide type="bottom" id="jWq-sh-gb8"/>
@@ -1086,10 +1086,10 @@
             </objects>
             <point key="canvasLocation" x="10834.4" y="89.505247376311857"/>
         </scene>
-        <!--Yo365-->
+        <!--teleBang-->
         <scene sceneID="YW1-YS-LR6">
             <objects>
-                <viewController id="l9x-Lv-Xkv" customClass="HomeController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="l9x-Lv-Xkv" customClass="HomeController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9LX-zH-HNa"/>
                         <viewControllerLayoutGuide type="bottom" id="vYI-Qc-y7Z"/>
@@ -1108,7 +1108,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridVideoCell" id="6UU-cs-qfJ" customClass="GridVideoViewCell" customModule="Yo365" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridVideoCell" id="6UU-cs-qfJ" customClass="GridVideoViewCell" customModule="teleBang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="165" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1132,13 +1132,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFL-8B-CUU">
-                                                    <rect key="frame" x="0.0" y="124.5" width="35.5" height="14.5"/>
+                                                    <rect key="frame" x="0.0" y="124" width="35.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.56078431370000004" green="0.5568627451" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Master Chef" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ej-i9-OwR">
-                                                    <rect key="frame" x="43.5" y="124.5" width="113.5" height="14.5"/>
+                                                    <rect key="frame" x="43" y="124" width="113.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.94509803921568625" green="0.25098039215686274" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1150,7 +1150,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="17K Views" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnZ-aQ-uup">
-                                                    <rect key="frame" x="82.5" y="139" width="82.5" height="14.5"/>
+                                                    <rect key="frame" x="82" y="139" width="82.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.56078431370000004" green="0.5568627451" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1202,7 +1202,7 @@
                             <constraint firstItem="5Tz-T2-Idj" firstAttribute="leading" secondItem="b0f-9q-IX9" secondAttribute="leading" id="wwc-aw-3fK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Yo365" id="BEN-gl-g0b"/>
+                    <navigationItem key="navigationItem" title="teleBang" id="BEN-gl-g0b"/>
                     <connections>
                         <outlet property="collectionView" destination="5Tz-T2-Idj" id="ZHA-05-kHD"/>
                     </connections>
@@ -1214,7 +1214,7 @@
         <!--Main Controller-->
         <scene sceneID="gCg-5X-z5u">
             <objects>
-                <tabBarController storyboardIdentifier="MainController" id="Qb6-zI-LFA" customClass="MainController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainController" id="Qb6-zI-LFA" customClass="MainController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="AWf-oJ-z2J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -1269,7 +1269,7 @@
         <!--Container View Controller-->
         <scene sceneID="nMm-9R-nx4">
             <objects>
-                <viewController storyboardIdentifier="ContainerViewController" id="I7T-cj-XFM" customClass="ContainerViewController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContainerViewController" id="I7T-cj-XFM" customClass="ContainerViewController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CLf-Sq-vuP"/>
                         <viewControllerLayoutGuide type="bottom" id="njF-GB-RLI"/>
@@ -1287,7 +1287,7 @@
         <!--Side Menu View-->
         <scene sceneID="gQD-Ba-iZJ">
             <objects>
-                <viewController storyboardIdentifier="Left" id="QYt-cY-AsJ" customClass="SideMenuView" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Left" id="QYt-cY-AsJ" customClass="SideMenuView" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tb9-Ca-CtY"/>
                         <viewControllerLayoutGuide type="bottom" id="teU-rG-bi6"/>
@@ -1403,7 +1403,7 @@
         <!--Trending Controller-->
         <scene sceneID="Y9r-rB-CkW">
             <objects>
-                <viewController id="2sz-n2-OQT" customClass="TrendingController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2sz-n2-OQT" customClass="TrendingController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TXk-Wm-9Y5"/>
                         <viewControllerLayoutGuide type="bottom" id="l2X-SR-0xF"/>
@@ -1601,7 +1601,7 @@
         <!--Setting Controller-->
         <scene sceneID="AQl-s9-esz">
             <objects>
-                <viewController id="nMm-nE-W2W" customClass="SettingController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nMm-nE-W2W" customClass="SettingController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xfI-dP-wnK"/>
                         <viewControllerLayoutGuide type="bottom" id="zqs-fc-sKR"/>
@@ -1744,7 +1744,7 @@
         <!--Change Password Controller-->
         <scene sceneID="mmK-QL-5pB">
             <objects>
-                <viewController id="vaD-0J-6He" customClass="ChangePasswordController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vaD-0J-6He" customClass="ChangePasswordController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tsm-fZ-Se5"/>
                         <viewControllerLayoutGuide type="bottom" id="xmS-He-7fB"/>
@@ -1766,7 +1766,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZQl-u8-iHY">
-                                <rect key="frame" x="191.5" y="145" width="168.5" height="30"/>
+                                <rect key="frame" x="191" y="145" width="168.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
@@ -1790,7 +1790,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YaG-x3-zhe">
-                                <rect key="frame" x="191.5" y="221" width="168.5" height="30"/>
+                                <rect key="frame" x="191" y="221" width="168.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -1853,7 +1853,7 @@
         <!--Static Page Controller-->
         <scene sceneID="rfP-aA-3Ev">
             <objects>
-                <viewController id="9to-zf-gdK" customClass="StaticPageController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9to-zf-gdK" customClass="StaticPageController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="17Z-qo-lXd"/>
                         <viewControllerLayoutGuide type="bottom" id="2k2-93-NCk"/>
@@ -1887,7 +1887,7 @@
         <!--Change Profile Controller-->
         <scene sceneID="ita-v3-N4n">
             <objects>
-                <viewController storyboardIdentifier="ChangeProfileScreen" id="kjT-Io-KOj" customClass="ChangeProfileController" customModule="Yo365" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeProfileScreen" id="kjT-Io-KOj" customClass="ChangeProfileController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IRJ-ZJ-InG"/>
                         <viewControllerLayoutGuide type="bottom" id="ZcM-Ch-ZVd"/>
@@ -1948,7 +1948,7 @@
                                 <rect key="frame" x="0.0" y="209" width="375" height="174"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kip-gY-7ei">
-                                        <rect key="frame" x="191.5" y="15" width="168.5" height="30"/>
+                                        <rect key="frame" x="191" y="15" width="168.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -1984,7 +1984,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xje-vf-KLa">
-                                        <rect key="frame" x="191.5" y="129" width="168.5" height="30"/>
+                                        <rect key="frame" x="191" y="129" width="168.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
@@ -2128,6 +2128,213 @@
             </objects>
             <point key="canvasLocation" x="8962.3999999999996" y="90.404797601199405"/>
         </scene>
+        <!--Subscription View Controller-->
+        <scene sceneID="i49-bG-WSZ">
+            <objects>
+                <viewController storyboardIdentifier="SubscriptionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kwA-kP-6p0" customClass="SubscriptionViewController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mI8-ee-DeU"/>
+                        <viewControllerLayoutGuide type="bottom" id="lm9-Rt-Cgv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BNJ-Et-ECu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will be charged 25 NGR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KY3-rz-GBX">
+                                <rect key="frame" x="16" y="61" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-t7-Lxk">
+                                <rect key="frame" x="48" y="126" width="280" height="30"/>
+                                <state key="normal" title="1 month">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedSubscriptionType:" destination="kwA-kP-6p0" eventType="touchUpInside" id="6aE-Ib-h1u"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCe-XN-QZC" customClass="PSTCKPaymentCardTextField">
+                                <rect key="frame" x="48" y="184" width="280" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="jcG-qW-VE8"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="cardDetailChanged:" destination="kwA-kP-6p0" eventType="valueChanged" id="km8-ba-oJ5"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNT-D8-YuK">
+                                <rect key="frame" x="48" y="337" width="279" height="30"/>
+                                <state key="normal" title="Charge"/>
+                                <connections>
+                                    <action selector="clickedCharge:" destination="kwA-kP-6p0" eventType="touchUpInside" id="KfL-ZT-44g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KY3-rz-GBX" firstAttribute="top" secondItem="mI8-ee-DeU" secondAttribute="bottom" constant="41" id="0Rv-6K-Htq"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="KY3-rz-GBX" secondAttribute="leading" id="4iM-5v-fIS"/>
+                            <constraint firstItem="vNT-D8-YuK" firstAttribute="top" secondItem="JCe-XN-QZC" secondAttribute="bottom" constant="53" id="7dk-WC-I8D"/>
+                            <constraint firstItem="Yeg-t7-Lxk" firstAttribute="centerX" secondItem="BNJ-Et-ECu" secondAttribute="centerX" id="9Qd-eI-mpg"/>
+                            <constraint firstItem="vNT-D8-YuK" firstAttribute="leading" secondItem="BNJ-Et-ECu" secondAttribute="leadingMargin" constant="32" id="Abk-rF-Jp0"/>
+                            <constraint firstItem="vNT-D8-YuK" firstAttribute="centerX" secondItem="BNJ-Et-ECu" secondAttribute="centerX" id="EsK-K2-Nmj"/>
+                            <constraint firstItem="Yeg-t7-Lxk" firstAttribute="top" secondItem="KY3-rz-GBX" secondAttribute="bottom" constant="44" id="PmL-R7-BgX"/>
+                            <constraint firstItem="JCe-XN-QZC" firstAttribute="centerX" secondItem="BNJ-Et-ECu" secondAttribute="centerX" id="X3f-qG-XeV"/>
+                            <constraint firstItem="KY3-rz-GBX" firstAttribute="centerX" secondItem="BNJ-Et-ECu" secondAttribute="centerX" id="Z19-qb-OLj"/>
+                            <constraint firstItem="JCe-XN-QZC" firstAttribute="top" secondItem="Yeg-t7-Lxk" secondAttribute="bottom" constant="28" id="iVL-o6-myd"/>
+                            <constraint firstItem="JCe-XN-QZC" firstAttribute="leading" secondItem="BNJ-Et-ECu" secondAttribute="leadingMargin" constant="32" id="oY9-Mf-p6D"/>
+                            <constraint firstItem="Yeg-t7-Lxk" firstAttribute="leading" secondItem="BNJ-Et-ECu" secondAttribute="leadingMargin" constant="32" id="q0k-eO-NSM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnSubscriptionType" destination="Yeg-t7-Lxk" id="Alh-sc-JTY"/>
+                        <outlet property="cardDetailsForm" destination="JCe-XN-QZC" id="SYe-br-0sL"/>
+                        <outlet property="chargeCardButton" destination="vNT-D8-YuK" id="0i1-BJ-seG"/>
+                        <outlet property="lblChargeAmount" destination="KY3-rz-GBX" id="vqY-H8-NF7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OlK-Qx-BHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10294" y="843"/>
+        </scene>
+        <!--Subscription History View Controller-->
+        <scene sceneID="yf0-No-1hc">
+            <objects>
+                <viewController storyboardIdentifier="SubscriptionHistoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rAv-PH-Xyk" customClass="SubscriptionHistoryViewController" customModule="teleBang" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bdu-Uy-UcV"/>
+                        <viewControllerLayoutGuide type="bottom" id="pEW-P7-j6d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xgF-WZ-qvL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8GS-el-CB9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVy-al-RMS">
+                                        <rect key="frame" x="0.0" y="13" width="124" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fb-pR-6eg">
+                                        <rect key="frame" x="124" y="13" width="124" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43a-Hx-RDU">
+                                        <rect key="frame" x="248" y="12.5" width="124" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="43a-Hx-RDU" firstAttribute="centerY" secondItem="8GS-el-CB9" secondAttribute="centerY" id="0jt-8t-nf4"/>
+                                    <constraint firstItem="43a-Hx-RDU" firstAttribute="width" secondItem="8GS-el-CB9" secondAttribute="width" multiplier="0.33" id="9w8-Oy-T9N"/>
+                                    <constraint firstItem="43a-Hx-RDU" firstAttribute="leading" secondItem="3fb-pR-6eg" secondAttribute="trailing" id="CHa-re-QMr"/>
+                                    <constraint firstItem="3fb-pR-6eg" firstAttribute="centerY" secondItem="8GS-el-CB9" secondAttribute="centerY" id="GUh-ZZ-TDW"/>
+                                    <constraint firstItem="KVy-al-RMS" firstAttribute="centerY" secondItem="8GS-el-CB9" secondAttribute="centerY" id="VmK-vC-GWn"/>
+                                    <constraint firstItem="KVy-al-RMS" firstAttribute="leading" secondItem="8GS-el-CB9" secondAttribute="leading" id="WX6-Ic-wp9"/>
+                                    <constraint firstItem="3fb-pR-6eg" firstAttribute="leading" secondItem="KVy-al-RMS" secondAttribute="trailing" id="ged-Yv-SwM"/>
+                                    <constraint firstAttribute="height" constant="46" id="hln-H6-aJy"/>
+                                    <constraint firstItem="KVy-al-RMS" firstAttribute="width" secondItem="8GS-el-CB9" secondAttribute="width" multiplier="0.33" id="pTq-Vl-dAq"/>
+                                    <constraint firstItem="3fb-pR-6eg" firstAttribute="width" secondItem="8GS-el-CB9" secondAttribute="width" multiplier="0.33" id="ttP-g8-HBv"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x4i-Co-ZqQ">
+                                <rect key="frame" x="0.0" y="118" width="375" height="549"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubscriptionHistoryTableViewCell" id="7w3-Kw-qOl" customClass="SubscriptionHistoryTableViewCell" customModule="teleBang" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7w3-Kw-qOl" id="7to-ph-QD0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edr-vY-ynU">
+                                                    <rect key="frame" x="0.0" y="0.5" width="375" height="43.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klw-uu-5rH">
+                                                            <rect key="frame" x="0.0" y="12.5" width="124" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1k-F1-gTN">
+                                                            <rect key="frame" x="124" y="12.5" width="124" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Os-lD-t5O">
+                                                            <rect key="frame" x="248" y="12.5" width="124" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="7Os-lD-t5O" firstAttribute="centerY" secondItem="edr-vY-ynU" secondAttribute="centerY" id="EQH-P3-I6s"/>
+                                                        <constraint firstItem="7Os-lD-t5O" firstAttribute="leading" secondItem="W1k-F1-gTN" secondAttribute="trailing" id="P7m-WO-N7x"/>
+                                                        <constraint firstItem="W1k-F1-gTN" firstAttribute="leading" secondItem="Klw-uu-5rH" secondAttribute="trailing" id="TGh-QI-9WH"/>
+                                                        <constraint firstItem="W1k-F1-gTN" firstAttribute="centerY" secondItem="edr-vY-ynU" secondAttribute="centerY" id="bbp-BN-OYY"/>
+                                                        <constraint firstItem="Klw-uu-5rH" firstAttribute="width" secondItem="edr-vY-ynU" secondAttribute="width" multiplier="0.33" id="dSv-pN-2fl"/>
+                                                        <constraint firstItem="Klw-uu-5rH" firstAttribute="leading" secondItem="edr-vY-ynU" secondAttribute="leading" id="e2F-ug-c9v"/>
+                                                        <constraint firstItem="W1k-F1-gTN" firstAttribute="width" secondItem="edr-vY-ynU" secondAttribute="width" multiplier="0.33" id="emC-3m-cfI"/>
+                                                        <constraint firstItem="7Os-lD-t5O" firstAttribute="width" secondItem="edr-vY-ynU" secondAttribute="width" multiplier="0.33" id="gck-Jj-E4P"/>
+                                                        <constraint firstItem="Klw-uu-5rH" firstAttribute="centerY" secondItem="edr-vY-ynU" secondAttribute="centerY" id="iGP-Ji-DLa"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="edr-vY-ynU" firstAttribute="width" secondItem="7to-ph-QD0" secondAttribute="width" id="FmH-1Z-3sF"/>
+                                                <constraint firstItem="edr-vY-ynU" firstAttribute="height" secondItem="7to-ph-QD0" secondAttribute="height" id="MGA-Qq-Bap"/>
+                                                <constraint firstItem="edr-vY-ynU" firstAttribute="centerY" secondItem="7to-ph-QD0" secondAttribute="centerY" id="eST-6U-T4Q"/>
+                                                <constraint firstItem="edr-vY-ynU" firstAttribute="centerX" secondItem="7to-ph-QD0" secondAttribute="centerX" id="rfy-W8-LxH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblAmount" destination="W1k-F1-gTN" id="iy1-mD-3cM"/>
+                                            <outlet property="lblCardNumber" destination="7Os-lD-t5O" id="jc0-Go-C8S"/>
+                                            <outlet property="lblTime" destination="Klw-uu-5rH" id="a1X-Q4-1cp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rAv-PH-Xyk" id="H1F-eF-Geh"/>
+                                    <outlet property="delegate" destination="rAv-PH-Xyk" id="8af-oh-Sg4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8GS-el-CB9" firstAttribute="top" secondItem="bdu-Uy-UcV" secondAttribute="bottom" id="BCl-Rz-o6a"/>
+                            <constraint firstItem="x4i-Co-ZqQ" firstAttribute="top" secondItem="8GS-el-CB9" secondAttribute="bottom" constant="8" id="Cky-Px-sru"/>
+                            <constraint firstItem="8GS-el-CB9" firstAttribute="centerX" secondItem="xgF-WZ-qvL" secondAttribute="centerX" id="LCM-kX-Op4"/>
+                            <constraint firstItem="pEW-P7-j6d" firstAttribute="top" secondItem="x4i-Co-ZqQ" secondAttribute="bottom" id="MHe-1J-5GG"/>
+                            <constraint firstItem="x4i-Co-ZqQ" firstAttribute="width" secondItem="xgF-WZ-qvL" secondAttribute="width" id="Pnh-18-3kU"/>
+                            <constraint firstItem="8GS-el-CB9" firstAttribute="width" secondItem="xgF-WZ-qvL" secondAttribute="width" id="QhF-dM-kPy"/>
+                            <constraint firstItem="x4i-Co-ZqQ" firstAttribute="centerX" secondItem="xgF-WZ-qvL" secondAttribute="centerX" id="ptX-Ud-bhp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gaT-sT-EL2"/>
+                    <connections>
+                        <outlet property="tableView" destination="x4i-Co-ZqQ" id="BAW-tq-NhU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TSe-s2-yW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9094" y="824"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="rEt-cK-R8Y">
             <objects>
@@ -2145,6 +2352,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojR-K0-tve" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6956" y="-616.64167916041981"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fqV-Yh-HZp">
+            <objects>
+                <navigationController storyboardIdentifier="SubscriptionNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MVk-c8-O6g" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GxW-66-k9r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rAv-PH-Xyk" kind="relationship" relationship="rootViewController" id="g3v-UE-oXh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r7j-fI-iba" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8180" y="825"/>
         </scene>
     </scenes>
     <resources>

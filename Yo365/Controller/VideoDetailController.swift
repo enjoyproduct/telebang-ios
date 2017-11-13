@@ -268,6 +268,51 @@ class VideoDetailController: BaseNavController {
         }
     }
     @IBAction func doPLayVideo(_ sender: UITapGestureRecognizer) {
+        if self.checkVIP() {
+            self.playVideo()
+        } else {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController") as! SubscriptionViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
+    }
+    func checkVIP() -> Bool {
+        if videoModel?.getVIP() == 0 {
+            return true
+        } else {
+            if !customerManager.isLogin() {
+                self.showMessage(title: "Telebang", msg: "Please login")
+                return false
+            } else {
+                let lastSubscribedTime = UserDefaults.standard.integer(forKey: KEY_SUBSCRIBED_DATE)
+                let lastSubscribedType = UserDefaults.standard.integer(forKey: KEY_SUBSCRIPTION_TYPE)
+                
+                let currentTime = Int(Date().timeIntervalSince1970)
+                if currentTime - lastSubscribedTime > (3600 * 24 * 30 * countMonth(type: lastSubscribedType)) {
+                    return false
+                }
+                return true
+            }
+        }
+        
+    }
+    func countMonth(type: Int) -> Int {
+        switch (type) {
+            case 0:
+                return 1;
+            case 1:
+                return 3;
+            case 2:
+                return 6;
+            case 3:
+                return 12;
+            default:
+                return 1;
+        }
+    
+    }
+    func playVideo() {
         let player = videoModel?.getPlayerType()
         if(player == .YOUTUBE){
             playYoutube()
@@ -275,7 +320,6 @@ class VideoDetailController: BaseNavController {
             playDefault()
         }
     }
-    
     @IBAction func doLike(_ sender: UITapGestureRecognizer) {
         requestLikeVideo()
     }

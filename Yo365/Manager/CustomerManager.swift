@@ -32,7 +32,10 @@ class CustomerManager {
         preferences.set(username, forKey: KEY_USERNAME)
         preferences.set(password, forKey: KEY_PASSWORD)
     }
-    
+    func saveSubscription(paystack_auth_code: String, subscription_date: Int) {
+        preferences.set(subscription_date, forKey: KEY_SUBSCRIBED_DATE)
+        preferences.set(paystack_auth_code, forKey: KEY_PAYSTACK_AUTH_CODE)
+    }
     func onLoginSuccessfully(loginStatus: LoginStatus, customer: CustomerResponse) {
         self.loginStatus = loginStatus;
         self.customerModel = customer;
