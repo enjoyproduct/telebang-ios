@@ -21,7 +21,7 @@ let RELATIVE_URL_VIDEO_LATEST = "/api/getListVideoLasted/%d/%d"
 let RELATIVE_URL_VIDEO_MOST = "/api/getListVideoMostView/%d/%d"
 let RELATIVE_URL_VIDEO_TRENDING = "/api/getListVideoTrending/%d/%d"
 let RELATIVE_URL_SEARCH_BY_KEYWORD = "/api/getListVideoByKeyword"
-let RELATIVE_URL_GET_VIDEOS_BY_CATEGORY = "/api/getListVideoByCategory/%d/%d/%d";
+let RELATIVE_URL_GET_VIDEOS_BY_CATEGORY = "/api/getListVideoByCategory/%d/%d/%d"
 let RELATIVE_URL_GET_VIDEO_BY_ID = "/api/getVideoById/%d";
 
 let RELATIVE_URL_UPDATE_VIDEO_COUNTER = "api/updateStatistics"
@@ -34,10 +34,14 @@ let RELATIVE_URL_INSERT_COMMENT = "/api/insertCommentVideo"
 let RELATIVE_URL_CHANGE_PASSWORD = "/api/change_password"
 let RELATIVE_URL_CHANGE_PROFILE = "/api/change_profile"
 let RELATIVE_URL_CHANGE_AVATAR = "api/change_avatar"
-let RELATIVE_URL_GET_NEW_ACCESS_CODE = "/api/get_new_access_code";
-let RELATIVE_URL_VIERITY_SUBSCRIPTION = "/api/verify_subscription";
-let RELATIVE_URL_UPDATE_SUBSCRIPTION = "/api/update_subscription";
-let RELATIVE_URL_GET_SUBSCRIPTIONS = "/api/getSubscriptionHistory";
+let RELATIVE_URL_GET_NEW_ACCESS_CODE = "/api/get_new_access_code"
+let RELATIVE_URL_VIERITY_SUBSCRIPTION = "/api/verify_subscription"
+let RELATIVE_URL_UPDATE_SUBSCRIPTION = "/api/update_subscription"
+let RELATIVE_URL_GET_SUBSCRIPTIONS = "/api/getSubscriptionHistory"
+
+let RELATIVE_URL_GET_SERIES = "/api/getListSeries/%s/%s/%s"
+let RELATIVE_URL_GET_VIDEO_BY_SERIES = "/api/getListVideoBySeries/%s/%s/%s"
+let RELATIVE_URL_REGISTER_DEVICE = "/api/registerDevice";
 
 let LIMIT_VIDEOS_HOMES = 10;
 let LIMIT_VIDEOS_SEARCH = 10;

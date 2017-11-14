@@ -63,6 +63,11 @@
 		28FCDAF91E698F8500666EF4 /* StaticPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCDAF81E698F8500666EF4 /* StaticPageController.swift */; };
 		28FD82541E320B4300EFA1A4 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD82531E320B4300EFA1A4 /* MainController.swift */; };
 		28FD82571E32113400EFA1A4 /* ValidateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD82561E32113400EFA1A4 /* ValidateUtil.swift */; };
+		844DE2E51FBAF64F001756AB /* VideoListBySeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DE2E41FBAF64F001756AB /* VideoListBySeriesViewController.swift */; };
+		844DE2E71FBAFAA0001756AB /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DE2E61FBAFAA0001756AB /* SeriesViewController.swift */; };
+		844DE2EA1FBB06DE001756AB /* SeriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DE2E91FBB06DE001756AB /* SeriesCollectionViewCell.swift */; };
+		844DE2EC1FBB0700001756AB /* SeriesVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DE2EB1FBB0700001756AB /* SeriesVideoTableViewCell.swift */; };
+		844DE2EE1FBB0D25001756AB /* SeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DE2ED1FBB0D25001756AB /* SeriesModel.swift */; };
 		84CB184C1ED3996D00E2CF05 /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB184B1ED3996D00E2CF05 /* SubscriptionViewController.swift */; };
 		84CB184E1ED3997C00E2CF05 /* SubscriptionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB184D1ED3997C00E2CF05 /* SubscriptionHistoryViewController.swift */; };
 		84CB18501ED39CB700E2CF05 /* SubscriptionHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB184F1ED39CB700E2CF05 /* SubscriptionHistoryTableViewCell.swift */; };
@@ -348,6 +353,11 @@
 		4E058DB0B1C4BD99FCF48165 /* Pods-Yo365Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yo365Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yo365Tests/Pods-Yo365Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		629B01C180898C38CFC26AF0 /* Pods_teleBang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teleBang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7023778DF0381728A66E1068 /* Pods-teleBangUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teleBangUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-teleBangUITests/Pods-teleBangUITests.release.xcconfig"; sourceTree = "<group>"; };
+		844DE2E41FBAF64F001756AB /* VideoListBySeriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoListBySeriesViewController.swift; path = Controller/VideoListBySeriesViewController.swift; sourceTree = "<group>"; };
+		844DE2E61FBAFAA0001756AB /* SeriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeriesViewController.swift; path = Controller/SeriesViewController.swift; sourceTree = "<group>"; };
+		844DE2E91FBB06DE001756AB /* SeriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeriesCollectionViewCell.swift; path = View/SeriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		844DE2EB1FBB0700001756AB /* SeriesVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeriesVideoTableViewCell.swift; path = View/SeriesVideoTableViewCell.swift; sourceTree = "<group>"; };
+		844DE2ED1FBB0D25001756AB /* SeriesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeriesModel.swift; path = Model/SeriesModel.swift; sourceTree = "<group>"; };
 		84CB184B1ED3996D00E2CF05 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionViewController.swift; path = Controller/SubscriptionViewController.swift; sourceTree = "<group>"; };
 		84CB184D1ED3997C00E2CF05 /* SubscriptionHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionHistoryViewController.swift; sourceTree = "<group>"; };
 		84CB184F1ED39CB700E2CF05 /* SubscriptionHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionHistoryTableViewCell.swift; path = View/SubscriptionHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -515,6 +525,7 @@
 				28975E6A1E4882EF00CB824A /* VideoModel.swift */,
 				28975E6C1E4890A900CB824A /* VideoCategoryModel.swift */,
 				84CB18511ED3A1BB00E2CF05 /* SubscriptionModel.swift */,
+				844DE2ED1FBB0D25001756AB /* SeriesModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -522,6 +533,7 @@
 		2848B30C1E2F56E400AAB998 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				844DE2E81FBB06AA001756AB /* SeriesCell */,
 				282A11D91E6851520088AFEE /* FavouriteCell */,
 				2802F8481E4C8BAC000795B8 /* CommentCell */,
 				284E15AF1E49E37C0090B276 /* VideoListCell */,
@@ -536,6 +548,7 @@
 		2848B30D1E2F56F200AAB998 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				844DE2CB1FBAF5B0001756AB /* VideoListBySeries */,
 				84CB18331ED3993100E2CF05 /* Subscription */,
 				28B0A0611E6FDCD00099CD9C /* Player */,
 				28E936221E6D4F5F00A617A4 /* News */,
@@ -761,6 +774,24 @@
 				2802F8441E4C6723000795B8 /* AppUtil.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		844DE2CB1FBAF5B0001756AB /* VideoListBySeries */ = {
+			isa = PBXGroup;
+			children = (
+				844DE2E41FBAF64F001756AB /* VideoListBySeriesViewController.swift */,
+				844DE2E61FBAFAA0001756AB /* SeriesViewController.swift */,
+			);
+			name = VideoListBySeries;
+			sourceTree = "<group>";
+		};
+		844DE2E81FBB06AA001756AB /* SeriesCell */ = {
+			isa = PBXGroup;
+			children = (
+				844DE2E91FBB06DE001756AB /* SeriesCollectionViewCell.swift */,
+				844DE2EB1FBB0700001756AB /* SeriesVideoTableViewCell.swift */,
+			);
+			name = SeriesCell;
 			sourceTree = "<group>";
 		};
 		84CB18331ED3993100E2CF05 /* Subscription */ = {
@@ -1367,6 +1398,8 @@
 				284E15B21E49E3AA0090B276 /* VideoViewCell1.swift in Sources */,
 				28975E641E48727F00CB824A /* BaseNavController.swift in Sources */,
 				28975E6B1E4882EF00CB824A /* VideoModel.swift in Sources */,
+				844DE2EA1FBB06DE001756AB /* SeriesCollectionViewCell.swift in Sources */,
+				844DE2EC1FBB0700001756AB /* SeriesVideoTableViewCell.swift in Sources */,
 				284E15AE1E49D2710090B276 /* CategoryViewCell.swift in Sources */,
 				28AC54881E35DD0500CE5598 /* SideMenuView.swift in Sources */,
 				287A2E3C1E331EF100D92A01 /* HomeController.swift in Sources */,
@@ -1401,9 +1434,12 @@
 				84CB184C1ED3996D00E2CF05 /* SubscriptionViewController.swift in Sources */,
 				28CD24991E44412F00CEEEF4 /* SlideMenuElement.swift in Sources */,
 				286C87A41E30C87A00539369 /* ResponseModel.swift in Sources */,
+				844DE2E71FBAFAA0001756AB /* SeriesViewController.swift in Sources */,
 				84F7BA211ED66B860082F068 /* NIDropDown.m in Sources */,
 				2848B30F1E2F67E900AAB998 /* LoginController.swift in Sources */,
+				844DE2E51FBAF64F001756AB /* VideoListBySeriesViewController.swift in Sources */,
 				28E2DA291E2F511100CFD6AC /* AppDelegate.swift in Sources */,
+				844DE2EE1FBB0D25001756AB /* SeriesModel.swift in Sources */,
 				28CD24A51E44820300CEEEF4 /* CustomerManager.swift in Sources */,
 				84CB184E1ED3997C00E2CF05 /* SubscriptionHistoryViewController.swift in Sources */,
 			);

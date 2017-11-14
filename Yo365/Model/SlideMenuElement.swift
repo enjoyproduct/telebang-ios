@@ -9,7 +9,7 @@ import Foundation
 
 struct SlideMenuElement {
     enum MenuType: String {
-        case Home, Categories, Favourite, Download, News, Upload, AboutUs, Terms, Feedback, Help, Share, SubscriptionHistory
+        case Home, Categories, Series, Favourite, Download, News, Upload, AboutUs, Terms, Feedback, Help, Share, SubscriptionHistory
     }
     
     let icon: String

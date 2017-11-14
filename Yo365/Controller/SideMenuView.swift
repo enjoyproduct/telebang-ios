@@ -113,7 +113,6 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
             let mainController = self.storyboard?.instantiateViewController(withIdentifier: "MainController") as! MainController
             mainController.positionActive = 0
             controller = mainController
-            
             break
             
         case .Categories:
@@ -127,7 +126,10 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
             mainController.positionActive = 3
             controller = mainController
             break
-            
+        case .Series:
+            let seriesViewController = self.storyboard?.instantiateViewController(withIdentifier: "SeriesViewController") as! SeriesViewController
+            controller = seriesViewController
+            break
         case .Download:
             
             break
