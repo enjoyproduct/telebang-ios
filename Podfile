@@ -9,7 +9,7 @@ target 'teleBang' do
 	pod 'Alamofire', '~> 4.3'
 pod 'SwiftyJSON'
 pod 'ObjectMapper', '~> 2.2'
-pod 'Eureka', '~> 2.0.0-beta.1'
+pod 'Eureka'
 pod 'SnapKit', '~> 3.1.2'
 pod 'Kingfisher', '~> 3.0'
 pod 'AlamofireObjectMapper', '~> 4.0'

@@ -68,7 +68,7 @@ class RegisterController: BaseController {
             message = ValidateUtil.EMAIL_INVALID_MSG
         }else if(password?.isEmpty)!{
             message = "Please enter password"
-        }else if((password?.characters.count)! < 4){
+        }else if((password?.count)! < 4){
             message = ValidateUtil.PASSWORD_INVALID_MSG
         }else if(password != rePassword){
             message = ValidateUtil.PASSWORD_NOT_MATCH_MSG
@@ -79,8 +79,7 @@ class RegisterController: BaseController {
     
     @IBAction func doSignInFacebook(_ sender: Any) {
         let loginManager = LoginManager()
-        
-        loginManager.logIn([ .email ], viewController: self) { loginResult in
+        loginManager.logIn(readPermissions: [ReadPermission.email], viewController: self) { (loginResult) in
             switch loginResult {
             case .failed(let error):
                 self.showMessage(title: "Error", msg: error as! String)

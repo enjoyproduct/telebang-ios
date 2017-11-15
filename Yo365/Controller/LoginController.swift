@@ -69,8 +69,7 @@ class LoginController: BaseController {
     
     @IBAction func doFacebookLogin(_ sender: Any){
         let loginManager = LoginManager()
-        
-        loginManager.logIn([ .email ], viewController: self) { loginResult in
+        loginManager.logIn(readPermissions: [ReadPermission.email], viewController: self) { (loginResult) in
             switch loginResult {
             case .failed(let error):
                 self.showMessage(title: "Error", msg: error as! String)
