@@ -127,8 +127,8 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
             controller = mainController
             break
         case .Series:
-            let seriesViewController = self.storyboard?.instantiateViewController(withIdentifier: "SeriesViewController") as! SeriesViewController
-            controller = seriesViewController
+            let nav = self.storyboard?.instantiateViewController(withIdentifier: "SeriesPageScreen") as! UINavigationController
+            controller = nav
             break
         case .Download:
             
@@ -179,8 +179,6 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
             break
         case .SubscriptionHistory:
             let nav = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionNav") as! UINavigationController
-//            let vc = nav.topViewController as! SubscriptionHistoryViewController
-//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionHistoryViewController") as! SubscriptionHistoryViewController
             controller = nav
             break
         

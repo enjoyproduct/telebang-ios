@@ -66,8 +66,6 @@
 		844DE2E51FBAF64F001756AB /* VideoListBySeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DE2E41FBAF64F001756AB /* VideoListBySeriesViewController.swift */; };
 		844DE2E71FBAFAA0001756AB /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DE2E61FBAFAA0001756AB /* SeriesViewController.swift */; };
 		844DE2EA1FBB06DE001756AB /* SeriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DE2E91FBB06DE001756AB /* SeriesCollectionViewCell.swift */; };
-		844DE2EC1FBB0700001756AB /* SeriesVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DE2EB1FBB0700001756AB /* SeriesVideoTableViewCell.swift */; };
-		844DE2EE1FBB0D25001756AB /* SeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DE2ED1FBB0D25001756AB /* SeriesModel.swift */; };
 		84CB184C1ED3996D00E2CF05 /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB184B1ED3996D00E2CF05 /* SubscriptionViewController.swift */; };
 		84CB184E1ED3997C00E2CF05 /* SubscriptionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB184D1ED3997C00E2CF05 /* SubscriptionHistoryViewController.swift */; };
 		84CB18501ED39CB700E2CF05 /* SubscriptionHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB184F1ED39CB700E2CF05 /* SubscriptionHistoryTableViewCell.swift */; };
@@ -111,6 +109,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 28E2DA241E2F511100CFD6AC;
 			remoteInfo = Yo365;
+		};
+		8424EAFE1FBC8D6600B68065 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F200C7361ECF0F14001E954C /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 31B741DC2FE21C91C08B84CB2818CDD6;
+			remoteInfo = nanopb;
 		};
 		84B525761ED8FFDE00D79413 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -356,8 +361,6 @@
 		844DE2E41FBAF64F001756AB /* VideoListBySeriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoListBySeriesViewController.swift; path = Controller/VideoListBySeriesViewController.swift; sourceTree = "<group>"; };
 		844DE2E61FBAFAA0001756AB /* SeriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeriesViewController.swift; path = Controller/SeriesViewController.swift; sourceTree = "<group>"; };
 		844DE2E91FBB06DE001756AB /* SeriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeriesCollectionViewCell.swift; path = View/SeriesCollectionViewCell.swift; sourceTree = "<group>"; };
-		844DE2EB1FBB0700001756AB /* SeriesVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeriesVideoTableViewCell.swift; path = View/SeriesVideoTableViewCell.swift; sourceTree = "<group>"; };
-		844DE2ED1FBB0D25001756AB /* SeriesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeriesModel.swift; path = Model/SeriesModel.swift; sourceTree = "<group>"; };
 		84CB184B1ED3996D00E2CF05 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionViewController.swift; path = Controller/SubscriptionViewController.swift; sourceTree = "<group>"; };
 		84CB184D1ED3997C00E2CF05 /* SubscriptionHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionHistoryViewController.swift; sourceTree = "<group>"; };
 		84CB184F1ED39CB700E2CF05 /* SubscriptionHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionHistoryTableViewCell.swift; path = View/SubscriptionHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -525,7 +528,6 @@
 				28975E6A1E4882EF00CB824A /* VideoModel.swift */,
 				28975E6C1E4890A900CB824A /* VideoCategoryModel.swift */,
 				84CB18511ED3A1BB00E2CF05 /* SubscriptionModel.swift */,
-				844DE2ED1FBB0D25001756AB /* SeriesModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -789,7 +791,6 @@
 			isa = PBXGroup;
 			children = (
 				844DE2E91FBB06DE001756AB /* SeriesCollectionViewCell.swift */,
-				844DE2EB1FBB0700001756AB /* SeriesVideoTableViewCell.swift */,
 			);
 			name = SeriesCell;
 			sourceTree = "<group>";
@@ -887,6 +888,7 @@
 				F200C76A1ECF0F15001E954C /* GoogleToolboxForMac.framework */,
 				F200C76C1ECF0F15001E954C /* IHKeyboardAvoiding.framework */,
 				F200C76E1ECF0F15001E954C /* Kingfisher.framework */,
+				8424EAFF1FBC8D6600B68065 /* nanopb.framework */,
 				F200C7701ECF0F15001E954C /* ObjectMapper.framework */,
 				84B525771ED8FFDE00D79413 /* Paystack.framework */,
 				84B525791ED8FFDE00D79413 /* Pods_teleBang.framework */,
@@ -1029,6 +1031,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		8424EAFF1FBC8D6600B68065 /* nanopb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = nanopb.framework;
+			remoteRef = 8424EAFE1FBC8D6600B68065 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		84B525771ED8FFDE00D79413 /* Paystack.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1453,7 +1462,6 @@
 				28975E641E48727F00CB824A /* BaseNavController.swift in Sources */,
 				28975E6B1E4882EF00CB824A /* VideoModel.swift in Sources */,
 				844DE2EA1FBB06DE001756AB /* SeriesCollectionViewCell.swift in Sources */,
-				844DE2EC1FBB0700001756AB /* SeriesVideoTableViewCell.swift in Sources */,
 				284E15AE1E49D2710090B276 /* CategoryViewCell.swift in Sources */,
 				28AC54881E35DD0500CE5598 /* SideMenuView.swift in Sources */,
 				287A2E3C1E331EF100D92A01 /* HomeController.swift in Sources */,
@@ -1493,7 +1501,6 @@
 				2848B30F1E2F67E900AAB998 /* LoginController.swift in Sources */,
 				844DE2E51FBAF64F001756AB /* VideoListBySeriesViewController.swift in Sources */,
 				28E2DA291E2F511100CFD6AC /* AppDelegate.swift in Sources */,
-				844DE2EE1FBB0D25001756AB /* SeriesModel.swift in Sources */,
 				28CD24A51E44820300CEEEF4 /* CustomerManager.swift in Sources */,
 				84CB184E1ED3997C00E2CF05 /* SubscriptionHistoryViewController.swift in Sources */,
 			);

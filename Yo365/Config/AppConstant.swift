@@ -39,13 +39,14 @@ let RELATIVE_URL_VIERITY_SUBSCRIPTION = "/api/verify_subscription"
 let RELATIVE_URL_UPDATE_SUBSCRIPTION = "/api/update_subscription"
 let RELATIVE_URL_GET_SUBSCRIPTIONS = "/api/getSubscriptionHistory"
 
-let RELATIVE_URL_GET_SERIES = "/api/getListSeries/%s/%s/%s"
-let RELATIVE_URL_GET_VIDEO_BY_SERIES = "/api/getListVideoBySeries/%s/%s/%s"
+let RELATIVE_URL_GET_SERIES = "/api/getListSeries/%d/%d/%d"
+let RELATIVE_URL_GET_VIDEO_BY_SERIES = "/api/getListVideoBySeries/%@/%d/%d"
 let RELATIVE_URL_REGISTER_DEVICE = "/api/registerDevice";
 
 let LIMIT_VIDEOS_HOMES = 10;
 let LIMIT_VIDEOS_SEARCH = 10;
 let LIMIT_COMMENTS_VIDEO = 20;
+let LIMIT_SERIES_LIST = 20;
 
 let KEY_USERNAME = "username"
 let KEY_PASSWORD = "password"
@@ -69,3 +70,6 @@ let KEY_PAYSTACK_AUTH_CODE = "paystack_auth_code";
 let KEY_SUBSCRIBED_DATE = "subscribed_date";
 let KEY_CARD_NUMBER = "card_number";
 let KEY_SUBSCRIPTION_TYPE = "subscription_type";
+
+let colorPrimary: UIColor = AppUtil.makeColorFromHex("#F35836")
+

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,11 +26,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgr_splash" translatesAutoresizingMaskIntoConstraints="NO" id="Ks6-l6-MVE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="yRv-OP-Y9l">
-                                <rect key="frame" x="89" y="235" width="196" height="196"/>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_yo365" translatesAutoresizingMaskIntoConstraints="NO" id="yRv-OP-Y9l">
+                                <rect key="frame" x="56.5" y="227.5" width="262.5" height="212"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yRv-OP-Y9l" secondAttribute="height" multiplier="178:144" id="nUE-nQ-eYB"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Network Of Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc9-pT-ffg">
-                                <rect key="frame" x="16" y="447" width="343" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Videos and Shorts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc9-pT-ffg">
+                                <rect key="frame" x="113.5" y="389.5" width="148.5" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -36,15 +41,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Ks6-l6-MVE" secondAttribute="bottom" id="4G5-bZ-6yR"/>
-                            <constraint firstItem="Lc9-pT-ffg" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="16" id="6Jh-Pt-bXx"/>
-                            <constraint firstItem="Ks6-l6-MVE" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="MGN-Wr-DUB"/>
-                            <constraint firstAttribute="trailing" secondItem="Lc9-pT-ffg" secondAttribute="trailing" constant="16" id="WsU-AY-PL1"/>
-                            <constraint firstItem="yRv-OP-Y9l" firstAttribute="centerY" secondItem="Ks6-l6-MVE" secondAttribute="centerY" id="lWV-L4-s5X"/>
-                            <constraint firstItem="Ks6-l6-MVE" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="qXO-Bf-fwc"/>
-                            <constraint firstItem="yRv-OP-Y9l" firstAttribute="centerX" secondItem="Ks6-l6-MVE" secondAttribute="centerX" id="rej-eO-0Eo"/>
-                            <constraint firstAttribute="trailing" secondItem="Ks6-l6-MVE" secondAttribute="trailing" id="y5z-aZ-VQP"/>
-                            <constraint firstItem="Lc9-pT-ffg" firstAttribute="top" secondItem="yRv-OP-Y9l" secondAttribute="bottom" constant="16" id="zJp-uK-TM4"/>
+                            <constraint firstItem="Ks6-l6-MVE" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="4cS-tB-iXS"/>
+                            <constraint firstItem="yRv-OP-Y9l" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="JbX-Py-Ygf"/>
+                            <constraint firstItem="Ks6-l6-MVE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Prz-WD-ETN"/>
+                            <constraint firstItem="Lc9-pT-ffg" firstAttribute="top" secondItem="yRv-OP-Y9l" secondAttribute="bottom" constant="-50" id="iSh-SN-WYQ"/>
+                            <constraint firstItem="Ks6-l6-MVE" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="mHp-Kd-tY4"/>
+                            <constraint firstItem="Ks6-l6-MVE" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="moD-J9-3t5"/>
+                            <constraint firstItem="yRv-OP-Y9l" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" id="z2e-bh-RIX"/>
+                            <constraint firstItem="yRv-OP-Y9l" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="zEQ-jI-4im"/>
+                            <constraint firstItem="Lc9-pT-ffg" firstAttribute="centerX" secondItem="yRv-OP-Y9l" secondAttribute="centerX" id="zOV-Vy-YbX"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -56,6 +61,6 @@
     </scenes>
     <resources>
         <image name="bgr_splash" width="375" height="667"/>
-        <image name="img_avatar_default" width="196" height="196"/>
+        <image name="logo_yo365" width="178" height="144"/>
     </resources>
 </document>

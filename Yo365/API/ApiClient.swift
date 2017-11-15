@@ -49,7 +49,29 @@ class ApiClient {
             }
         }
     }
-
+    static func getVideoSeries(url: String, errorHandler: @escaping (String) -> Void, successHandler: @escaping (Array<SeriesJSON>)-> Void) {
+        Alamofire.request(getAbsoluteUrl(relativeUrl: url)).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                
+                let data: Array<Dictionary<String, AnyObject>>! = response.result.value!.content as! Array<Dictionary<String, AnyObject>>
+                let seriesList: Array<SeriesJSON>! = Mapper<SeriesJSON>().mapArray(JSONArray: data)
+                successHandler(seriesList)
+            }
+        }
+    }
+    static func getListVideoBySeries(url: String, errorHandler: @escaping (String) -> Void, successHandler: @escaping (Array<VideoResponseJSON>)-> Void) {
+        Alamofire.request(getAbsoluteUrl(relativeUrl: url)).responseObject { (response: DataResponse<ResponseModel>) in
+            
+            let result = parseResponse(data: response, errorHandler: errorHandler)
+            if(result){
+                let data: Array<Dictionary<String, AnyObject>>! = response.result.value!.content as! Array<Dictionary<String, AnyObject>>
+                let videoList: Array<VideoResponseJSON>! = Mapper<VideoResponseJSON>().mapArray(JSONArray: data)
+                successHandler(videoList)
+            }
+        }
+    }
     static func login(username: String,password: String, errorHandler: @escaping (String) -> Void, successHandler: @escaping (CustomerResponse)-> Void) {
         let params: Parameters = [KEY_USERNAME: username,KEY_PASSWORD: password  ]
         

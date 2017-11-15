@@ -17,7 +17,7 @@ class SubscriptionHistoryViewController: BaseNavController, UITableViewDelegate,
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-         updateTitleHeader(title: "Subscription History")
+        updateTitleHeader(title: "Subscription History")
         getSubscriptions()
     }
     func getSubscriptions()  {

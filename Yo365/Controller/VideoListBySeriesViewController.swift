@@ -8,29 +8,129 @@
 
 import UIKit
 
-class VideoListBySeriesViewController: UIViewController {
+class VideoListBySeriesViewController: BaseNavController {
 
     @IBOutlet weak var tableView: UITableView!
+    var seriesJSON: SeriesJSON? = nil
+    
+    var pageNumber:Int = 1
+    var listVideo: Array<VideoModel> = []
+    let cellIdentifier = "VideoViewCell2"
+    let cellSpacingHeight: CGFloat = 15
+    var isLoadMore: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if(seriesJSON == nil){
+            return
+        }
+        
+        updateTitleHeader(title: (seriesJSON?.title)!)
+        
+        tableView.register(UINib(nibName: "VideoViewCell2", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        
+        showLoading(msg: "Please wait while the content loads")
+        requestGetVideos()
     }
-
+    override func initLeftHeader() {
+        addBackButton()
+    }
+    func requestGetVideos() {
+        if(pageNumber == 1){
+            listVideo.removeAll()
+            self.tableView.reloadData()
+        }
+        let url = String(format: RELATIVE_URL_GET_VIDEO_BY_SERIES, (seriesJSON?.id)!, pageNumber, LIMIT_SERIES_LIST)
+        ApiClient.getListVideoBySeries(url: url, errorHandler: { (message: String) in
+            self.hideLoading()
+        }) { (data: Array<VideoResponseJSON>) in
+            self.hideLoading()
+            
+            if(data.count < LIMIT_VIDEOS_HOMES){
+                self.isLoadMore = false
+            }
+            
+            for model in data {
+                self.listVideo.append(VideoModel.init(videoJSON: model))
+            }
+            
+            self.pageNumber += 1
+            self.tableView.reloadData()
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+}
+extension VideoListBySeriesViewController: UITableViewDataSource, UITableViewDelegate{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return listVideo.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if(isLoadMore && indexPath.section == listVideo.count-1){
+            requestGetVideos()
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! VideoViewCell2
+        cell.selectionStyle = .none
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let videoCell = cell as! VideoViewCell2
+        videoCell.updateView(model: listVideo[indexPath.section])
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nav = storyboard?.instantiateViewController(withIdentifier: "VideoDetailScreen") as!
+        UINavigationController
+        let vc = nav.topViewController as! VideoDetailController
+        vc.videoModel = listVideo[indexPath.section]
+        present(nav, animated: true, completion: nil)
+    }
+    
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+    
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        highlightCell(indexPath: indexPath, flag: true)
+    }
+    
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        highlightCell(indexPath: indexPath, flag: false)
+    }
+    
+    func highlightCell(indexPath : IndexPath, flag: Bool) {
+        
+        let cell = self.tableView.cellForRow(at: indexPath) as! VideoViewCell2
+        
+        if flag {
+            cell.bgrViewHover.alpha = 1
+        } else {
+            cell.bgrViewHover.alpha = 0
+        }
+    }
 }
