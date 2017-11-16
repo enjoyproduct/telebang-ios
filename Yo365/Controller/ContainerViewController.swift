@@ -25,9 +25,9 @@ class ContainerViewController: SlideMenuController {
     }
     
     override func awakeFromNib() {
-        //        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainController") {
-//            self.mainViewController = controller
-//        }
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainController") {
+            self.mainViewController = controller
+        }
         SlideMenuOptions.hideStatusBar = true
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "Left") {
             self.leftViewController = controller

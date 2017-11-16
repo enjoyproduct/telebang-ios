@@ -38,10 +38,10 @@ class SideMenuView: BaseController, UITableViewDataSource, UITableViewDelegate {
         initAccount()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        UIApplication.shared.setStatusBarHidden(true, with: .none)
-//    }
-//    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+//
 //    override func viewWillDisappear(_ animated: Bool) {
 //        UIApplication.shared.setStatusBarHidden(false, with: .none)
 //    }
