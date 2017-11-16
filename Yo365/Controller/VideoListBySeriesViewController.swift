@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class VideoListBySeriesViewController: BaseNavController {
 
@@ -88,7 +89,18 @@ extension VideoListBySeriesViewController: UITableViewDataSource, UITableViewDel
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let videoCell = cell as! VideoViewCell2
-        videoCell.updateView(model: listVideo[indexPath.section])
+//        videoCell.updateView(model: listVideo[indexPath.section])
+        let model = listVideo[indexPath.section]
+        videoCell.lbTitle.text = model.getTitle()
+        
+        let urlThumbnail = URL(string: model.getThumbnail())!
+        videoCell.imvThumbnail.kf.setImage(with: urlThumbnail, placeholder: Image.init(named: "no_image_default"), options: nil, progressBlock: nil, completionHandler: nil)
+        
+        videoCell.lbSeries.text = model.getSeries()
+        var moreInfo = String.init(format: "%@ &#8226; %@", model.getUpdateAt(), model.getViewCounterFormat())
+        let aux = "<span style=\"font-family: Helvetica; line-height: 1.5;color: #8F8E94; font-size: 12\">%@</span>"
+        moreInfo = String.init(format: aux, moreInfo)
+        videoCell.lbMoreInfo.attributedText = AppUtil.stringFromHtml(string: moreInfo)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
