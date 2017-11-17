@@ -86,8 +86,8 @@ class VideoModel{
         return videoJSON.id!
     }
     
-    func getVIP() -> Int {
-        return (videoJSON.author?.vip!)!
+    func getVIPPlay() -> Int {
+        return (videoJSON.vipPlay)!
     }
     
     func getPlayerType() -> PlayerType {

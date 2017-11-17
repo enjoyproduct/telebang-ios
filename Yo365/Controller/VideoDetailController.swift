@@ -278,7 +278,7 @@ class VideoDetailController: BaseNavController {
         
     }
     func checkVIP() -> Bool {
-        if videoModel?.getVIP() == 0 {
+        if videoModel?.getVIPPlay() == 0 {
             return true
         } else {
             if !customerManager.isLogin() {
